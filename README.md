@@ -1,17 +1,18 @@
 # Project
 
 ## Goals,Opportunity and Objectves :
-> What the `system ` is trying to do 
+> What the `system ` is trying to do \
+> Scope of project
+> SIGN IN
+> Password view
 
 <br/>
 
 ## Requirements :
-
-> Works of users, Faculty, Admin, Student \
-> Who, What, Where, When, How, Why
+> Works of Faculty, Admin, Student \
+> Who (include ), What( project ), Where ( pages ), When ( pages ), How( system ), Why 
 
 <br/>
-
 
 ## Analysis :
 - [ ] Data flow diagrams
