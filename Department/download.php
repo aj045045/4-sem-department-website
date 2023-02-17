@@ -1,7 +1,7 @@
-<!-- //TODO: DOWNLOAD PDF DOCUMENT
+<!-- TODO: Download pdf files
 -->
 <?php
-// TODO:For downloading pdf
+// ? For downloading pdf
 if (isset($_POST['download-pdf'])) {
     $course = $_POST['course'];
     $sem = $_POST['sem'];
@@ -14,7 +14,7 @@ if (isset($_POST['download-pdf'])) {
             $path = $row['document'] . ".pdf";
             echo base64_decode($row['document']);
 
-// TODO: PDF DOWNLAOD
+// ? PDF DOWNLAOD
             header("Content-Disposition: attachment; filename=" . urlencode($path));
             header("Content-Type: application/download");
             header("Content-Description: File Transfer");
@@ -28,9 +28,6 @@ if (isset($_POST['download-pdf'])) {
             fclose($fp);
         }
     }
-}
-?>
-
 }
 ?>
 <!doctype html>

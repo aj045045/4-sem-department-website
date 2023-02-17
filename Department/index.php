@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+    <!-- TODO: Index page 
+-->
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="utf-8">

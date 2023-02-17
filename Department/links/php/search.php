@@ -1,5 +1,5 @@
-// TODO: Search
 <?php 
+// TODO: Search
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
                         //? SEARCH USING SWITCH CASE

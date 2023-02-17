@@ -1,4 +1,5 @@
-  /* TODO:Navbar in javascript file */
+/*TODO: Web pages css*/
+ /* *Navbar in javascript file */
   #back-color {
       /** color code */
     background: rgb(0, 33, 71);
@@ -67,7 +68,7 @@
       width: 50%;
   }
 
-  /*TODO: Footer styling codes */
+  /** Footer styling codes */
   .footer {
       padding-left: 20px;
       padding-bottom: 20px;
@@ -88,7 +89,7 @@
       padding: 2px;
   }
 
-  /*TODO: Cards [ faculty.html ] */
+  /** Cards [ faculty.html ] */
   .card-body .card-title .badge {
       background-color: #016064;
   }
@@ -126,7 +127,7 @@
       border-radius: 50%;
   }
 
-  /*TODO: Faculty detail */
+  /** Faculty detail */
   .bg_img {
       /** Images of fauclty members */
       background-image: url(image/logos/bg_gu.webp);
@@ -143,7 +144,7 @@
       color: white;
   }
 
-  /*TODO: More [ home.html ] */
+  /** More [ home.html ] */
   #more {
       display: none;
   }
@@ -170,7 +171,7 @@
   }
 
 
-  /* TODO: Pie-chart [ home.html ] */
+  /* * Pie-chart [ home.html ] */
   #doughnutChart {
       width: 100%;
       height: 100px;
@@ -183,7 +184,7 @@
       max-height: 450px;
   }
 
-  /*TODO: Faculty detail tables */
+  /** Faculty detail tables */
   .fd-center {
       display: block;
       margin-left: auto;
@@ -192,7 +193,7 @@
       display: block;
   }
 
-  /* TODO: Top javascript button [ home.html ] */
+  /* * Top javascript button [ home.html ] */
   #myBtn {
       display: none;
       position: fixed;
@@ -212,7 +213,7 @@
       background-color: rgb(62, 126, 200);
   }
 
-  /*TODO: Carousel items*/
+  /** Carousel items*/
 .carousel-item img{
     height:500px;
     width:100%;

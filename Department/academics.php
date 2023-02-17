@@ -1,5 +1,5 @@
-<!-- // TODO: ACADEMICS WEB PAGE
- -->
+<!-- // TODO: Academics web pages
+-->
 <!doctype html>
 <html lang="en">
 

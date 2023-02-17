@@ -1,3 +1,4 @@
+// TODO: About page 
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +12,6 @@
         }
     </style>
 </head>
-
 <body>
     
     <!-- Scroll button -->

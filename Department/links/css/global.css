@@ -1,6 +1,6 @@
-/*TODO: Badge */
+/* TODO: Global css */
+/** Badge */
 .pill {
-    /** Badge styles for content heading */
     border: 2px;
     background-color: #002147;
     padding-right: 13px;
@@ -14,7 +14,7 @@
     font-size: 17px;
 }
 
-/*TODO: Center style */
+/** Center style */
 .center {
     display: block;
     margin-left: auto;
@@ -23,7 +23,7 @@
     display: block;
 }
 
-/* TODO: Breadcrumbs */
+/* * Breadcrumbs */
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
@@ -50,7 +50,7 @@ ul.breadcrumb li a:hover {
     text-decoration: underline;
 }
 
-/*TODO: Collaborator scroll [ home.html ] */
+/** Collaborator scroll [ home.html ] */
 div.scroll {
     padding-left: 7%;
     padding-right: 7%;

@@ -1,5 +1,5 @@
 <?php
-
+// TODO: Chart for home pages 
 $dataPoints = array(
 	array("label"=> "Food + Drinks", "y"=> 590),
 	array("label"=> "Activities and Entertainments", "y"=> 261),
