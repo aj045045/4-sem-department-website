@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <?php include "links/include/link.php"?>
     <style>
     .page_404 {
         padding: 0px 0;
@@ -36,13 +34,15 @@
     .link_404 {
         color: #fff !important;
         padding: 10px 20px;
-        background:  rgb(0, 33, 71);
+        background: rgb(0, 33, 71);
         margin: 20px 0;
         display: inline-block;
     }
-    .size{
-        height:10px;
+
+    .size {
+        height: 10px;
     }
+
     .contant_box_404 {
         margin-top: -50px;
     }
@@ -63,7 +63,7 @@
                                 Look like you're lost
                             </h3>
                             <p>the page you are looking for not available!</p>
-                            <a href="home.php" class="link_404">Go to Home</a>
+                            <a href=".php" class="link_404">Go to Home</a>
                         </div>
                     </div>
                 </div>
