@@ -34,12 +34,10 @@ echo '<nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
             <li class="nav-item">
                 <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
             </li>';
-            if($_SESSION['userType']=='Student')
-            {
+            if($_SESSION['userType']=='Student'){
             echo ' <li class="nav-item">
                 <a class="nav-link text-light" href="result.php"><b>RESULT</b></a>
-            </li>';
-            }
+            </li>';}
 echo '</ul>
         <div class="top-header hidden-xs" style="padding:0px">
         <a  class="nav-link text-light p-2 ms-lg-5" href="signin.php" target="_self">

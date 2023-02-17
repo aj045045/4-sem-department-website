@@ -1,6 +1,4 @@
-<?php session_start();
-    $_SESSION['userType']="Student";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "links/include/link.php"?>
-</head>
-<body>
-    <?php include "links/include/header.php"?>
-    <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php include "links/php/link.php"?>
+    <?php include "links/include/link.php"?>
     <style>
         .scroll::-webkit-scrollbar {
             height: 5px;
@@ -28,10 +18,7 @@
     </style>
 </head>
 <body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
-    <script defer src="footer & header.js"></script>
-    <!-- Header -->
-    <header id="header"></header>
+    <?php include "links/include/header.php"?>
     <ul class="breadcrumb" style="padding-top:130px;padding-left: 7%;">
         <li>Home</li>
     </ul>
@@ -93,7 +80,7 @@
                 <br>
                 <div class="pill"> Total Student </div>
                 <br>
-                <?php include "links/php/chart.php"?>
+                <?php include"links/include/chart.php"?>
                 <!-- OVERVIEW -->
                 <div class="pill "> OVERVIEW</div>
                 <br>

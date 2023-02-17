@@ -1,7 +1,8 @@
 <!-- // TODO: ACADEMICS WEB PAGE
--->
+ -->
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,20 +19,24 @@
         outline: none;
         font-size: 15px;
     }
+
     .imgl {
         padding-right: 5px;
         padding-left: 5px;
         padding-top: 15px;
     }
+
     .active,
     .collapsible:hover {
         color: rgb(255, 147, 5);
     }
+
     @media screen and (max-width: 600px) {
         div.imgl {
             display: none;
         }
     }
+
     .content {
         /* padding: 0 18px; */
         display: none;
@@ -40,11 +45,10 @@
     }
     </style>
 </head>
+
 <body>
-    <script defer src="footer & header.js"></script>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
-    <!-- Header -->
-    <header id="header"></header>
+    
+    <?php include "links/include/header.php"?>
     <br>
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">
@@ -219,7 +223,7 @@
         </div>
     </div>
     <script>
-                                                                // ? COLLAPSIBLE
+    // ? COLLAPSIBLE
     var coll = document.getElementsByClassName("collapsible");
     var i;
     for (i = 0; i < coll.length; i++) {
@@ -234,6 +238,8 @@
         });
     }
     </script>
+    <!-- Footer -->
     <?php include "links/include/footer.php"?>
 </body>
+
 </html>

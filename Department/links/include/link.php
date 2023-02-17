@@ -2,6 +2,8 @@
 // BS5 links
 //echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 //       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>';
+session_start();
+        $_SESSION['userType']="Student";
 
 echo '<link rel="stylesheet" href="links/bs5/bootstrap.min.css">
         <link rel="stylesheet" href="links/css/global.css">
