@@ -2,7 +2,7 @@
 // TODO: Search
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-                        //? SEARCH USING SWITCH CASE
+//? SEARCH USING SWITCH CASE
 switch ($search) {
 case "download":
     header("Location:./../../download.php");

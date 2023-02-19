@@ -22,7 +22,8 @@
 <body>
     <?php include "links/include/header.php"?>
     <ul class="breadcrumb" style="padding-top:130px;padding-left: 7%;">
-        <li>Home</li>
+        <li><i class="fa fa-"></i> Home</li>
+        
     </ul>
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -82,7 +83,8 @@
                 <br>
                 <div class="pill"> Total Student </div>
                 <br>
-                <?php include"links/include/chart.php"?>
+<canvas id="myChart" style="width:100%;max-width:600px; display:block; margin:auto;"></canvas>
+
                 <!-- OVERVIEW -->
                 <div class="pill "> OVERVIEW</div>
                 <br>
@@ -138,5 +140,49 @@
     <br>
     
     <?php include "links/include/footer.php"?>
+    <!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+
+
+<script>
+var xValues = ["Computer Science",
+    "MCA",
+    "PGDCSA",
+    "M.Sc AI & ML",
+    "M.Sc AI & ML & Defence",
+    "Integrated M.Sc(computer science)", ];
+var yValues = [<?php echo '10'?>, 49, 44, 24, 15, 24];
+var barColors = [
+    "#F7464A",
+    "#46BFBD",
+    "#FDB45C",
+    "#949FB1",
+    "#4D5360",
+    "#fa8072",
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Population of Department of computer science"
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
 </body>
 </html>

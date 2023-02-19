@@ -1,13 +1,12 @@
 <?php
 // TODO: Chart for home pages 
 $dataPoints = array(
-	array("label"=> "Food + Drinks", "y"=> 590),
-	array("label"=> "Activities and Entertainments", "y"=> 261),
-	array("label"=> "Health and Fitness", "y"=> 158),
-	array("label"=> "Shopping & Misc", "y"=> 72),
-	array("label"=> "Transportation", "y"=> 191),
-	array("label"=> "Rent", "y"=> 573),
-	array("label"=> "Travel Insurance", "y"=> 126)
+	array("label"=> "Computer Science", "y"=> 590),
+	array("label"=> "MCA", "y"=> 261),
+	array("label"=> "PGDCSA", "y"=> 158),
+	array("label"=> "M.Sc AI & ML", "y"=> 72),
+	array("label"=> "M.Sc AI & ML Defence", "y"=> 191),
+	array("label"=> "M.Sc Integrated ( Computer Science )", "y"=> 573),
 );
 
 ?>
@@ -21,10 +20,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
 	title:{
-		text: "Average Expense Per Day  in Thai Baht"
+		text: "Population of students"
 	},
 	subtitles: [{
-		text: "Currency Used: Thai Baht (฿)"
+		text: "As per courses"
 	}],
 	data: [{
 		type: "pie",
@@ -43,6 +42,7 @@ chart.render();
 </head>
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<!-- <script src="./../js/chart.min.js"></script> -->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>     

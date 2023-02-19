@@ -2,6 +2,7 @@
 <html lang="en">
     <!-- TODO: Index page 
 -->
+<?php session_start();?>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="utf-8">
