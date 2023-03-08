@@ -5,7 +5,8 @@
 > Scope of project
 > SIGN IN
 > Password view
-
+> Calender of events and reminder with email
+> 
 <br/>
 
 ## Requirements :
