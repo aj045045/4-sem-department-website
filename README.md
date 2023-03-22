@@ -6,11 +6,11 @@
 > SIGN IN
 > Password view
 > Calender of events and reminder with email
-> 
+
 <br/>
 
 ## Requirements :
-> Works of Faculty, Admin, Student \
+> Works of Faculty, Admin, Student and other user \
 > Who (include ), What( project ), Where ( pages ), When ( pages ), How( system ), Why 
 
 <br/>

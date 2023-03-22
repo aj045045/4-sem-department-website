@@ -12,6 +12,43 @@
     padding-left: 20%;
     padding-right: 20%;
 }
+/** Cards [ faculty.html ] */
+.card-body .card-title .badge {
+    background-color: #016064;
+}
+
+.card {
+    background-color: #ffffffd3;
+    height: 317px;
+    width: 200px;
+    overflow: hidden;
+}
+.card:hover {
+    box-shadow: 4.2px 8.3px 8.3px hsl(0deg 0% 0% / 0.37);
+    overflow: auto;
+    z-index: 7;
+} 
+
+.card:hover::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.card:hover::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: grey;
+}
+
+.card-text {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card-img-top {
+    size: 20px;
+    border-radius: 50%;
+}
+
 </style>
 
 <body>

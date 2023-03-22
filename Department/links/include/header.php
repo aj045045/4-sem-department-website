@@ -35,17 +35,20 @@ echo '<nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
             <li class="nav-item">
                 <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
             </li>';
-            if($_SESSION['userType']=='Student'){
-            echo ' <li class="nav-item">
+if ($_SESSION['userType'] == 'stu') {
+    echo ' <li class="nav-item">
                 <a class="nav-link text-light" href="result.php"><b>RESULT</b></a>
-            </li>';}
+            </li>';
+}
 echo '</ul>
         <div class="top-header hidden-xs" style="padding:0px">
-        <a  class="nav-link text-light p-2 ms-lg-5" href="signin.php" target="_self">
+        <a  class="nav-link text-light p-2 ms-lg-5" href="sign-up.php" target="_self">
+        <b>SIGN UP</b></a>
+        <a  class="nav-link text-light p-2 ms-lg-5" href="sign-in.php" target="_self">
         <b>SIGN IN</b></a>
             <form  action="links/php/search.php" method="GET" style="padding-top:0px">
-                <input type="text"  name="search">
-                <input type="submit" value="Search" autocomplete="off">
+                <input type="text"  name="searchValue" style="text-transform: capitalize;">
+                <input type="submit" value="Search" name="search"autocomplete="off">
             </form>
         </div>
 </nav>

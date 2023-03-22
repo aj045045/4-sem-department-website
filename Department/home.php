@@ -1,34 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <!-- TODO: Home page 
+<!-- TODO: Home page 
 -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include "links/include/link.php"?>
-    <?php include "links/include/link.php"?>
+    <?php include "links/include/link.php" ?>
+    <?php include "links/include/link.php" ?>
     <style>
         .scroll::-webkit-scrollbar {
             height: 5px;
         }
+
         .scroll:hover::-webkit-scrollbar-thumb {
             border-radius: 50px;
-            background-color:grey;
+            background-color: grey;
+        }
+
+        #more {
+            display: none;
+        }
+
+        #buttonreadmore {
+            backface-visibility: hidden;
+            background-color:rgb(11, 64, 140);
+            border-radius: 6px;
+            border-width: 0;
+            box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+            color: #fff;
+            cursor: pointer;
+            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+            font-size: 100%;
+            height: 40px;
+            line-height: 1.15;
+            outline: none;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            transition: all .2s, box-shadow .08s ease-in;
+            width: 1.5in;
+        }
+
+        #buttonreadmore:focus {
+            box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
         }
     </style>
 </head>
+
 <body>
-    <?php include "links/include/header.php"?>
+    <?php include "links/include/header.php" ?>
     <ul class="breadcrumb" style="padding-top:130px;padding-left: 7%;">
         <li><i class="fa fa-"></i> Home</li>
-        
+
     </ul>
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="First slide"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="First slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Second slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="3" aria-label="Third slide"></li>
@@ -83,7 +112,7 @@
                 <br>
                 <div class="pill"> Total Student </div>
                 <br>
-<canvas id="myChart" style="width:100%;max-width:600px; display:block; margin:auto;"></canvas>
+                <canvas id="myChart" style="width:100%;max-width:600px; display:block; margin:auto;"></canvas>
 
                 <!-- OVERVIEW -->
                 <div class="pill "> OVERVIEW</div>
@@ -138,51 +167,72 @@
         </div>
     </div>
     <br>
-    
-    <?php include "links/include/footer.php"?>
+
+    <?php include "links/include/footer.php" ?>
     <!DOCTYPE html>
-<html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<body>
+    <html>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+    <script src="links/js/chart.js"></script>
+
+    <body>
 
 
-<script>
-var xValues = ["Computer Science",
-    "MCA",
-    "PGDCSA",
-    "M.Sc AI & ML",
-    "M.Sc AI & ML & Defence",
-    "Integrated M.Sc(computer science)", ];
-var yValues = [<?php echo '10'?>, 49, 44, 24, 15, 24];
-var barColors = [
-    "#F7464A",
-    "#46BFBD",
-    "#FDB45C",
-    "#949FB1",
-    "#4D5360",
-    "#fa8072",
-];
+        <script>
+            var xValues = ["Computer Science",
+                "MCA",
+                "PGDCSA",
+                "M.Sc AI & ML",
+                "M.Sc AI & ML & Defence",
+                "Integrated M.Sc(computer science)",
+            ];
+            var yValues = [<?php echo '30' ?>, 49, 44, 24, 15, 24];
+            var barColors = [
+                "#F7464A",
+                "#46BFBD",
+                "#FDB45C",
+                "#949FB1",
+                "#4D5360",
+                "#fa8072",
+            ];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Population of Department of computer science"
-    }
-  }
-});
-</script>
+            new Chart("myChart", {
+                type: "pie",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Population of Department of computer science"
+                    }
+                }
+            });
+        </script>
+        <script>
+            function myFunction() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("buttonreadmore");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+            }
+        </script>
+    </body>
+
+    </html>
 
 </body>
-</html>
 
-</body>
 </html>
