@@ -22,13 +22,13 @@
     height: 317px;
     width: 200px;
     overflow: hidden;
+    border-radius: 50%;
 }
 .card:hover {
     box-shadow: 4.2px 8.3px 8.3px hsl(0deg 0% 0% / 0.37);
     overflow: auto;
     z-index: 7;
-} 
-
+}
 .card:hover::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -44,9 +44,9 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.card-img-top {
-    size: 20px;
-    border-radius: 50%;
+.card-round {
+    border-radius:50%;
+    width: 100%;
 }
 
 </style>
@@ -69,7 +69,7 @@
                     <div class="col">
                         <div class="card"><a href="fd1.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-                                    <img src="image/faculties/jyotiPareek.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/jyotiPareek.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -82,7 +82,7 @@
                         <div class="card"><a href="fd2.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/hirenJoshi.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/hirenJoshi.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -95,7 +95,7 @@
                         <div class="card"><a href="fd3.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/kamaljitLakhtaria.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/kamaljitLakhtaria.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -109,7 +109,7 @@
                             <a href="fd4.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/logos/admin.webp" class="card-img-top p-4">
+                                    <img src="image/logos/admin.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -122,7 +122,7 @@
                         <div class="card"><a href="fd5.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/jayPatel.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/jayPatel.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -135,7 +135,7 @@
                         <div class="card"><a href="fd6.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/logos/admin.webp" class="card-img-top p-4">
+                                    <img src="image/logos/admin.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -148,7 +148,7 @@
                         <div class="card"><a href="fd7.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/logos/admin.webp" class="card-img-top p-4">
+                                    <img src="image/logos/admin.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -161,7 +161,7 @@
                         <div class="card"><a href="fd8.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/suchitPurohit.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/suchitPurohit.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -175,7 +175,7 @@
                             <a href="fd9.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/bhumikaShah.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/bhumikaShah.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">
@@ -188,7 +188,7 @@
                         <div class="card"><a href="fd10.php" class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/jignaSatani.webp" class="card-img-top p-4">
+                                    <img src="image/faculties/jignaSatani.webp" class="card-round p-4">
                                 </div>
                             </a>
                             <div class="card-body">

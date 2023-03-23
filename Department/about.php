@@ -1,21 +1,35 @@
-// TODO: About page 
+<!-- // TODO: About page  -->
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php include "links/include/link.php"?>
+    <?php include "links/include/link.php" ?>
     <style>
         p {
             text-align: justify;
         }
+
+        iframe {
+            height: 4in;
+            width: 70%;
+            display: block;
+            margin: 0px auto;
+        }
+
+        @media only screen and (max-width: 600px) {
+            iframe {
+                display: none;
+            }
+        }
     </style>
 </head>
+
 <body>
-    
+
     <!-- Scroll button -->
-    <?php include "links/include/header.php"?>
+    <?php include "links/include/header.php" ?>
     <div style="padding-right:7%;padding-left:7%;">
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
@@ -71,10 +85,10 @@
                 universities
                 teachers at state level and national level.</p>
         </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d649.0649982208517!2d72.54517913626239!3d23.036029182865764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e859c09adf79f%3A0xe1d87bc33ed48fe7!2sDepartment%20of%20Computer%20Science%2C%20Maharshi%20Pingal%20-%20School%20of%20Advanced%20Computing%20and%20Information%20Technology!5e0!3m2!1sen!2sin!4v1679460183283!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <br><br><br>
-    <?php include "links/include/footer.php"?>
+    <?php include "links/include/footer.php" ?>
 </body>
 
 </html>
-

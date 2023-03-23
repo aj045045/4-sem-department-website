@@ -9,7 +9,7 @@
     <?php include "links/include/link.php"?>
     <style>
     .collapsible {
-        background-color: #08999f;
+        background-color:  #016064;
         color: white;
         cursor: pointer;
         /* padding: 18px; */
@@ -28,7 +28,8 @@
 
     .active,
     .collapsible:hover {
-        color: rgb(255, 147, 5);
+        background-color:#0ab6b6;
+        color:cornsilk
     }
 
     @media screen and (max-width: 600px) {

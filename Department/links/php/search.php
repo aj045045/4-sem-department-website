@@ -16,6 +16,9 @@ if (isset($_GET['search'])) {
         case "ABOUT":
             header("Location:./../../about.php");
             break;
+        case "MAP":
+            header("Location:./../../about.php");
+            break;
         default:
             header("Location:./../../error.php");
             break;

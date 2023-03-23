@@ -6,40 +6,43 @@
     <!-- Requireds meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php include "links/include/link.php"?>
+    <?php include "links/include/link.php" ?>
     <style>
-    .card-img-top {
-        margin: 1ch 30%;
-        max-width: 150px;
-    }
-    .card-body{
-        display: block;
-        margin: 0px auto;
-    }
-    .text-primary:link {
-        text-decoration: none;
-    }
+        .card-img-top {
+            margin: 1ch 30%;
+            max-width: 150px;
+        }
 
-    .text-primary:hover {
-        text-decoration: underline;
-    }
+        .card-body {
+            display: block;
+            margin: 0px auto;
+        }
 
-    .linkers {
-        display: block;
-    margin:0px auto;
-        width: 60%;
-        display: block;
-    }
-    .form-control{
-        width: 9cm;
-    }
+        .text-primary:link {
+            text-decoration: none;
+        }
 
-    .card {
-    background-color: #ffffffd3;
-    height: 6in;
-    width: auto;
-    overflow: hidden;
-}
+        .text-primary:hover {
+            text-decoration: underline;
+        }
+
+        .linkers {
+            display: block;
+            margin: 0px auto;
+            width: 60%;
+            display: block;
+        }
+
+        .form-control {
+            width: 9cm;
+        }
+
+        .card {
+            background-color: #ffffffd3;
+            height: 6in;
+            width: auto;
+            overflow: hidden;
+        }
     </style>
 </head>
 </head>
@@ -47,13 +50,12 @@
 <body style="background-color: #eee">
     <section class="vh-100">
         <div style="padding-top:1in"></div>
-        <?php include "links/include/header.php"?>  
+        <?php include "links/include/header.php" ?>
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-7 col-xl-6">
                     <div class="card text-black" style="border-radius: 25px;">
-                        <img src="image/logos/bgfreelogo.webp" class="card-img-top"
-                            alt="department o computer science logos">
+                        <img src="image/logos/bgfreelogo.webp" class="card-img-top" alt="department o computer science logos">
                         <h4 class="card-title " style="color: #657388;padding-left:10px">Maharishi pingla, School of
                             advance
                             computing and
@@ -66,24 +68,24 @@
                                         <div class="d-flex flex-row align-items-center mb-2">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="form3Example1c" class="form-control"
-                                                    placeholder="User Name" name="name" required autocomplete="off" />
+                                                <input type="text"  class="form-control" placeholder="User Name" name="name" required autocomplete="off" />
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row align-items-center mb-2">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="password" id="form3Example4c" class="form-control"
-                                                    placeholder="Password" name="password" minlength="6" required
-                                                    autocomplete="off" />
+                                                <input type="password"  id="pswd_input" class="form-control" placeholder="Password" name="password" minlength="6" required autocomplete="off" />
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center mb-2">
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="checkbox" id="checkes" onclick="pswd_visible()" style="margin:0px 3%;  width:15px; height:15px;"> Show Password
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <input type="submit" class="btn btn-primary " name="sign-in"
-                                                value="submit" />
+                                            <input type="submit" class="btn btn-primary " name="sign-in" value="submit" />
                                         </div>
-                                        <div class="linkers">Don't have an account?<a class="text-primary"
-                                                href="sign-up.php" target="_self"> Signup now</a></div>
+                                        <div class="linkers">Don't have an account?<a class="text-primary" href="sign-up.php" target="_self"> Signup now</a></div>
                                     </form>
                                 </div>
                             </div>
@@ -93,6 +95,27 @@
             </div>
         </div>
     </section>
+    <script>
+        var x = document.getElementById("pswd_input");
+
+        function pswd_visible() {
+            if (x.type === "password") {
+                x.type = "text";
+                setTimeout(MakeCheckNull, 2000);
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function MakeCheckNull() {
+            var chk = document.getElementById("checkes");
+            if (chk.checked == true) {
+                chk.checked = false;
+                x.type = "password";
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 
 </html>

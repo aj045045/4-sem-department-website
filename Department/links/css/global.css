@@ -17,10 +17,7 @@
 /** Center style */
 .center {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    display: block;
+    margin: 0px auto;
 }
 
 /* * Breadcrumbs */

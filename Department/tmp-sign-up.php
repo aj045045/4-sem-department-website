@@ -50,9 +50,7 @@
 
         .center {
             width: 200px;
-            height: 200px;
             margin: 10px auto;
-            border-radius: 50%;
         }
 
         .card {
@@ -77,12 +75,6 @@
             width: 87%;
             height: 45px;
         }
-
-        .preview>#file-preview {
-            width: 200px;
-            border: 50%;
-        }
-        
     </style>
     <script>
         $(document).ready(function() {
@@ -103,6 +95,7 @@
 <body style="background-color: #eee" id="hide">
     <div style="padding-bottom: 2in;"></div>
     <?php include "./links/include/header.php" ?>
+    <div class="h1">Temp</div>
     <section class="vh-100">
 
         <div class="container h-100">
