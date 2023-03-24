@@ -5,66 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include "links/include/link.php"?>
-    <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-    }
-
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        font-size: 18px;
-        border: none;
-        outline: none;
-        background-color: red;
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 4px;
-    }
-
-    #myBtn:hover {
-        background-color: #555;
-    }
-    </style>
+    <!-- <?php include "links/include/link.php" ?> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
 </head>
 
 <body>
-    <?php include "links/include/header.php";?>
-    </head>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-    <div style="background-color:black;color:white;padding:30px">Scroll Down</div>
-    <div style="background-color:lightgrey;padding:30px 30px 2500px">This example demonstrates how to create a "scroll
-        to top" button that becomes visible
-        <strong>when the user starts to scroll the page</strong>.
+    <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+        <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src="/img/erin-lindford.jpg" alt="Woman's Face">
+        <div class="text-center space-y-2 sm:text-left">
+            <div class="space-y-0.5">
+                <p class="text-lg text-black font-semibold">
+                    Erin Lindford
+                </p>
+                <p class="text-slate-500 font-medium">
+                    Product Engineer
+                </p>
+            </div>
+            <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+        </div>
     </div>
-
-    <script>
-    let mybutton = document.getElementById("myBtn");
-    window.onscroll = function() {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    </script>
-    <?php include "links/include/footer.php";?>
 </body>
 
 </html>
