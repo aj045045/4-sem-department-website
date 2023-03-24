@@ -1,3 +1,6 @@
+# tailwind link for run tailwind
+ npx -i ./Department/links/css/tailwind/input.css -o ./Department/links/css/tailwind/output.css --watch
+
 # Project
 
 ## Goals,Opportunity and Objectves :

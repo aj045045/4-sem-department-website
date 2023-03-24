@@ -3,11 +3,24 @@
 include "link.php";
 // TODO: Footer
 echo '
+<style>
+a{
+    color:#7cced0;
+    text-decoration:none;
+}
+a:hover
+{
+    color:white;
+}
+header{
+    width 80px;
+}
+</style>
 <div class="footer">
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-6 footer-links">
-            <h6>Quick Links</h6>
+            <div class="header">Quick Links</div>
             <div class="row small">
                 <div class="col-lg-6 col-md-6 footer-link text-start">
                     <b>Academics</b>
