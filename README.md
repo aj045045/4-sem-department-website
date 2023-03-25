@@ -1,5 +1,5 @@
 # tailwind link for run tailwind
- npx -i ./Department/links/css/tailwind/input.css -o ./Department/links/css/tailwind/output.css --watch
+ npx tailwindcss -i ./Department/links/css/tailwind/input.css -o ./Department/links/css/output.css --watch
 
 # Project
 
