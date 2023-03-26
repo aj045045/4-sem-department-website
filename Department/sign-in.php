@@ -83,7 +83,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <input type="submit" class="btn btn-primary " name="sign-in" value="submit" />
+                                            <input type="submit" class="bg-trasparent border-1 border-blue-500 text-blue-600 hover:bg-blue-700  capitalize rounded-lg px-3 py-1 hover:text-white " name="sign-in" value="submit" />
                                         </div>
                                         <div class="linkers">Don't have an account?<a class="text-primary" href="sign-up.php" target="_self"> Signup now</a></div>
                                     </form>

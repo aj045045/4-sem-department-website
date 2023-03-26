@@ -2,8 +2,8 @@
 <?php
 include "link.php";
 // TODO: Footer
-echo '
-<style>
+echo '<style>
+
 a{
     color:#7cced0;
     text-decoration:none;
@@ -13,7 +13,7 @@ a:hover
     color:white;
 }
 header{
-    width 80px;
+    width:80px;
 }
 </style>
 <div class="footer">
@@ -53,7 +53,7 @@ header{
         <div class="col-lg-4 col-md-6 footer-links">
             <h6>CONTACT US</h6>
             <div class="tdrow">
-                <img src="image/logos/imap.webp" height="20px">|
+                <img src="image/logos/imap.webp" style="width:20px; display:inline-block;" >|
                 Gujarat University, Near Ambedkar Gate, University Area, Ahmedabad, Gujarat 380009
             </div>
             <div class="tdrow">📞| 09727797105</div>

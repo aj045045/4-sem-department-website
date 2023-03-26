@@ -189,7 +189,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-0">
-                                            <input type="submit" class="btn btn-primary" name="sign-up" value="Submit" />
+                                            <input type="submit" class="bg-trasparent border-1 border-blue-500 text-blue-600 hover:bg-blue-700  capitalize rounded-lg px-3 py-1 hover:text-white" name="sign-up" value="Submit" />
                                         </div>
                                         <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Signin now</a></div>
                                     </form>

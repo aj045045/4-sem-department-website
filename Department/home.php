@@ -10,11 +10,30 @@
     <?php include "links/include/link.php" ?>
     <?php include "links/include/link.php" ?>
     <style>
-        .scroll::-webkit-scrollbar {
+        .scroll_bar::-webkit-scrollbar {
             height: 5px;
         }
 
-        .scroll:hover::-webkit-scrollbar-thumb {
+        img.img {
+            align-items: center;
+            max-height: 80px;
+            margin: auto;
+        }
+
+        .scroll_bar {
+            height: 1in;
+            padding-left: 7%;
+            padding-right: 7%;
+            margin: 4px, 4px;
+            /* background-color: whitesmoke; */
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            writing-mode: vertical-lr;
+        }
+
+        .scroll_bar:hover::-webkit-scrollbar-thumb {
             border-radius: 50px;
             background-color: grey;
         }
@@ -25,7 +44,7 @@
 
         #buttonreadmore {
             backface-visibility: hidden;
-            background-color:rgb(11, 64, 140);
+            background-color: rgb(11, 64, 140);
             border-radius: 6px;
             border-width: 0;
             box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
@@ -150,7 +169,7 @@
             </div>
         </div>
         <div class="pill "> collaborators</div><br>
-        <div class="scroll">
+        <div class="scroll_bar">
             <img class="img" src="image/collaborators/1scr.webp">
             <img class="img" style="max-width:200px" src="image/collaborators/2scr.webp">
             <img class="img" src="image/collaborators/3scr.webp">
