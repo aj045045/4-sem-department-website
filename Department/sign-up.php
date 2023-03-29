@@ -75,7 +75,8 @@
             margin: 0px 0px 10px 50px;
             border-radius: 5px;
             width: 87%;
-            height: 45px;
+            height: 40px;
+            color: gray;
         }
 
         .preview>#file-preview {
@@ -122,7 +123,7 @@
                                     <p class="text-center h1 fw-bold mb-2 mx-md-3 ">Sign up</p>
                                     <!--TODO: Form for sign-up -->
                                     <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
-                                        <label class="file-upload">Select Your avtaar
+                                        <label class="file-upload bg-white">Select Your avtaar
                                             <input type="file" name="image" accept="image/jpg, image/png,image/jpeg, image/webp" onchange="showPreview(event);">
                                         </label>
                                         <div class="d-flex flex-row align-items-center mb-2">

@@ -9,30 +9,34 @@
     <?php include "links/include/link.php"?>
     <style>
     .collapsible {
-        background-color:  #016064;
-        color: white;
+        /* background-color:  #016064; */
+        /* color: white; */
+        /* background-color: #0ab6b6; */
         cursor: pointer;
-        /* padding: 18px; */
+        padding: 10px;
         width: 100%;
         border: none;
         text-align: left;
         outline: none;
-        font-size: 15px;
+        font-size: .2in;
     }
-
+    .collapsible:last-of-type{
+        margin-bottom: 1in;
+    }
     .imgl {
         padding-right: 5px;
         padding-left: 5px;
         padding-top: 15px;
     }
 
-    .active,
     .collapsible:hover {
-        background-color:#0ab6b6;
-        color:cornsilk
+        border-radius: 15px;
+        background-color:#099f9f;
+        font-weight: 600;
+        color:white;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
         div.imgl {
             display: none;
         }
@@ -83,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">Masters Of Computer Applications (MCA)</button>
             <div class="content">
                 <div class="row">
@@ -92,7 +96,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>Masters of Computer Applications (MCA)</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p style="font-size: 18px;">The MCA program prepares the student to take up high profile
                             positions in the IT industry as analysts, system designers, developers and project managers
                             in
@@ -104,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">Post Graduate Diploma in Computer Science and Applications
                 (PGDCSA)</button>
             <div class="content">
@@ -115,7 +119,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>Post Graduate Diploma in Computer Science and Applications (PGDCSA)</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p style="font-size: 18px;">The PGDCSA program prepares the student to take up positions as
                             programmer, web designer and lab administrator.
                             <a button type="button" class="btn btn-link" href="pgdca.php">Read More..</a></button>
@@ -123,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">M.Sc Artificial Intelligence and Machine Learning [M.Sc AI &
                 ML]</button>
             <div class="content">
@@ -133,7 +137,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build data analysts, data mining experts and robotics and automation software engineers
                             <a button type="button" class="btn btn-link" href="aiml.php">Read More..</a></button>
@@ -141,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">M.Sc Artificial Intelligence and Machine Learning and Defence
                 [M.Sc AI &
                 ML & Defence]</button>
@@ -153,7 +157,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build data analysts, data mining experts and robotics and automation software engineers
                             <a button type="button" class="btn btn-link" href="aimld.php">Read More..</a></button>
@@ -161,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">Five Year Integrated M.Sc Computer Science</button>
             <div class="content">
                 <div class="row">
@@ -171,7 +175,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>5 Years Integrated M.Sc Computer Science</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
                             soluta non
                             atque impedit perspiciatis doloremque consequunt
@@ -180,7 +184,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">Masters of Technology (Networking and Communications)</button>
             <div class="content">
                 <div class="row">
@@ -190,7 +194,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>M.Tech. (Networking and Communications)</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build network analysts, network architects and network/security consultants.
                             <a button type="button" class="btn btn-link" href="mtechnc.php">Read More..</a></button>
@@ -198,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
             <button type="button" class="collapsible">Masters of Technology (Web Technology)</button>
             <div class="content">
                 <div class="row">
@@ -208,7 +212,7 @@
                     </div>
                     <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
                         <h5>M.Tech in Web Technology</h5>
-                        <hr>
+                        <!-- <hr> -->
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
                             soluta non
                             atque impedit perspiciatis doloremque consequunt
@@ -217,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <hr style="opacity: 0.1;padding-top: 0.1px;">
+            <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
         </div>
         <div class="imgl col-sm-2">
             <img src="image/academics/course/acadload.webp" alt="logo" style="max-width: 100%; max-height: 100%;">

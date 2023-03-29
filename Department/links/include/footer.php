@@ -20,7 +20,7 @@ header{
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-6 footer-links">
-            <div class="header">Quick Links</div>
+            <div class="header uppercase pb-4">Quick Links</div>
             <div class="row small">
                 <div class="col-lg-6 col-md-6 footer-link text-start">
                     <b>Academics</b>
@@ -51,7 +51,7 @@ header{
             </div>
         </div>
         <div class="col-lg-4 col-md-6 footer-links">
-            <h6>CONTACT US</h6>
+            <div class=" uppercase pb-4">CONTACT US</div>
             <div class="tdrow">
                 <img src="image/logos/imap.webp" style="width:20px; display:inline-block;" >|
                 Gujarat University, Near Ambedkar Gate, University Area, Ahmedabad, Gujarat 380009
