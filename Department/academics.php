@@ -24,9 +24,7 @@
         margin-bottom: 1in;
     }
     .imgl {
-        padding-right: 5px;
-        padding-left: 5px;
-        padding-top: 15px;
+       margin: 1px 5px 0px ;
     }
 
     .collapsible:hover {
@@ -35,7 +33,6 @@
         font-weight: 600;
         color:white;
     }
-
     @media screen and (max-width: 800px) {
         div.imgl {
             display: none;
@@ -64,14 +61,14 @@
         <br>
     </div>
     <div class="row">
-        <div class="col-sm-9 " style="padding-left:8%;padding-right: 5%;">
+        <div class="w-full col-sm-9 md:w-3/5" style="padding-left:8%;">
             <button type="button" class="collapsible">Doctor of Philosophy [Computer Science]</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke;padding: inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke;padding: inherit;">
                         <img src="image/academics/logo/phd.webp" alt="logo" style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>Doctor of Philosophy (Ph.D in Computer Science) </h5>
                         <hr>
                         <p style="font-size: 18px;">Department of Computer Science, Gujarat University is one of the
@@ -91,10 +88,10 @@
             <button type="button" class="collapsible">Masters Of Computer Applications (MCA)</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/mca.webp" alt="logo" style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>Masters of Computer Applications (MCA)</h5>
                         <!-- <hr> -->
                         <p style="font-size: 18px;">The MCA program prepares the student to take up high profile
@@ -113,11 +110,11 @@
                 (PGDCSA)</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding: inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding: inherit;">
                         <img src="image/academics/logo/pgdcsa.webp" alt="logo"
                             style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>Post Graduate Diploma in Computer Science and Applications (PGDCSA)</h5>
                         <!-- <hr> -->
                         <p style="font-size: 18px;">The PGDCSA program prepares the student to take up positions as
@@ -132,10 +129,10 @@
                 ML]</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/aiml.webp" alt="logo" style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]</h5>
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
@@ -151,11 +148,11 @@
                 ML & Defence]</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/aimld.webp" alt="logo"
                             style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]</h5>
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
@@ -169,11 +166,11 @@
             <button type="button" class="collapsible">Five Year Integrated M.Sc Computer Science</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/msccs.webp" alt="logo"
                             style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>5 Years Integrated M.Sc Computer Science</h5>
                         <!-- <hr> -->
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
@@ -188,11 +185,11 @@
             <button type="button" class="collapsible">Masters of Technology (Networking and Communications)</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/msccs.webp" alt="logo"
                             style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>M.Tech. (Networking and Communications)</h5>
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
@@ -206,11 +203,11 @@
             <button type="button" class="collapsible">Masters of Technology (Web Technology)</button>
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-5 mx-auto text-center" style="background-color:whitesmoke; padding:inherit;">
+                    <div class="mx-auto text-center col-sm-5" style="background-color:whitesmoke; padding:inherit;">
                         <img src="image/academics/logo/msccs.webp" alt="logo"
                             style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="col-sm-7 text-left" style="background-color:whitesmoke;">
+                    <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                         <h5>M.Tech in Web Technology</h5>
                         <!-- <hr> -->
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
@@ -223,7 +220,7 @@
             </div>
             <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
         </div>
-        <div class="imgl col-sm-2">
+        <div class="mr-12 imgl col-sm">
             <img src="image/academics/course/acadload.webp" alt="logo" style="max-width: 100%; max-height: 100%;">
         </div>
     </div>
