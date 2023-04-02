@@ -1,0 +1,358 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`user_cat`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`user_cat` (
+  `ucat_id` INT NOT NULL,
+  `ucat_name` VARCHAR(30) NULL,
+  PRIMARY KEY (`ucat_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+  `user_id` INT NULL,
+  `user_name` VARCHAR(30) NULL,
+  `user_profile` VARCHAR(50) NULL,
+  `user_email` VARCHAR(50) NULL,
+  `user_password` VARCHAR(80) NULL,
+  `user_cat_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`),
+  INDEX `fk_user_user_cat1_idx` (`user_cat_id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_user_cat1`
+    FOREIGN KEY (`user_cat_id`)
+    REFERENCES `mydb`.`user_cat` (`ucat_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`faculty`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`faculty` (
+  `fac_id` INT NOT NULL,
+  `fac_experience` SMALLINT(3) NULL,
+  `fac_qualification` VARCHAR(50) NULL,
+  `fac_specialization` VARCHAR(50) NULL,
+  `fac_designation` VARCHAR(50) NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`fac_id`),
+  INDEX `fk_faculty_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_faculty_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `mydb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`fac_research`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`fac_research` (
+  `res_id` INT NOT NULL,
+  `res_title` VARCHAR(50) NULL,
+  `res_journal` TEXT NULL,
+  `res_publisher` VARCHAR(50) NULL,
+  `res_year` YEAR NULL,
+  `faculty_id` INT NOT NULL,
+  PRIMARY KEY (`res_id`),
+  INDEX `fk_fac_research_faculty1_idx` (`faculty_id` ASC) VISIBLE,
+  CONSTRAINT `fk_fac_research_faculty1`
+    FOREIGN KEY (`faculty_id`)
+    REFERENCES `mydb`.`faculty` (`fac_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`achievement`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`achievement` (
+  `awd_id` INT NOT NULL,
+  `awd_name` VARCHAR(50) NULL,
+  `awd_association` VARCHAR(50) NULL,
+  `awd_work` TEXT NULL,
+  `awd_year` YEAR NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`awd_id`),
+  INDEX `fk_achievement_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_achievement_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `mydb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`course`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`course` (
+  `course_id` INT NOT NULL,
+  `course_name` VARCHAR(50) NULL,
+  `course_duration` TINYINT(1) NULL,
+  `course_details` TEXT NULL,
+  PRIMARY KEY (`course_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`student`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`student` (
+  `stu_id` INT NOT NULL,
+  `stu_batch_year` YEAR NULL,
+  `stu_semister` INT NULL,
+  `stu_dob` DATE NULL,
+  `stu_address` VARCHAR(50) NULL,
+  `course_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`stu_id`),
+  INDEX `fk_student_course1_idx` (`course_id` ASC) VISIBLE,
+  INDEX `fk_student_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_student_course1`
+    FOREIGN KEY (`course_id`)
+    REFERENCES `mydb`.`course` (`course_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_student_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `mydb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`syllabus`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`syllabus` (
+  `syl_id` INT NOT NULL,
+  `syl_semister` SMALLINT NULL,
+  `syl_document` VARCHAR(50) NULL,
+  `course_id` INT NOT NULL,
+  PRIMARY KEY (`syl_id`),
+  INDEX `fk_syllabus_program1_idx` (`course_id` ASC) VISIBLE,
+  CONSTRAINT `fk_syllabus_program1`
+    FOREIGN KEY (`course_id`)
+    REFERENCES `mydb`.`course` (`course_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`evt_cat`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`evt_cat` (
+  `ecat_id` INT NOT NULL,
+  `ecat_type` VARCHAR(50) NULL,
+  PRIMARY KEY (`ecat_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`event`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`event` (
+  `evt_id` INT NOT NULL,
+  `evt_title` VARCHAR(100) NULL,
+  `evt_description` TEXT NULL,
+  `evt_venue` VARCHAR(100) NULL,
+  `evt_start` DATETIME NULL,
+  `evt_end` DATETIME NULL,
+  `event_status` TINYINT NULL,
+  `event_cat_id` INT NOT NULL,
+  `faculty_id` INT NOT NULL,
+  PRIMARY KEY (`evt_id`),
+  INDEX `fk_event_evt_cat_idx` (`event_cat_id` ASC) VISIBLE,
+  INDEX `fk_event_faculty1_idx` (`faculty_id` ASC) VISIBLE,
+  CONSTRAINT `fk_event_evt_cat`
+    FOREIGN KEY (`event_cat_id`)
+    REFERENCES `mydb`.`evt_cat` (`ecat_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_faculty1`
+    FOREIGN KEY (`faculty_id`)
+    REFERENCES `mydb`.`faculty` (`fac_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`news_cat`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`news_cat` (
+  `ncat_id` INT NOT NULL,
+  `ncat_type` VARCHAR(50) NULL,
+  PRIMARY KEY (`ncat_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`news`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`news` (
+  `news_id` INT NOT NULL,
+  `news_title` VARCHAR(50) NULL,
+  `news_image` VARCHAR(50) NULL,
+  `news_description` TEXT NULL,
+  `news_cat_id` INT NOT NULL,
+  PRIMARY KEY (`news_id`),
+  INDEX `fk_news_news_cat1_idx` (`news_cat_id` ASC) VISIBLE,
+  CONSTRAINT `fk_news_news_cat1`
+    FOREIGN KEY (`news_cat_id`)
+    REFERENCES `mydb`.`news_cat` (`ncat_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`photos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`photos` (
+  `photo_id` INT NOT NULL,
+  `photo_document` VARCHAR(50) NULL,
+  `event_id` INT NOT NULL,
+  PRIMARY KEY (`photo_id`),
+  INDEX `fk_photos_event1_idx` (`event_id` ASC) VISIBLE,
+  CONSTRAINT `fk_photos_event1`
+    FOREIGN KEY (`event_id`)
+    REFERENCES `mydb`.`event` (`evt_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`subject`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`subject` (
+  `sub_id` INT NOT NULL,
+  `sub_name` VARCHAR(50) NULL,
+  `sub_description` TEXT NULL,
+  `course_id` INT NOT NULL,
+  PRIMARY KEY (`sub_id`),
+  INDEX `fk_subject_program1_idx` (`course_id` ASC) VISIBLE,
+  CONSTRAINT `fk_subject_program1`
+    FOREIGN KEY (`course_id`)
+    REFERENCES `mydb`.`course` (`course_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`ref_paper`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`ref_paper` (
+  `sub_doc_id` INT NOT NULL,
+  `sub_document_name` VARCHAR(50) NULL,
+  `sub_document` VARCHAR(50) NULL,
+  `subject_id` INT NOT NULL,
+  PRIMARY KEY (`sub_doc_id`),
+  INDEX `fk_subject_doc_subject1_idx` (`subject_id` ASC) VISIBLE,
+  CONSTRAINT `fk_subject_doc_subject1`
+    FOREIGN KEY (`subject_id`)
+    REFERENCES `mydb`.`subject` (`sub_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`event_member`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`event_member` (
+  `evt_id` INT NOT NULL,
+  `stu_id` INT NOT NULL,
+  PRIMARY KEY (`evt_id`, `stu_id`),
+  INDEX `fk_event_has_student_student1_idx` (`stu_id` ASC) VISIBLE,
+  INDEX `fk_event_has_student_event1_idx` (`evt_id` ASC) VISIBLE,
+  CONSTRAINT `fk_event_has_student_event1`
+    FOREIGN KEY (`evt_id`)
+    REFERENCES `mydb`.`event` (`evt_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_has_student_student1`
+    FOREIGN KEY (`stu_id`)
+    REFERENCES `mydb`.`student` (`stu_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`comments`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`comments` (
+  `comment_id` INT NOT NULL,
+  `comment` TEXT NULL,
+  `comment_at` DATETIME NULL,
+  `event_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  INDEX `fk_comments_event1_idx` (`event_id` ASC) VISIBLE,
+  INDEX `fk_comments_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_comments_event1`
+    FOREIGN KEY (`event_id`)
+    REFERENCES `mydb`.`event` (`evt_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comments_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `mydb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`result`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`result` (
+  `result_id` INT NOT NULL,
+  `result_document` VARCHAR(50) NULL,
+  `faculty_id` INT NOT NULL,
+  `subject_id` INT NOT NULL,
+  PRIMARY KEY (`result_id`),
+  INDEX `fk_result_faculty1_idx` (`faculty_id` ASC) VISIBLE,
+  INDEX `fk_result_subject1_idx` (`subject_id` ASC) VISIBLE,
+  CONSTRAINT `fk_result_faculty1`
+    FOREIGN KEY (`faculty_id`)
+    REFERENCES `mydb`.`faculty` (`fac_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_result_subject1`
+    FOREIGN KEY (`subject_id`)
+    REFERENCES `mydb`.`subject` (`sub_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

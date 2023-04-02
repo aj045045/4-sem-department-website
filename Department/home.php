@@ -10,79 +10,119 @@
     <?php include "links/include/link.php" ?>
     <?php include "links/include/link.php" ?>
     <style>
-        .scroll_bar::-webkit-scrollbar {
-            height: 5px;
-        }
+    .scroll_bar::-webkit-scrollbar {
+        height: 5px;
+    }
 
-        img.img {
-            align-items: center;
-            max-height: 80px;
-            margin: auto;
-        }
+    img.img {
+        align-items: center;
+        max-height: 80px;
+        margin: auto;
+    }
 
-        .scroll_bar {
-            height: 1in;
-            padding-left: 7%;
-            padding-right: 7%;
-            margin: 4px, 4px;
-            /* background-color: whitesmoke; */
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            writing-mode: vertical-lr;
-        }
+    .scroll_bar {
+        height: 1in;
+        padding-left: 7%;
+        padding-right: 7%;
+        margin: 4px, 4px;
+        /* background-color: whitesmoke; */
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        writing-mode: vertical-lr;
+    }
 
-        .scroll_bar:hover::-webkit-scrollbar-thumb {
-            border-radius: 50px;
-            background-color: grey;
-        }
+    .scroll_bar:hover::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background-color: grey;
+    }
 
-        #more {
-            display: none;
-        }
+    #more {
+        display: none;
+    }
 
-        #buttonreadmore {
-            backface-visibility: hidden;
-            background-color: rgb(11, 64, 140);
-            border-radius: 6px;
-            border-width: 0;
-            box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
-            color: #fff;
-            cursor: pointer;
-            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
-            font-size: 100%;
-            height: 40px;
-            line-height: 1.15;
-            outline: none;
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-            transition: all .2s, box-shadow .08s ease-in;
-            width: 1.5in;
-        }
+    #buttonreadmore {
+        backface-visibility: hidden;
+        background-color: rgb(11, 64, 140);
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+        color: #fff;
+        cursor: pointer;
+        font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+        font-size: 100%;
+        height: 40px;
+        line-height: 1.15;
+        outline: none;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        transition: all .2s, box-shadow .08s ease-in;
+        width: 1.5in;
+    }
 
-        ul.westside {
-            text-align: justify;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 20px;
-        }
+    ul.westside {
+        text-align: justify;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+    }
 
-        #buttonreadmore:focus {
-            box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-        }
+    #buttonreadmore:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+    }
+
+    #chat-btn {
+        position: fixed;
+        bottom: 92px;
+        right: 30px;
+        z-index: 99;
+        background-color: rgb(11, 64, 124);
+    }
+
+    .modal-backdrop {
+        background-color: rgba(0, 0, 0, .3) !important;
+    }
     </style>
 </head>
 
 <body>
     <?php include "links/include/header.php" ?>
+    <button id="chat-btn" class="btn btn-primary rounded-circle p-3 fs-3" data-bs-toggle="modal"
+        data-bs-target="#chatModal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chat-dots"
+            viewBox="0 0 16 16">
+            <path
+                d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            <path
+                d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
+        </svg>
+    </button>
+    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin: 55vh 0px 0px 60vw;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">DCS Chatbot</h1>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <ul class="breadcrumb" style="padding-top:130px;padding-left: 7%;">
         <li><i class="fa fa-"></i> Home</li>
 
     </ul>
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="First slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="First slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Second slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="3" aria-label="Third slide"></li>
@@ -190,9 +230,9 @@
             <img class="img" src="image/collaborators/12scr.webp">
             <img class="img" src="image/collaborators/13scr.webp">
         </div>
+
     </div>
     <br>
-
     <?php include "links/include/footer.php" ?>
     <!DOCTYPE html>
     <html>
@@ -203,56 +243,56 @@
 
 
         <script>
-            var xValues = ["Computer Science",
-                "MCA",
-                "PGDCSA",
-                "M.Sc AI & ML",
-                "M.Sc AI & ML & Defence",
-                "Integrated M.Sc(computer science)",
-            ];
-            var yValues = [<?php echo '30' ?>, 49, 44, 24, 15, 24];
-            var barColors = [
-                "#F7464A",
-                "#46BFBD",
-                "#FDB45C",
-                "#949FB1",
-                "#4D5360",
-                "#fa8072",
-            ];
+        var xValues = ["Computer Science",
+            "MCA",
+            "PGDCSA",
+            "M.Sc AI & ML",
+            "M.Sc AI & ML & Defence",
+            "Integrated M.Sc(computer science)",
+        ];
+        var yValues = [<?php echo '30' ?>, 49, 44, 24, 15, 24];
+        var barColors = [
+            "#F7464A",
+            "#46BFBD",
+            "#FDB45C",
+            "#949FB1",
+            "#4D5360",
+            "#fa8072",
+        ];
 
-            new Chart("myChart", {
-                type: "pie",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: "Population of Department of computer science"
-                    }
-                }
-            });
-        </script>
-        <script>
-            function myFunction() {
-                var dots = document.getElementById("dots");
-                var moreText = document.getElementById("more");
-                var btnText = document.getElementById("buttonreadmore");
-
-                if (dots.style.display === "none") {
-                    dots.style.display = "inline";
-                    btnText.innerHTML = "Read more";
-                    moreText.style.display = "none";
-                } else {
-                    dots.style.display = "none";
-                    btnText.innerHTML = "Read less";
-                    moreText.style.display = "inline";
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Population of Department of computer science"
                 }
             }
+        });
+        </script>
+        <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("buttonreadmore");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
         </script>
     </body>
 
