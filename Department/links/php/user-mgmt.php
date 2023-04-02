@@ -44,4 +44,7 @@
     
     // FORGET-PASSWORD
 
+
+    class student{
+    }
 ?>

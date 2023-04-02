@@ -62,6 +62,12 @@
             width: 1.5in;
         }
 
+        ul.westside {
+            text-align: justify;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+
         #buttonreadmore:focus {
             box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
         }
@@ -107,10 +113,10 @@
         </button>
     </div>
     <div style="padding-right:7%; padding-left: 7%;">
-        <div class="container-fluid mt-3">
+        <div class="mt-3 container-fluid">
             <br>
             <!-- AIM-->
-            <div class="container-fluid mt-3">
+            <div class="mt-3 container-fluid">
                 <div class="pill"> AIM</div>
                 <br>
                 <ul class="westside">

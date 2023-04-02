@@ -10,7 +10,9 @@
         p {
             text-align: justify;
         }
-
+        p::first-letter{
+            font-size: 200%;
+        }
         iframe {
             height: 4in;
             width: 70%;
@@ -24,6 +26,7 @@
             }
         }
     </style>
+    <a href="./../"></a>
 </head>
 
 <body>
@@ -40,7 +43,6 @@
             <div class="pill">ABOUT</div>
             <br>
             <br>
-            <hr style="height:5px;color:black">
             <p>Department of Computer Science, Gujarat University is the most popular, well sought and best resourced
                 Computer Science
                 Department in Gujarat. Ever since its inception, Department of Computer Science has maintained and
