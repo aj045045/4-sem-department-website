@@ -9,8 +9,8 @@
     <?php include "links/include/link.php" ?>
 </head>
 
-<body class="mx-10">
-    <div class="flex flex-initial h-20 px-10 mt-6 bg-purple-900 sm:px-32 sm:h-32 ">
+<body class="mx-10 sm:mx-32">
+    <div class="flex flex-initial h-20 px-10 mt-6 bg-red-900 sm:px-32 sm:h-32 ">
         <div class="flex flex-initial w-full font-serif bg-white">
             <img src="./image/logos/logo.webp" alt="Univesity Tower" class="h-auto mr-4 w-14 sm:mr-10 sm:w-24 ">
             <div class="flex flex-col ">
@@ -29,7 +29,7 @@
         <img src="./image/logos/Tower.png" alt="Univeristy Tower" class="items-start w-16 h-auto sm:w-20">
         <div class="w-full ">
             <img src="./image/slideshows/3slide.webp" alt="Department of computer science " class="w-full h-20 rounded-lg sm:h-36">
-            <div class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-300 to-purple-800">
+            <div class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-50 to-red-800">
                 <div class="text-lg sm:text-2xl">MCA</div>
                 <div class="font-serif text-sm font-thin sm:text-xl">(Master of Computer Applications)</div>
             </div>
@@ -37,7 +37,7 @@
     </div>
     <!-- TABLE 1 -->
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
-      <thead class="text-center text-white bg-purple-800 ">
+      <thead class="text-center text-white bg-red-800 ">
             <tr>
                 <th class="py-2 pr-5">Admission Process</th>
                 <th class="py-2 pr-5"> Master of Computer Applicaitons</th>
@@ -71,7 +71,7 @@
     </table>
     <!-- TABLE 2 -->
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
-      <thead class="text-center text-white bg-purple-800 ">
+      <thead class="text-center text-white bg-red-800 ">
             <tr>
                 <th class="py-2 pr-5">Eligibility</th>
                 <th class="py-2 pr-5"> Career Prospects</th>
@@ -91,7 +91,7 @@
     </table>
     <!-- TABLE 3 -->
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
-        <thead class="text-center text-white bg-purple-800 ">
+        <thead class="text-center text-white bg-red-800 ">
             <tr>
                 <th class="py-2 pr-5 ">About Department of Computer Science</th>
                 <th class="py-2 pr-5 ">About Gujarat University</th>
@@ -106,7 +106,7 @@
     </table>
     <!-- TABLE 4 -->
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
-      <thead class="text-center text-white bg-purple-800 ">
+      <thead class="text-center text-white bg-red-800 ">
             <tr>
                 <th class="py-2 pr-5" colspan="2">Strength of Department of Computer Science</th>
             </tr>
