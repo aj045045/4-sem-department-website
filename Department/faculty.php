@@ -1,7 +1,9 @@
+<?php include "links/include/db.php"?>
 <!doctype html>
 <html lang="en">
 <!-- TODO: Faculty page 
 -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +14,7 @@
     padding-left: 20%;
     padding-right: 20%;
 }
+
 /** Cards [ faculty.html ] */
 .card-body .card-title .badge {
     background-color: #016064;
@@ -24,11 +27,13 @@
     overflow: hidden;
     border-radius: 50%;
 }
+
 .card:hover {
     box-shadow: 4.2px 8.3px 8.3px hsl(0deg 0% 0% / 0.37);
     overflow: auto;
     z-index: 7;
 }
+
 .card:hover::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -45,10 +50,9 @@
 }
 
 .card-round {
-    border-radius:50%;
+    border-radius: 50%;
     width: 100%;
 }
-
 </style>
 
 <body>
@@ -197,6 +201,49 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                     $query = "SELECT u.user_name,u.user_profile,d.designation FROM user as u
+INNER JOIN faculty as f
+ON f.user_id=u.user_id
+INNER JOIN designation as d
+ON f.designation_id=d.designation_id";
+  
+  // FETCHING DATA FROM DATABASE
+  $result = $conn->query($query);
+  
+    if ($result->num_rows > 0) 
+    {
+        // OUTPUT DATA OF EACH ROW
+        while($row = $result->fetch_assoc())
+        {
+            $username=$row["user_name"];
+            $faculty_profile=$row["user_profile"];
+            $designation=$row["designation"];
+         ?>
+                    <div class="col">
+                        <div class="card"><a href="fd10.php" class="card-link">
+                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
+
+                                    <img src="<?php echo $faculty_profile;?>" class="card-round p-4">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="badge"><?php echo $username;?></span></h5>
+                                <p class="card-text">👤| <?php echo $designation;?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+        }
+    } 
+    else {
+        echo "0 results";
+    }
+  
+   $conn->close();
+  
+?>
+
                 </div>
             </div>
         </div>
