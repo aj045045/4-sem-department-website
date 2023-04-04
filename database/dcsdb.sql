@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 04, 2023 at 05:06 AM
+-- Generation Time: Apr 04, 2023 at 07:30 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -133,7 +133,14 @@ CREATE TABLE `faculty` (
 --
 
 INSERT INTO `faculty` (`faculty_id`, `faculty_experience`, `faculty_qualification`, `faculty_specialization`, `faculty_designation`, `designation_id`, `user_id`) VALUES
-(1, 16, 'PHD', 'Machine Learning', 'HOD', 1, 1);
+(1, 16, 'Ph. D, M. Sc, B.Sc', 'Machine Learning', 'HOD', 1, 1),
+(2, 14, 'Ph. D, M. Sc, B.Sc', 'Web fundamentals', NULL, 2, 2),
+(3, 14, 'PHD MCA BCom', 'DBMS and JAVA', NULL, 2, 3),
+(4, 15, 'PHD', 'Networking', NULL, 2, 4),
+(5, 14, 'PHD', 'Machine Learning', NULL, 2, 5),
+(6, 10, 'PHD', 'Machine Learning', NULL, 2, 6),
+(7, 8, 'MCA', 'Operating system and JAVA', NULL, 2, 7),
+(8, 6, 'MCA', 'Machine Learning', NULL, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -294,7 +301,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_profile`, `user_email`, `user_password`, `use_category_id`) VALUES
-(1, 'jyoti', 'image/faculties/jyotiPareek.webp', 'jyotipareek@gmail.com', '12345678', 1);
+(1, 'Dr. Jyoti Pareek', 'image/faculties/jyotiPareek.webp', 'jyotipareek@gmail.com', '12345678', 1),
+(2, 'Dr. Hiren D Joshi', 'image/faculties/hirenJoshi.webp', 'hiren@gmail.com', '12345678', 2),
+(3, 'Dr. Bhumika Shah', 'image/faculties/bhumikaShah.webp', 'bhumikashah@gmail.com', '12345678', 2),
+(4, 'Dr. Hardik J Joshi', 'image/logos/admin.webp', NULL, '12345678', 2),
+(5, 'Dr. Suchit Purohit', 'image/faculties/suchitPurohit.webp', NULL, '12345678', 2),
+(6, 'Dr. Maitri Jhaveri', 'image/logos/admin.webp', NULL, '121345678', 2),
+(7, 'Mr. Jaykumar Patel', 'image/faculties/jayPatel.webp', NULL, '12345678', 2),
+(8, 'Jigna Satani', 'image/faculties/jignaSatani.webp', NULL, '12345678', 2);
 
 -- --------------------------------------------------------
 
@@ -496,7 +510,7 @@ ALTER TABLE `event_category`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `faculty_research`
@@ -562,7 +576,7 @@ ALTER TABLE `syllabus`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_category`

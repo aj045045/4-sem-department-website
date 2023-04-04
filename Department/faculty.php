@@ -70,139 +70,9 @@
                 <br><br>
                 <br>
                 <div class="row row-sm-cols-1 row-cols-md-2 row-cols-xl-3 gx-1 gy-4 ">
-                    <div class="col">
-                        <div class="card"><a href="fd1.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-                                    <img src="image/faculties/jyotiPareek.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"> <span class="badge">Dr. Jyoti S Pareek</span></h5>
-                                <p class="card-text">👤| Head of Department and Lecturer<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd2.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="image/faculties/hirenJoshi.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Hiren D Joshi</span></h5>
-                                <p class="card-text">👤| Professor </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd3.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/faculties/kamaljitLakhtaria.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr .Kamaljit I Lakhtaria</span></h5>
-                                <p class="card-text">👤| Associate Professor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <a href="fd4.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/logos/admin.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Hardik J Joshi</span></h5>
-                                <p class="card-text">👤|Assistant Professor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd5.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/faculties/jayPatel.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Mr. Jaykumar Patel</span></h5>
-                                <p class="card-text">👤|Assistant Professor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd6.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/logos/admin.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Khyati Rami</span></h5>
-                                <p class="card-text">👤| Lecturer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd7.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/logos/admin.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Maitri Jhaveri</span></h5>
-                                <p class="card-text">👤| Lecturer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd8.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/faculties/suchitPurohit.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Suchit Purohit</span></h5>
-                                <p class="card-text">👤| Lecturer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <a href="fd9.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/faculties/bhumikaShah.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Bhumika Shah</span></h5>
-                                <p class="card-text">👤| Lecturer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card"><a href="fd10.php" class="card-link">
-                                <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
-
-                                    <img src="image/faculties/jignaSatani.webp" class="card-round p-4">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title"><span class="badge">Dr. Jigna Satani</span></h5>
-                                <p class="card-text">👤| Lecturer</p>
-                            </div>
-                        </div>
-                    </div>
                     <?php
-                     $query = "SELECT u.user_name,u.user_profile,d.designation FROM user as u
+                     $query = "SELECT u.user_name,u.user_profile,d.designation,f.faculty_id FROM user as u
 INNER JOIN faculty as f
 ON f.user_id=u.user_id
 INNER JOIN designation as d
@@ -219,9 +89,11 @@ ON f.designation_id=d.designation_id";
             $username=$row["user_name"];
             $faculty_profile=$row["user_profile"];
             $designation=$row["designation"];
+            $faculty_id=$row["faculty_id"];
          ?>
                     <div class="col">
-                        <div class="card"><a href="fd10.php" class="card-link">
+                        <div class="card"><a href="faculty_details.php?faculty_id=<?php echo $faculty_id ?>"
+                                class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
                                     <img src="<?php echo $faculty_profile;?>" class="card-round p-4">

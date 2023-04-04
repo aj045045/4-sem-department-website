@@ -93,7 +93,7 @@ a:before {
 /** Faculty detail */
 .bg_img {
     /** Images of fauclty members */
-    background-image: url(image/logos/bg_gu.webp);
+    background-image: url(../../image/logos/bg_gu.webp);
     height: auto;
     padding: 15%;
     width: auto;
