@@ -80,8 +80,24 @@
         background-color: rgb(11, 64, 124);
     }
 
+    #chat-btn:hover {
+        background-color: #2babd0;
+    }
+
     .modal-backdrop {
         background-color: rgba(0, 0, 0, .3) !important;
+    }
+
+    #chat-send-btn {
+        background-color: rgb(11, 64, 124)
+    }
+
+    #messages-div::-webkit-scrollbar {
+        display: none;
+    }
+
+    .bg-msg {
+        background-color: #9aeeff;
     }
     </style>
 </head>
@@ -99,18 +115,34 @@
         </svg>
     </button>
     <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="margin: 55vh 0px 0px 60vw;">
+        <div class="modal-dialog" style="margin: 25vh 0px 0px 62vw;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">DCS Chatbot</h1>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    ...
+                <div class="modal-body" style="height:300px">
+                    <div id="messages-div" style="height:280px;overflow-y:scroll;"
+                        class="messages border border-1 border-primary">
+                        <div id="single-message">
+                            <div style="float:left;" class="d-flex flex-wrap  w-75 my-1 p-1">
+                                <span class="p-1 bg-msg">
+                                    Hello. I am DCS bot,You can ask me your queries.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary">Save changes</button>
+                    <div class="d-flex flex-row border border-1 w-100">
+                        <input id="chat-message" type="text" class="form-control "
+                            placeholder="Type your message here...">
+                        <button id="chat-send-btn" class="btn rounded-circle"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                <path style="color:white;"
+                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                            </svg></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -293,6 +325,22 @@
                 moreText.style.display = "inline";
             }
         }
+        $("#chat-send-btn").on("click", function(e) {
+            e.preventDefault();
+            var chattext = $("#chat-message").val();
+            $("#chat-message").val("");
+            $.ajax({
+                type: "post",
+                url: "chatbot.php",
+                data: {
+                    text: chattext
+                },
+                success: function(response) {
+                    $("#messages-div").append(response);
+                    $("#messages-div").scrollTop($("#messages-div")[0].scrollHeight);
+                }
+            });
+        });
         </script>
     </body>
 

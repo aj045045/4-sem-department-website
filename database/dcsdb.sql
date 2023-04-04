@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 02, 2023 at 12:05 PM
+-- Generation Time: Apr 04, 2023 at 05:06 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -74,6 +74,15 @@ CREATE TABLE `designation` (
   `designation` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `designation`
+--
+
+INSERT INTO `designation` (`designation_id`, `designation`) VALUES
+(1, 'Head Of Department'),
+(2, 'Professor'),
+(3, 'Assistant Professor');
+
 -- --------------------------------------------------------
 
 --
@@ -106,17 +115,6 @@ CREATE TABLE `event_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_member`
---
-
-CREATE TABLE `event_member` (
-  `event_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `faculty`
 --
 
@@ -129,6 +127,13 @@ CREATE TABLE `faculty` (
   `designation_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `faculty`
+--
+
+INSERT INTO `faculty` (`faculty_id`, `faculty_experience`, `faculty_qualification`, `faculty_specialization`, `faculty_designation`, `designation_id`, `user_id`) VALUES
+(1, 16, 'PHD', 'Machine Learning', 'HOD', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -181,6 +186,27 @@ CREATE TABLE `photos` (
   `photo_document` varchar(50) DEFAULT NULL,
   `event_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE `question` (
+  `question_id` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `answer` text NOT NULL,
+  `type` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
+(1, 'hi,hiii,hey,hello', 'Greetings. You’re welcome to ask me a question.', 'text'),
+(2, 'how are you?', 'I am fine', 'text');
 
 -- --------------------------------------------------------
 
@@ -263,6 +289,13 @@ CREATE TABLE `user` (
   `use_category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_profile`, `user_email`, `user_password`, `use_category_id`) VALUES
+(1, 'jyoti', 'image/faculties/jyotiPareek.webp', 'jyotipareek@gmail.com', '12345678', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -273,6 +306,15 @@ CREATE TABLE `user_category` (
   `use_category_id` int(11) NOT NULL,
   `user_category_name` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_category`
+--
+
+INSERT INTO `user_category` (`use_category_id`, `user_category_name`) VALUES
+(1, 'admin'),
+(2, 'faculty'),
+(3, 'student');
 
 --
 -- Indexes for dumped tables
@@ -320,13 +362,6 @@ ALTER TABLE `event_category`
   ADD PRIMARY KEY (`event_category_id`);
 
 --
--- Indexes for table `event_member`
---
-ALTER TABLE `event_member`
-  ADD PRIMARY KEY (`event_id`,`student_id`),
-  ADD KEY `fk_event_has_student_student1` (`student_id`);
-
---
 -- Indexes for table `faculty`
 --
 ALTER TABLE `faculty`
@@ -360,6 +395,12 @@ ALTER TABLE `news_category`
 ALTER TABLE `photos`
   ADD PRIMARY KEY (`photo_id`),
   ADD KEY `fk_photos_event1` (`event_id`);
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`question_id`);
 
 --
 -- Indexes for table `reference_paper`
@@ -412,6 +453,124 @@ ALTER TABLE `user_category`
   ADD PRIMARY KEY (`use_category_id`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `achievement`
+--
+ALTER TABLE `achievement`
+  MODIFY `award_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `course`
+--
+ALTER TABLE `course`
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `designation`
+--
+ALTER TABLE `designation`
+  MODIFY `designation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `event`
+--
+ALTER TABLE `event`
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `event_category`
+--
+ALTER TABLE `event_category`
+  MODIFY `event_category_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `faculty`
+--
+ALTER TABLE `faculty`
+  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `faculty_research`
+--
+ALTER TABLE `faculty_research`
+  MODIFY `research_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `news_category`
+--
+ALTER TABLE `news_category`
+  MODIFY `news_category_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `reference_paper`
+--
+ALTER TABLE `reference_paper`
+  MODIFY `subject_doc_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `result`
+--
+ALTER TABLE `result`
+  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subject`
+--
+ALTER TABLE `subject`
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `syllabus`
+--
+ALTER TABLE `syllabus`
+  MODIFY `syllabus_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_category`
+--
+ALTER TABLE `user_category`
+  MODIFY `use_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -434,13 +593,6 @@ ALTER TABLE `comments`
 ALTER TABLE `event`
   ADD CONSTRAINT `fk_event_evt_cat` FOREIGN KEY (`event_category_id`) REFERENCES `event_category` (`event_category_id`),
   ADD CONSTRAINT `fk_event_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`);
-
---
--- Constraints for table `event_member`
---
-ALTER TABLE `event_member`
-  ADD CONSTRAINT `fk_event_has_student_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`),
-  ADD CONSTRAINT `fk_event_has_student_student1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`);
 
 --
 -- Constraints for table `faculty`
