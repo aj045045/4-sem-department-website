@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 04, 2023 at 07:30 PM
+-- Generation Time: Apr 05, 2023 at 06:52 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -212,8 +212,11 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
-(1, 'hi,hiii,hey,hello', 'Greetings. You’re welcome to ask me a question.', 'text'),
-(2, 'how are you?', 'I am fine', 'text');
+(1, 'hi,hiii,hey,hello', 'Greetings,How may I help you?', 'text'),
+(2, 'how are you?', 'I am fine', 'text'),
+(3, 'course,how many courses are there,how many courses are in rollwala computer center,how many courses are in departement of computer science,what are the courses', 'There are following courses in Department of computer science:<br/>\nMCA<br/>\nMSC(AI & ML)<br/>\nMSC(5 Year integrated)<br/>\nM.Tech<br/>\nPGDCA<br/>', 'text'),
+(4, 'about dcs,about rcc,about rollwala computer center,tell me about rollwala,give me information about rollwala,give me information about dcs', 'Department of Computer Science, Gujarat University is the most popular, well sought and best resourced Computer Science Department in Gujarat. Ever since its inception, Department of Computer Science has maintained and sustained its legacy as a premium institute in providing high quality education to produce personnel with professional and personal success as well as high ethics and social conduct. The resources at the department are well supported by extensive networked Computer facilities and software aids well along with skilled and experienced faculties. ', 'text'),
+(5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"faculty.php\">here.</a>', 'text');
 
 -- --------------------------------------------------------
 
@@ -540,7 +543,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `reference_paper`

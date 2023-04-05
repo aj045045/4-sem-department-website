@@ -2,7 +2,8 @@
 include "links/include/db.php";
 
 if (isset($_POST["text"])) {
-    $msg=$_POST["text"];    
+    $msg=$_POST["text"];  
+    $msg=strtolower($msg);
     $query=mysqli_query($conn,"SELECT * FROM question WHERE question RLIKE '[[:<:]]".$msg."[[:>:]]';");
     $count=mysqli_num_rows($query);
     if($count=="0"){

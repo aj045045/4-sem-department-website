@@ -98,6 +98,7 @@
 
     .bg-msg {
         background-color: #9aeeff;
+        border-radius: 10px;
     }
     </style>
 </head>
@@ -122,12 +123,12 @@
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="height:300px">
-                    <div id="messages-div" style="height:280px;overflow-y:scroll;"
-                        class="messages border border-1 border-primary">
+                    <div id="messages-div" style="height:280px;overflow-y:scroll;" class="messages">
                         <div id="single-message">
                             <div style="float:left;" class="d-flex flex-wrap  w-75 my-1 p-1">
                                 <span class="p-1 bg-msg">
-                                    Hello. I am DCS bot,You can ask me your queries.
+                                    Hello. I am DCS bot,You can ask me your queries.<br />
+                                    <button class="btn btn-primary" onclick='passMessage(this)'>Faculty</button>
                                 </span>
                             </div>
                         </div>
@@ -341,6 +342,12 @@
                 }
             });
         });
+
+        function passMessage(value) {
+            console.log(value.textContent);
+            $("#chat-message").val(value.textContent);
+            $("#chat-send-btn").click();
+        }
         </script>
     </body>
 
