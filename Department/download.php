@@ -64,7 +64,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :
+                    <td class="row"><b>Semester 1 Syllabus :
                         <form action="">
                         <input type="hidden" name="course" value="1">
                         <input type="hidden" name="sem" value="1">
@@ -75,7 +75,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="1">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -85,7 +85,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :<form action="">
+                    <td class="row"><b>Semester 3 Syllabus :<form action="">
                         <input type="hidden" name="course" value="1">
                         <input type="hidden" name="sem" value="3">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -104,7 +104,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :
+                    <td class="row"><b>Semester 1 Syllabus :
                         <form action="">
                             <input type="hidden" name="course" value="2">
                             <input type="hidden" name="sem" value="1">
@@ -115,7 +115,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :
+                    <td class="row"><b>Semester 2 Syllabus :
                         <form action="">
                             <input type="hidden" name="course" value="2">
                             <input type="hidden" name="sem" value="2">
@@ -130,7 +130,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :
+                    <td class="row"><b>Semester 3 Syllabus :
                         <form action="">
                         <input type="hidden" name="course" value="2">
                         <input type="hidden" name="sem" value="3">
@@ -151,7 +151,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :<form action="">
+                    <td class="row"><b>Semester 1 Syllabus :<form action="">
                         <input type="hidden" name="course" value="3">
                         <input type="hidden" name="sem" value="1">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -161,7 +161,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="3">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -171,7 +171,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :<form action="">
+                    <td class="row"><b>Semester 3 Syllabus :<form action="">
                         <input type="hidden" name="course" value="3">
                         <input type="hidden" name="sem" value="3">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -192,7 +192,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :<form action="">
+                    <td class="row"><b>Semester 1 Syllabus :<form action="">
                         <input type="hidden" name="course" value="4">
                         <input type="hidden" name="sem" value="1">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -202,7 +202,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="4">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -212,7 +212,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :<form action="">
+                    <td class="row"><b>Semester 3 Syllabus :<form action="">
                         <input type="hidden" name="course" value="4">
                         <input type="hidden" name="sem" value="3">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -233,7 +233,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :<form action="">
+                    <td class="row"><b>Semester 1 Syllabus :<form action="">
                         <input type="hidden" name="course" value="5">
                         <input type="hidden" name="sem" value="1">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -243,7 +243,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="5">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -253,7 +253,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :<form action="">
+                    <td class="row"><b>Semester 3 Syllabus :<form action="">
                         <input type="hidden" name="course" value="5">
                         <input type="hidden" name="sem" value="3">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -274,7 +274,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :<form action="">
+                    <td class="row"><b>Semester 1 Syllabus :<form action="">
                         <input type="hidden" name="course" value="6">
                         <input type="hidden" name="sem" value="1">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -284,7 +284,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="6">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -294,7 +294,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 3 Syllabus :<form action="">
+                    <td class="row"><b>Semester 3 Syllabus :<form action="">
                         <input type="hidden" name="course" value="6">
                         <input type="hidden" name="sem" value="3">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -315,7 +315,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="row"><b>Semister 1 Syllabus :<form action="">
+                    <td class="row"><b>Semester 1 Syllabus :<form action="">
                         <input type="hidden" name="course" value="7">
                         <input type="hidden" name="sem" value="1">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>
@@ -325,7 +325,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="row"><b>Semister 2 Syllabus :<form action="">
+                    <td class="row"><b>Semester 2 Syllabus :<form action="">
                         <input type="hidden" name="course" value="7">
                         <input type="hidden" name="sem" value="2">
                         <span class="icon-input-btn"><i class="fa fa-download"></i>

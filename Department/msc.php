@@ -40,7 +40,7 @@
       <thead class="text-center text-white bg-red-800 ">
             <tr>
                 <th class="py-2 pr-5">Admission Process</th>
-                <th class="py-2 pr-5"> Master of Computer Applicaitons</th>
+                <th class="py-2 pr-5"> Master of Computer Applications</th>
                 <th class="py-2 pr-5"> About MCA</th>
             </tr>
         </thead>
@@ -60,7 +60,7 @@
                     <li>Number of Seats:- 30 + EWS + other quotes as per Gujarat Government Norms</li>
                     <li>Based on the interest of the students, elective subjects pertaining to following fields are offered 
                         <ul class="pl-6 list-disc sm:pl-8">
-                            <li>Artificial Intelligence and Maching Learning</li>
+                            <li>Artificial Intelligence and Machine Learning</li>
                             <li>Networking</li>
                             <li>Web Designing</li>
                         </ul>
@@ -99,8 +99,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>With consistent placement record of 100% the department is one of the premium and Pioneer institute of Gujarat in computer education. With highly qulaified ( Ph.D ) and experienced ( 20+ years ) faculties providing student centric learning, the departemnt is known to produce well acclaimed computer science professionals. It has a strong alumni base around the globe. With research-oriented infrastructure and support, the department has tie ups with various research instututes</td>
-                <td class="pl-5 ">Gujarat University was established in 1949. The University is a public state university  located at Ahmedabad. Gujarat, India. The university is an affiliating university at the under-graduated level and a teaching university at the postgraduated level. The GUSEC department is boon for start-ups.</td>
+                <td>With consistent placement record of 100% the department is one of the premium and Pioneer institute of Gujarat in computer education. With highly Qualified ( Ph.D ) and experienced ( 20+ years ) faculties providing student centric learning, the Department is known to produce well acclaimed computer science professionals. It has a strong alumni base around the globe. With research-oriented infrastructure and support, the department has tie ups with various research instututes</td>
+                <td class="pl-5 ">Gujarat University was established in 1949. The University is a public state university  located at Ahmedabad. Gujarat, India. The university is an affiliating university at the under-graduated level and a teaching university at the post graduated level. The GUSEC department is boon for start-ups.</td>
             </tr>
         </tbody>
     </table>
@@ -125,7 +125,7 @@
                 <td>
                     <ul class="pl-6 list-disc">
                         <li>Cohesive family like environment in department</li>
-                        <li>Transparency in overall academia activites</li>
+                        <li>Transparency in overall academia activities</li>
                         <li>Remedial coaching for weak students</li>
                         <li>Campus Recruitment</li>
                         <li>Frequent expert sessions from industry giants</li>

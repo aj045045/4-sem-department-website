@@ -20,7 +20,7 @@
 
         .card-body {
             display: block;
-            margin: 0px auto;
+            margin: 0px 80px;
         }
 
         .row>* {
@@ -47,14 +47,6 @@
             width: 60%;
             display: block;
         }
-
-        .center {
-            width: 200px;
-            height: 200px;
-            margin: 10px auto;
-            border-radius: 50%;
-        }
-
         .card {
             background-color: #ffffffd3;
             height: 9in;
@@ -67,38 +59,12 @@
             display: none;
         }
 
-        .file-upload {
-            border: 1px solid #ccc;
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            margin: 0px 0px 10px 50px;
-            border-radius: 5px;
-            width: 87%;
-            height: 40px;
-            color: gray;
-        }
 
         .preview>#file-preview {
             width: 200px;
             border: 50%;
         }
-        
     </style>
-    <script>
-        $(document).ready(function() {
-            $("#hide").hover(function() {
-                $("#option").hide();
-            });
-            $("#show").click(function() {
-                $("#option").show();
-            });
-            $("#forcehide").click(function() {
-                $("#option").hide();
-            });
-
-        });
-    </script>
 </head>
 
 <body style="background-color: #eee" id="hide">
@@ -109,97 +75,96 @@
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100 ">
                 <div class="col-lg-7 col-xl-6">
-                    <div class="card text-black" style="border-radius: 25px;">
+                    <div class="text-black card" style="border-radius: 25px;">
                         <div class="preview">
                             <img src="image/logos/bgfreelogo.webp" id="file-preview" class="center" alt="department o computer science logos">
                         </div>
+                        <?php
+                            include "./links/php/user-mgmt.php";
+                            echo $error;
+                        ?>
                         <h4 class="card-title " style="color: #657388;padding-left:10px;">Maharishi pingla, School of
                             advance
                             computing and
                             information technology</h4>
                         <div class="card-body">
-                            <div class="row justify-content-center">
-                                <div>
-                                    <p class="text-center h1 fw-bold mb-2 mx-md-3 ">Sign up</p>
-                                    <!--TODO: Form for sign-up -->
-                                    <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
-                                        <label class="file-upload bg-white">Select Your avtaar
-                                            <input type="file" name="image" accept="image/jpg, image/png,image/jpeg, image/webp" onchange="showPreview(event);">
-                                        </label>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="form3Example1c" class="form-control" placeholder="User Name" name="name" minlength="4" required autocomplete="off" />
-                                            </div>
+                            <div class="row justify-content-center ">
+                                <p class="mb-2 text-center h1 fw-bold mx-md-3 ">Sign up</p>
+                                <!--TODO: Form for sign-up -->
+                                <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
+                                    <label class="inline-block w-80 h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md">Select Your avatar
+                                        <input type="file" name="profile" accept="image/jpg, image/png,image/jpeg, image/webp" onchange="showPreview(event);">
+                                    </label>
+                                    <div class="flex-row mb-2 d-flex align-items-center">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="mb-0 form-outline flex-fill">
+                                            <input type="text" id="form3Example1c" class="form-control" placeholder="User Name" name="name" minlength="4" required autocomplete="off" />
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <input type="email" name="mail" class="form-control" placeholder="Mail" required autocomplete="off" />
-                                            </div>
+                                    </div>
+                                    <div class="flex-row mb-2 d-flex align-items-center">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="mb-0 form-outline flex-fill">
+                                            <input type="email" name="mail" class="form-control" placeholder="Mail" required autocomplete="off" />
                                         </div>
-                                        <div class="row ms-3 mb-2">
-                                            User is a:<div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="flex flex-row">
+                                            <div class="mb-2 ml-14 sm:ml-16 sm:w-52 ">
+                                                <select class="form-select " required id="option" autocomplete="off" name="course">
+                                                    <option selected disabled value="0" id="option">Course
+                                                    </option>
+                                                    <option value="1">Doctor of Philosophy [ PHD ]</option>
+                                                    <option value="2">Master of Science in Computer Science
+                                                        [ MSC(cs) ]</option>
+                                                    <option value="3">Artificial Intelligence & Machine
+                                                        Learning [ AIML ]</option>
+                                                    <option value="4">M. Tech in Networking & Communication
+                                                        [ M.TECH NC ]</option>
+                                                    <option value="5">M. Tech in Web Technology [ M.TECH WT
+                                                        ]</option>
+                                                    <option value="6">Masters in Computer Application [ MCA
+                                                        ]</option>
+                                                    <option value="7"> Post Graduate Diploma in Computer
+                                                        Science and Applications [ PGDCSA ]</option>
+                                                </select>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-1"></div>
-                                                <div class="col-3">
-                                                    <input class="form-check-input" type="radio" id="forcehide" value="1" name="role"><label for="role"></label>
-                                                    Faculty
-                                                    <br>
-                                                    <input class="form-check-input" type="radio" id="show" value="2" name="role">
-                                                    Student <div class="d-flex flex-row mb-2">
-                                                        <div class="form-outline flex-fill mb-0">
-                                                            <select class="form-select" required id="option" style="display:none; width:100%;" autocomplete="off" name="course">
-                                                                <option selected disabled value="0" id="option">Course
-                                                                </option>
-                                                                <option value="1">Doctor of Philosophy [ PHD ]</option>
-                                                                <option value="2">Master of Science in Computer Science
-                                                                    [ MSC(cs) ]</option>
-                                                                <option value="3">Artificial Intelligence & Machine
-                                                                    Learning [ AIML ]</option>
-                                                                <option value="4">M. Tech in Networking & Communication
-                                                                    [ M.TECH NC ]</option>
-                                                                <option value="5">M. Tech in Web Technology [ M.TECH WT
-                                                                    ]</option>
-                                                                <option value="6">Masters in Computer Application [ MCA
-                                                                    ]</option>
-                                                                <option value="7"> Post Graduate Diploma in Computer
-                                                                    Science and Applications [ PGDCSA ]</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input type="number" class="w-16 p-2 mb-2 ml-4 text-sm bg-white border-gray-300 rounded-md sm:ml-8 sm:w-24 h-9 border-1 focus:ring focus:ring-blue-200 focus:outline-none" id="semester" placeholder="Semester" name="semester" min="1" max="10" required autocomplete="off" />
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <input type="password" id="pswd_input1" class="form-control" placeholder="Password" name="pswd" minlength="6" maxlength="10" required autocomplete="off" />
-                                            </div>
+                                    </div>
+                                    <div class="flex flex-row mx-auto" >
+                                    <i class="fa fa-address-card" ></i>
+                                    <input type="text" class="w-2/3 p-1 mb-2 ml-6 text-sm border-gray-300 rounded-md sm:w-2/4 border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9 "name="address" placeholder="Address">    
+                                    <input type="number" class="w-20 p-1 mb-2 ml-4 text-sm border-gray-300 rounded-md border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9" name="batch" placeholder="Batch Year">
+                                    </div>
+                                    <div class="flex-row mb-2 d-flex align-items-center">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="mb-0 form-outline flex-fill">
+                                            <input type="password" id="pswd_input1" class="form-control" placeholder="Password" name="password" minlength="6" maxlength="10" required autocomplete="off" />
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <i class="fas fa-check fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <input type="password" id="pswd_input2" class="form-control" placeholder="Confirm your password" name="confirm_pswd" minlength="6" maxlength="10" required autocomplete="off" />
-                                            </div>
+                                    </div>
+                                    <div class="flex-row mb-2 d-flex align-items-center">
+                                        <i class="fas fa-check fa-lg me-3 fa-fw"></i>
+                                        <div class="mb-0 form-outline flex-fill">
+                                            <input type="password" id="pswd_input2" class="form-control" placeholder="Confirm your password" name="confirm_password" minlength="6" maxlength="10" required autocomplete="off" />
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <div class="form-outline flex-fill mb-0">
-                                                <input type="checkbox" id="checkes" onclick="pswd_visible()" style="margin:0px 3%;  width:15px; height:15px;"> Show Password
-                                            </div>
+                                    </div>
+                                    <div class="flex-row mb-2 d-flex align-items-center">
+                                        <div class="mb-0 form-outline flex-fill">
+                                            <input type="checkbox" id="checkes" onclick="pswd_visible()" style="margin:0px 3%;  width:15px; height:15px;"> Show Password
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-0">
-                                            <input type="submit" class="bg-trasparent border-1 border-blue-500 text-blue-600 hover:bg-blue-700  capitalize rounded-lg px-3 py-1 hover:text-white" name="sign-up" value="Submit" />
-                                        </div>
-                                        <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Signin now</a></div>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <div class="mx-4 mb-2 d-flex justify-content-center mb-lg-0">
+                                        <input type="submit" class="px-3 py-1 text-blue-600 capitalize border-blue-500 rounded-lg border-1 hover:bg-blue-700 hover:text-white" name="student-request" value="Request" />
+                                    </div>
+                                    <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Sign-in now</a></div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <script>

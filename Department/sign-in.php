@@ -3,7 +3,7 @@
 
 <head>
     <title>SIGN IN</title>
-    <!-- Requireds meta tags -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php include "links/include/link.php" ?>
@@ -54,7 +54,7 @@
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-7 col-xl-6">
-                    <div class="card text-black" style="border-radius: 25px;">
+                    <div class="text-black card" style="border-radius: 25px;">
                         <img src="image/logos/bgfreelogo.webp" class="card-img-top" alt="department o computer science logos">
                         <h4 class="card-title " style="color: #657388;padding-left:10px">Maharishi pingla, School of
                             advance
@@ -63,27 +63,27 @@
                         <div class="card-body">
                             <div class="row justify-content-center">
                                 <div>
-                                    <p class="text-center h1 fw-bold mb-4 mx-md-3 ">Sign in</p>
+                                    <p class="mb-4 text-center h1 fw-bold mx-md-3 ">Sign in</p>
                                     <form class="mx-1 mx-md-4" action="./links/php/user-mgmt.php" method="POST">
-                                        <div class="d-flex flex-row align-items-center mb-2">
+                                        <div class="flex-row mb-2 d-flex align-items-center">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
+                                            <div class="mb-0 form-outline flex-fill">
                                                 <input type="text"  class="form-control" placeholder="User Name" name="name" required autocomplete="off" />
                                             </div>
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
+                                        <div class="flex-row mb-2 d-flex align-items-center">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
+                                            <div class="mb-0 form-outline flex-fill">
                                                 <input type="password"  id="pswd_input" class="form-control" placeholder="Password" name="password" minlength="6" required autocomplete="off" />
                                             </div>
                                         </div>
-                                        <div class="d-flex flex-row align-items-center mb-2">
-                                            <div class="form-outline flex-fill mb-0">
+                                        <div class="flex-row mb-2 d-flex align-items-center">
+                                            <div class="mb-0 form-outline flex-fill">
                                                 <input type="checkbox" id="checkes" onclick="pswd_visible()" style="margin:0px 3%;  width:15px; height:15px;"> Show Password
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <input type="submit" class="bg-trasparent border-1 border-blue-500 text-blue-600 hover:bg-blue-700  capitalize rounded-lg px-3 py-1 hover:text-white " name="sign-in" value="submit" />
+                                        <div class="mx-4 mb-3 d-flex justify-content-center mb-lg-4">
+                                            <input type="submit" class="px-3 py-1 text-blue-600 capitalize border-blue-500 rounded-lg bg-trasparent border-1 hover:bg-blue-700 hover:text-white " name="sign-in" value="submit" />
                                         </div>
                                         <div class="linkers">Don't have an account?<a class="text-primary" href="sign-up.php" target="_self"> Signup now</a></div>
                                     </form>

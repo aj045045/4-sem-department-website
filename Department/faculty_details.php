@@ -62,7 +62,7 @@ where f.faculty_id=$faculty_id";
             </div><br><br>
 
             <div class="fd-center">
-                <!-- Experinc-->
+                <!-- Experience-->
                 <div class="pill ">Teaching Experience</div><br>
                 <table class="table table-borderless table-inverse table-responsive">
                     <thead class="thead-inverse" style="background-color:cadetblue;color:white;">
