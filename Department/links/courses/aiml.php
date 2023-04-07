@@ -30,8 +30,8 @@
         <div class="w-full ">
             <img src="./image/slideshows/3slide.webp" alt="Department of computer science " class="w-full h-20 rounded-lg sm:h-36">
             <div class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-50 to-red-800">
-                <div class="text-lg sm:text-2xl">MCA</div>
-                <div class="font-serif text-sm font-thin sm:text-xl">(Master of Computer Applications)</div>
+                <div class="text-lg sm:text-2xl">M.Sc.</div>
+                <div class="font-serif text-sm font-thin sm:text-xl">(Artificial Intelligence & Machine Learning)</div>
             </div>
         </div>
     </div>
@@ -39,33 +39,33 @@
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
       <thead class="text-center text-white bg-red-800 ">
             <tr>
-                <th class="py-2 pr-5">Admission Process</th>
-                <th class="py-2 pr-5"> Master of Computer Applications</th>
-                <th class="py-2 pr-5"> About MCA</th>
+                <th class="py-2 pr-5">Admission</th>
+                <th class="py-2 pr-5"> About Course</th>
+                <th class="py-2 pr-5"> Subject Taught</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><b>Based on the rancking by ACPC</b> (ACPC offices:- GMNX72, Amissiion Building, Nr. Library, L.D college of Engineering Campus, Ahmedabad 380015) for details visit following links
+            <td class="px-6">
                 <ul class="list-disc">
-                    <li><a href="https://jacpcldce.ac.in/" >jacpcldce</a></li>
-                    <li><a href="https://jacpcldce.ac.in/" >jacpcldce</a></li>
-                    <li><a href="https://jacpcldce.ac.in/" >jacpcldce</a></li>
-                    <li><a href="https://jacpcldce.ac.in/" >jacpcldce</a></li>
+                <li>
+                Applications invited through online admission portal of Gujarat University Admission granted on merit basis.
+                </li>
                 </ul>
             </td>
-                <td class="px-6 pt-0">In this course, Students learn variety of subjects such as programming skills and logic development ( using C++, Advance JAVA, Advance Python, Android and PHP ), Data Analytics, Cloud Computing, Web Security, Advanced Networking, Full Stack Developement, Database Management Systems, Operating Systems, Software Engineering system Analysis and Development and many more.</td>
-                <td><ul class="list-disc sm:pl-6">
-                    <li>Duration:- 2 years</li>
-                    <li>Number of Seats:- 30 + EWS + other quotes as per Gujarat Government Norms</li>
-                    <li>Based on the interest of the students, elective subjects pertaining to following fields are offered 
-                        <ul class="pl-6 list-disc sm:pl-8">
-                            <li>Artificial Intelligence and Machine Learning</li>
-                            <li>Networking</li>
-                            <li>Web Designing</li>
-                        </ul>
-                    </li>
+                
+            <td class="px-6"><ul class="list-disc sm:pl-6">
+                <li>2 years post graduate course with specialization in Artificial Intelligence & Machine Learning.
+                                </li>
+                    <li><b>Number of Seats: 30</b></li>
+                    <li> <b>Fee Structure: Rs. 27,000 per semester</b></li>
+                    
                 </ul></td>
+                <td class="px-6"><ul class="list-disc sm:pl-6">
+                <li> Programming (Python ,C,C++),Machine Learning ,Artificial Intelligence ,Deep Learning ,Mathematics ,Statistics, Computer Vision,NLP,Data Science and applications of these technologies.Project work in every semester.</li>
+                    
+                </ul></td>
+                
             </tr>
         </tbody>
     </table>
@@ -75,16 +75,17 @@
             <tr>
                 <th class="py-2 pr-5">Eligibility</th>
                 <th class="py-2 pr-5"> Career Prospects</th>
-                <th class="py-2 pr-5"> Fee Structure</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>As per ACPC guidelines</td>
-                <td class="px-6">Software Development, Software Engineer, Data Analysts, Database Administrator, Quality Assurance Software Engineer, System Analyst, AI developer, Software craftsmen, Research Scientist, Business Analyst</td>
-                <td>
-                    <b>Boys:</b>Rs.3140/semester
-                    <b>Girls:</b>Rs.1700/semester
+            <td class="px-6">
+                  B.Sc.(Computer Science,Information Technology,Mathematics,Statistics,Physics,Electronics),B.E./B.Tech.(All Branches),BCA.The students of Universities other than Gujarat will need eligiblity certificate according to Gujarat University rules.
+
+                    </td>  
+                    <td class="px-6">
+                
+                 Data Analyst,AI developer, Business Analyst,Data Engineer,Machine Learning Engineer,Business Intelligence(BI) Developer,Research Scientist,Computer vision/NLP developer/Scientist.              
                 </td>
             </tr>
         </tbody>
@@ -99,8 +100,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>With consistent placement record of 100% the department is one of the premium and Pioneer institute of Gujarat in computer education. With highly Qualified ( Ph.D ) and experienced ( 20+ years ) faculties providing student centric learning, the Department is known to produce well acclaimed computer science professionals. It has a strong alumni base around the globe. With research-oriented infrastructure and support, the department has tie ups with various research instututes</td>
-                <td class="pl-5 ">Gujarat University was established in 1949. The University is a public state university  located at Ahmedabad. Gujarat, India. The university is an affiliating university at the under-graduated level and a teaching university at the post graduated level. The GUSEC department is boon for start-ups.</td>
+                <td>With consistent placement record of 100% the department is one of the premium and Pioneer institute of Gujarat in computer education. With highly qulaified ( Ph.D ) and experienced ( 20+ years ) faculties providing student centric learning, the departemnt is known to produce well acclaimed computer science professionals. It has a strong alumni base around the globe. With research-oriented infrastructure and support, the department has tie ups with various research instututes</td>
+                <td class="pl-5 ">Gujarat University was established in 1949. The University is a public state university  located at Ahmedabad. Gujarat, India. The university is an affiliating university at the under-graduated level and a teaching university at the postgraduated level. The GUSEC department is boon for start-ups.</td>
             </tr>
         </tbody>
     </table>
@@ -125,7 +126,7 @@
                 <td>
                     <ul class="pl-6 list-disc">
                         <li>Cohesive family like environment in department</li>
-                        <li>Transparency in overall academia activities</li>
+                        <li>Transparency in overall academia activites</li>
                         <li>Remedial coaching for weak students</li>
                         <li>Campus Recruitment</li>
                         <li>Frequent expert sessions from industry giants</li>
