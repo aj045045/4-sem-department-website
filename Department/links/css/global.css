@@ -13,6 +13,12 @@
     text-transform: uppercase;
     font-size: 17px;
 }
+/** Input form for number*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 /** Center style */
 .center {

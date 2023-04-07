@@ -1,7 +1,8 @@
 <?php
+$error="";
     if (isset($_POST['student-request']))
     {
-        $profile = $_POST['profile'];
+        $profile = $_FILES['tmp_name']['profile'];
         $userName = $_POST['name'];
         $mail = $_POST['mail'];
         $course = $_POST['course'];
@@ -13,6 +14,15 @@
 
         if($password === $confirm_password)
         {
+            session_start();
+            $_SESSION['profile']=$profile;
+            $_SESSION['userName'] =$userName;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['course'] = $course;
+            $_SESSION['semester'] = $semester;
+            $_SESSION['address'] = $address;
+            $_SESSION['batch'] = $batch;
+            $_SESSION['password'] = $password    ;            
             header("Location:./../otp.php");
         }
         else{

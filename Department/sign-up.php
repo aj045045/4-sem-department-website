@@ -67,7 +67,7 @@
     </style>
 </head>
 
-<body style="background-color: #eee" id="hide">
+<body style="background-color: #eee">
     <div style="padding-bottom: 2in;"></div>
     <?php include "./links/include/header.php" ?>
     <section class="vh-100">
