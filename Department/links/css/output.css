@@ -732,6 +732,10 @@ video {
   width: 100%;
 }
 
+.w-2\/4 {
+  width: 50%;
+}
+
 .flex-initial {
   flex: 0 1 auto;
 }
@@ -898,6 +902,14 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pl-20 {
+  padding-left: 5rem;
+}
+
+.pl-40 {
+  padding-left: 10rem;
 }
 
 .text-left {
