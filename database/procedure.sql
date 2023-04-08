@@ -1,0 +1,13 @@
+use dcsdb;
+desc user;
+desc student;
+drop procedure if exists insert_student;
+DELIMITER //
+create procedure insert_student(in v_profile varchar(100),in v_name varchar(20),in v_mail varchar(80),in v_password varchar(25), v_course int(2), in v_batch year,in v_sem int(2), in v_address text)
+BEGIN
+declare v_userid int;
+		insert into user values(NULL, v_name, v_profile, v_mail, v_password,0);
+        select user_id into v_userid from user where user_name = v_name and user_email = v_mail order by user_id desc limit 1;
+        insert into student values(NULL, v_batch, v_sem, v_address,v_course, v_userid);
+END //
+DELIMITER ;
