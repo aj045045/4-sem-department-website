@@ -13,7 +13,7 @@
     <?php echo $_SESSION['mail']; ?>
     <?php include "links/include/header.php" ?>
     <div class=" bg-white my-56 mx-auto sm:w-96 w-4/5 shadow-xl rounded-xl px-3">
-        <p class=" capitalize mx-5 pt-3 text-xl ">e-mail verification</p>
+        <p class=" capitalize mx-5 pt-3 text-2xl ">e-mail verification</p>
         <p class=" italic "> We have sent a verification code to your email - </p>
         <form action="" method="post">
             <div class="mx-auto px-10">

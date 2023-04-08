@@ -3,7 +3,7 @@
 
 # Project
 
-## Goals,Opportunity and Objectves :
+## Goals,Opportunity and Objectives :
 > What the `system ` is trying to do \
 > Scope of project
 > SIGN IN
