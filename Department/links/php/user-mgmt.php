@@ -3,7 +3,6 @@ $server="localhost";
 $user="root";
 $password="";
 $database="dcsdb";
-
 $conn=mysqli_connect($server,$user,$password,$database);
 $error = "";
 if (isset($_POST['student-request'])) {
@@ -33,29 +32,34 @@ if (isset($_POST['student-request'])) {
                 $_SESSION['batch'] = $_POST['batch'];
                 $_SESSION['password'] = $password;
                 $_SESSION['sent-otp'] = rand(11111, 99999);
-                $message = "Your One Time Password is " . $_SESSION['sent-otp'] . " to Request for Registration";
-                $output = exec("mail.py $mail $message");
+                $message = "Your/One/Time/Password/is/".$_SESSION['sent-otp']."/to/Request/for/Registration";
+                $output = exec("C:\Users\anshy\AppData\Local\Programs\Python\Python311\python.exe mail.py $mail $message");
                 if ($output == "true") {
-                    header("Location:./../otp.php");
+                    header("Location:./../../otp.php");
                     if (isset($_POST['submit-otp'])) {
                         if ($_POST['verified-otp'] === $_SESSION['sent-otp']) {
-                            $location = "./image/students/";
+                            $location = "./../../image/students/";
                             $profile  = $_SESSION['profile'];
                             $userName = $_SESSION['userName'];
                             move_uploaded_file($profile,$location.$userName);
-                            $profile = $location.$userName;
-                            $mail   = $_SESSION['mail'];
+                            $profile = "./image/students/".$userName.".png";
+                            $mail = $_SESSION['mail'];
                             $course  = $_SESSION['course'];
                             $semester = $_SESSION['semester'];
                             $address  = $_SESSION['address'];
                             $batch  = $_SESSION['batch'];
                             $password = $_SESSION['password'];
-                            $sql = "CALL insert_student( $profile,$name,$mail,$password,$course,$batch,$sem,$address)";
+                            $sql = "CALL insert_student( $profile,$userName,$mail,$password,$course,$batch,$semester,$address)";
                             $result = $conn->query($sql);
-                            $error = " <div class=\"alert alert-primary alert-dismissible fade show\" role=\"alert\">
-                    <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
-                    ERROR: You have Requested for Registration in <b>course:<b/>$course
-                    </div>";
+                            session_destroy();
+                            if($result)
+                            {
+                                header("Location:./../../sign-up.php");
+                                $error = " <div class=\"alert alert-primary alert-dismissible fade show\" role=\"alert\">
+                                <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                                ERROR: You have Requested for Registration in <b>course:<b/>$course
+                                </div>";
+                            }
                         }
                     }
                 }

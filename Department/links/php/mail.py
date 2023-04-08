@@ -7,7 +7,9 @@ email = EmailMessage()
 email["From"] = sender
 email["To"] = sys.argv[1]
 email["Subject"] = "ONE TIME PASSWORD"
-email.set_content(sys.argv[2])
+message = sys.argv[2].split('/')
+message = ' '.join(message)
+email.set_content(message)
 
 smtp = smtplib.SMTP_SSL("smtp.gmail.com")
 smtp.login(sender, "wuxbpnckyxomyjsq")
