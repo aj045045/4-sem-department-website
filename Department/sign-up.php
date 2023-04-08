@@ -93,7 +93,7 @@
                                 <!--TODO: Form for sign-up -->
                                 <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
                                     <label class="inline-block w-80 h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md">Select Your avatar
-                                        <input type="file" name="profile" accept="image/jpg, image/png,image/jpeg, image/webp" onchange="showPreview(event);">
+                                        <input type="file" name="profile" accept=" image/png" onchange="showPreview(event);">
                                     </label>
                                     <div class="flex-row mb-2 d-flex align-items-center">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
