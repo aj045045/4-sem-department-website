@@ -24,7 +24,7 @@
     $scan = array('aiml.html','mca.html','msc.html','mtec.html','pgdcsa.html');
     foreach ($scan as $file) {
         if (is_file("./$file") ) {
-            echo '<div class=" bg-red-800 w-2/4 mx-auto pl-40 text-white text-2xl">NEW COURSES</div><iframe src= ./'. $file .'></iframe><br>';
+            echo '<div class=" bg-red-800 w-2/4 mx-auto pl-40 text-white text-2xl ">NEW COURSES</div><iframe src= ./'. $file .'></iframe><br>';
             
         }
     }

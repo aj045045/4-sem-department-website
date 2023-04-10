@@ -93,18 +93,18 @@
                                 <!--TODO: Form for sign-up -->
                                 <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
                                     <label class="inline-block w-80 h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md">Select Your avatar
-                                        <input type="file" name="profile" accept=" image/png" onchange="showPreview(event);">
+                                        <input type="file" name="profile" accept="image/png" onchange="showPreview(event);">
                                     </label>
                                     <div class="flex-row mb-2 d-flex align-items-center">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="mb-0 form-outline flex-fill">
-                                            <input type="text" id="form3Example1c" class="form-control" placeholder="User Name" name="name" minlength="4" required autocomplete="off" />
+                                            <input type="text" id="form3Example1c" class="form-control" placeholder="Enter user Name" name="name" minlength="4" required autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="flex-row mb-2 d-flex align-items-center">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="mb-0 form-outline flex-fill">
-                                            <input type="email" name="mail" class="form-control" placeholder="Mail" required autocomplete="off" />
+                                            <input type="email" name="mail" class="form-control" placeholder="Enter mail" required autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="row">
@@ -140,7 +140,7 @@
                                     <div class="flex-row mb-2 d-flex align-items-center">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="mb-0 form-outline flex-fill">
-                                            <input type="password" id="pswd_input1" class="form-control" placeholder="Password" name="password" minlength="6" maxlength="10" required autocomplete="off" />
+                                            <input type="password" id="pswd_input1" class="form-control" placeholder="Enter Password" name="password" minlength="6" maxlength="10" required autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="flex-row mb-2 d-flex align-items-center">

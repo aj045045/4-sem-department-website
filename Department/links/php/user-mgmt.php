@@ -6,6 +6,7 @@ $database="dcsdb";
 $conn=mysqli_connect($server,$user,$password,$database);
 $error = "";
 if (isset($_POST['student-request'])) {
+session_start();
     $password = $_POST['password'];
     $name = $_POST['name'];
     $mail = $_POST['mail'];
@@ -22,7 +23,6 @@ if (isset($_POST['student-request'])) {
         }
         if ($bool == true) {
             if ($password === $_POST['confirm_password']) {
-                session_start();
                 $_SESSION['profile'] = $_FILES['profile']['tmp_name'];
                 $_SESSION['userName'] = $name;
                 $_SESSION['mail'] = $mail;
@@ -33,36 +33,8 @@ if (isset($_POST['student-request'])) {
                 $_SESSION['password'] = $password;
                 $_SESSION['sent-otp'] = rand(11111, 99999);
                 $message = "Your/One/Time/Password/is/".$_SESSION['sent-otp']."/to/Request/for/Registration";
-                $output = exec("C:\Users\anshy\AppData\Local\Programs\Python\Python311\python.exe mail.py $mail $message");
-                if ($output == "true") {
-                    header("Location:./../../otp.php");
-                    if (isset($_POST['submit-otp'])) {
-                        if ($_POST['verified-otp'] === $_SESSION['sent-otp']) {
-                            $location = "./../../image/students/";
-                            $profile  = $_SESSION['profile'];
-                            $userName = $_SESSION['userName'];
-                            move_uploaded_file($profile,$location.$userName);
-                            $profile = "./image/students/".$userName.".png";
-                            $mail = $_SESSION['mail'];
-                            $course  = $_SESSION['course'];
-                            $semester = $_SESSION['semester'];
-                            $address  = $_SESSION['address'];
-                            $batch  = $_SESSION['batch'];
-                            $password = $_SESSION['password'];
-                            $sql = "CALL insert_student( $profile,$userName,$mail,$password,$course,$batch,$semester,$address)";
-                            $result = $conn->query($sql);
-                            session_destroy();
-                            if($result)
-                            {
-                                header("Location:./../../sign-up.php");
-                                $error = " <div class=\"alert alert-primary alert-dismissible fade show\" role=\"alert\">
-                                <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
-                                ERROR: You have Requested for Registration in <b>course:<b/>$course
-                                </div>";
-                            }
-                        }
-                    }
-                }
+                exec("C:\Users\anshy\AppData\Local\Programs\Python\Python311\python.exe mail.py $mail $message");
+                header("Location:./../../otp.php");
             } else {
                 $error = " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
                     <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
@@ -70,15 +42,19 @@ if (isset($_POST['student-request'])) {
                     </div>";
             }
         } else {
-            $error = " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+            header("Location:./../../sign-up.php");
+            $error = "
+                    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
                     <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
                     ERROR: User another E-Mail or User Name <br>TRY AGAIN
                     </div>";
         }
     } else {
+            header("Location:./../../sign-up.php");
         echo $error = " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
     <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
     ERROR: Connection Problem  <br>TRY AGAIN
     </div>";
     }
 }
+?>
