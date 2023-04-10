@@ -12,5 +12,6 @@ declare v_userid int;
 END //
 DELIMITER ;
 
-call insert_student("./image/student/ansh.png","","aj045045@gmail.com","aj045045",2,2021,4,"Navrangpura");
+call insert_student("./image/student/ansh.png","Ansh Yadav","aj045045@gmail.com","aj045045",2,2021,4,"Navrangpura");
 select * from user;
+select * from student;
