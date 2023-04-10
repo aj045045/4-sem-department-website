@@ -143,7 +143,7 @@
                 </div>
             </div>
             <!-- <hr style="opacity: 0.1;padding-top: 0.1px;"> -->
-            <button type="button" class="collapsible">M.Sc Artificial Intelligence and Machine Learning and Defence
+            <button type="button" class="collapsible">M.Sc Artificial Intelligence and Machine Learning and defence
                 [M.Sc AI &
                 ML & Defence]</button>
             <div class="content">

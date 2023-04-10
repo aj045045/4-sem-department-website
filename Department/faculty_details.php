@@ -12,10 +12,10 @@ ON f.user_id=u.user_id
 INNER JOIN designation as d
 ON f.designation_id=d.designation_id
 where f.faculty_id=$faculty_id";
-  
+
   // FETCHING DATA FROM DATABASE
-  $result = $conn->query($query);
-  
+$result = $conn->query($query);
+
     if ($result->num_rows > 0) 
     {
         // OUTPUT DATA OF EACH ROW
