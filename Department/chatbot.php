@@ -8,6 +8,8 @@ if (isset($_POST["text"])) {
     $count = mysqli_num_rows($query);
     if ($count == "0") {
         $data = "I am sorry but I am not exactly clear how to help you";
+        $query2 = mysqli_query($conn, "INSERT INTO `tmp_questions` (`tmp_question_id`, `question`, `type`) VALUES (NULL, '$msg', '');");
+    
     } else {
         while ($row = mysqli_fetch_array($query)) {
             $data = $row['answer'];
