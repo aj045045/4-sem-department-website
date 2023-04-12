@@ -100,7 +100,9 @@
         background-color: #9aeeff;
         border-radius: 10px;
     }
+    
     </style>
+
 </head>
 
 <body>
