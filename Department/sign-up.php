@@ -1,3 +1,30 @@
+<?php
+$server = "localhost";
+$user = "root";
+$password = "";
+$database = "dcsdb";
+$conn = mysqli_connect($server, $user, $password, $database);
+session_start();
+
+function isUserRegistered($name, $mail, $conn)
+{
+    $query = "SELECT user_name,user_email FROM user";
+    $result = $conn->query($query);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $userName = $row["user_name"];
+            $userMail = $row["user_email"];
+            if ($userName == $name || $userMail == $mail) {
+                return false;
+            }
+        }
+    } else {
+        throw new Exception("Connection Problem ");
+    }
+    return true;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -47,6 +74,7 @@
             width: 60%;
             display: block;
         }
+
         .card {
             background-color: #ffffffd3;
             height: 9in;
@@ -80,8 +108,38 @@
                             <img src="image/logos/bgfreelogo.webp" id="file-preview" class="center" alt="department o computer science logos">
                         </div>
                         <?php
-                            include "./links/php/user-mgmt.php";
-                            echo $error;
+                        try {
+                            if (isset($_POST['student-request'])) {
+                                $password = $_POST['password'];
+                                $name = $_POST['name'];
+                                $mail = $_POST['mail'];
+                                if ($password === $_POST['confirm_password']) {
+                                    if (isUserRegistered($name, $mail, $conn)) {
+                                        $_SESSION['profile'] = $_FILES['profile']['tmp_name'];
+                                        $_SESSION['userName'] = $name;
+                                        $_SESSION['mail'] = $mail;
+                                        $_SESSION['course'] = $_POST['course'];
+                                        $_SESSION['semester'] = $_POST['semester'];
+                                        $_SESSION['address'] =  $_POST['address'];
+                                        $_SESSION['batch'] = $_POST['batch'];
+                                        $_SESSION['password'] = $password;
+                                        $_SESSION['sent-otp'] = rand(11111, 99999);
+                                        $message = "Your/One/Time/Password/is/" . $_SESSION['sent-otp'] . "/to/Request/for/Registration";
+                                        exec("C:\Users\anshy\AppData\Local\Programs\Python\Python311\python.exe mail.py $mail $message");
+                                        header("Location:./../../otp.php");
+                                    } else {
+                                        throw new Exception("Use Another E-Mail or User Name");
+                                    }
+                                } else {
+                                    throw new Exception("Password and confirm password are not same");
+                                }
+                            }
+                        } catch (Exception $err) {
+                            echo " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+                                <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                        ERROR:  <strong>" . $err->getMessage() . "</strong> <br>TRY AGAIN
+                                </div>";
+                        }
                         ?>
                         <h4 class="card-title " style="color: #657388;padding-left:10px;">Maharishi pingla, School of
                             advance
@@ -91,7 +149,8 @@
                             <div class="row justify-content-center ">
                                 <p class="mb-2 text-center h1 fw-bold mx-md-3 ">Sign up</p>
                                 <!--TODO: Form for sign-up -->
-                                <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
+                                <form action="<?php // echo htmlspecialchars($_SERVER["PHP_SELF"]);
+                                                ?>" method="POST" id="form">
                                     <label class="inline-block w-80 h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md">Select Your avatar
                                         <input type="file" name="profile" accept="image/png" onchange="showPreview(event);">
                                     </label>
@@ -132,10 +191,10 @@
                                             <input type="number" class="w-16 p-2 mb-2 ml-4 text-sm bg-white border-gray-300 rounded-md sm:ml-8 sm:w-24 h-9 border-1 focus:ring focus:ring-blue-200 focus:outline-none" id="semester" placeholder="Semester" name="semester" min="1" max="10" required autocomplete="off" />
                                         </div>
                                     </div>
-                                    <div class="flex flex-row mx-auto" >
-                                    <i class="fa fa-address-card" ></i>
-                                    <input type="text" class="w-2/3 p-1 mb-2 ml-6 text-sm border-gray-300 rounded-md sm:w-2/4 border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9 "name="address" placeholder="Address">    
-                                    <input type="number" class="w-20 p-1 mb-2 ml-4 text-sm border-gray-300 rounded-md border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9" name="batch" placeholder="Batch Year">
+                                    <div class="flex flex-row mx-auto">
+                                        <i class="fa fa-address-card"></i>
+                                        <input type="text" class="w-2/3 p-1 mb-2 ml-6 text-sm border-gray-300 rounded-md sm:w-2/4 border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9 " name="address" placeholder="Address">
+                                        <input type="number" class="w-20 p-1 mb-2 ml-4 text-sm border-gray-300 rounded-md border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9" name="batch" placeholder="Batch Year">
                                     </div>
                                     <div class="flex-row mb-2 d-flex align-items-center">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -155,7 +214,7 @@
                                         </div>
                                     </div>
                                     <div class="mx-4 mb-2 d-flex justify-content-center mb-lg-0">
-                                        <input type="submit" class="px-3 py-1 text-blue-600 capitalize border-blue-500 rounded-lg border-1 hover:bg-blue-700 hover:text-white" name="student-request" value="Request" />
+                                        <input type="submit" class="px-3 py-1 capitalize bg-blue-600 my-3 rounded-md  text-white" name="student-request" value="Request" />
                                     </div>
                                     <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Sign-in now</a></div>
                                 </form>
