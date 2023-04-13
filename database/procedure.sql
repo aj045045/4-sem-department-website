@@ -12,6 +12,18 @@ declare v_userid int;
 END //
 DELIMITER ;
 
-call insert_student("./image/student/ansh.png","Ansh Yadav","aj045045@gmail.com","aj045045",2,2021,4,"Navrangpura");
+DELIMITER //
+create procedure delete_student(in v_user_id int(11))
+BEGIN
+		delete from user where user_id = v_user_id;
+		delete from student where user_id = v_user_id;
+END //
+DELIMITER ;
+
+call insert_student("./image/student/ansh.png","ALEX DEV","aj045045@gmail.com","aj045045",2,2021,4,"Navrangpura");
 select * from user;
 select * from student;
+select * from course;
+select u.user_id, u.user_name, u.user_email, s.student_sem, s.student_address from user u inner join student s on (u.user_id= s.user_id) where u.use_category_id = 0;
+select u.user_id, u.user_name, u.user_email,s.student_batch_year, s.student_sem, c.course_name from user u inner join student s on u.user_id= s.user_id inner join course c on s.course_id = c.course_id where u.use_category_id = 0;
+

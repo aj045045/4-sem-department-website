@@ -35,11 +35,11 @@ echo '<nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
             <li class="nav-item">
                 <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
             </li>';
-if ($_SESSION['userType'] == 'stu') {
-    echo ' <li class="nav-item">
-                <a class="nav-link text-light" href="result.php"><b>RESULT</b></a>
-            </li>';
-}
+// if ($_SESSION['userType'] == 'stu') {
+//     echo ' <li class="nav-item">
+//                 <a class="nav-link text-light" href="result.php"><b>RESULT</b></a>
+//             </li>';
+// }
 echo '</ul>
         <div class="top-header hidden-xs" style="padding:0px">
         <a  class="nav-link text-light p-2 ms-lg-5" href="sign-up.php" target="_self">

@@ -2,8 +2,6 @@
 session_start();
     if (isset($_POST['submit-otp'])) {
         include "./links/include/db.php";
-        echo "<br><br><br><br><br><br><br><br>";
-        // print_r($_SESSION);
         $otp = $_SESSION['sent-otp'];
         if ( $otp == $_POST['verified-otp']) {
             $profile  = $_SESSION['profile'];
@@ -18,7 +16,6 @@ session_start();
             $password = $_SESSION['password'];
             $sql = "call insert_student('$location','$userName','$mail','$password','$course','$batch','$semester','$address')";
             $result = $conn->query($sql);
-            $result;
             if($result == TRUE)
             {
                 header("Location:./sign-in.php");
