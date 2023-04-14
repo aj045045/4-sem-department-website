@@ -1,7 +1,7 @@
 <?php include "links/include/db.php"?>
 <!doctype html>
 <html lang="en">
-<!-- TODO: Faculty page 
+<!-- // TODO: Faculty page 
 -->
 
 <head>
@@ -96,7 +96,7 @@ ON f.designation_id=d.designation_id";
                                 class="card-link">
                                 <div data-bs-toggle="tooltip" title="CLICK TO KNOW MORE">
 
-                                    <img src="<?php echo $faculty_profile;?>" class="card-round p-4">
+                                    <img src="<?php echo $faculty_profile;?>" class="p-4 card-round">
                                 </div>
                             </a>
                             <div class="card-body">

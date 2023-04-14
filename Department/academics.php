@@ -1,4 +1,4 @@
-<!-- // TODO: Academics web pages
+<!--  // TODO: Academics web pages
 -->
 <!doctype html>
 <html lang="en">

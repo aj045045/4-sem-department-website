@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <!-- TODO: Event page 
+    <!-- // TODO: Event page 
 -->
 <head>
     <meta charset="utf-8">

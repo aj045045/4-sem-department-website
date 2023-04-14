@@ -108,6 +108,7 @@ function isUserRegistered($name, $mail, $conn)
                             <img src="image/logos/bgfreelogo.webp" id="file-preview" class="center" alt="department o computer science logos">
                         </div>
                         <?php
+                        // TODO: sign-up students
                         try {
                             if (isset($_POST['student-request'])) {
                                 $password = $_POST['password'];
@@ -152,10 +153,11 @@ function isUserRegistered($name, $mail, $conn)
                         <div class="card-body">
                             <div class="row justify-content-center ">
                                 <p class="mb-2 text-center h1 fw-bold mx-md-3 ">Sign up</p>
-                                <!--TODO: Form for sign-up -->
+                                <!--// TODO: Form for sign-up 
+                            -->
                                 <form action="<?php // echo htmlspecialchars($_SERVER["PHP_SELF"]);
                                                 ?>" method="POST" id="form">
-                                    <label class="inline-block w-80 h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md">Select Your avatar
+                                    <label class="inline-block h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md w-80 border-1 sm:ml-12 text-md">Select Your avatar
                                         <input type="file" name="profile" accept="image/png" onchange="showPreview(event);">
                                     </label>
                                     <div class="flex-row mb-2 d-flex align-items-center">
@@ -218,7 +220,7 @@ function isUserRegistered($name, $mail, $conn)
                                         </div>
                                     </div>
                                     <div class="mx-4 mb-2 d-flex justify-content-center mb-lg-0">
-                                        <input type="submit" class="px-3 py-1 capitalize bg-blue-600 my-3 rounded-md  text-white" name="student-request" value="Request" />
+                                        <input type="submit" class="px-3 py-1 my-3 text-white capitalize bg-blue-600 rounded-md" name="student-request" value="Request" />
                                     </div>
                                     <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Sign-in now</a></div>
                                 </form>

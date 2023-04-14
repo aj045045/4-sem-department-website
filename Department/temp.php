@@ -1,222 +1,305 @@
-<!doctype html>
-<html lang="en">
+<?php
 
-<head>
-    <title>Sign up</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php include "./links/include/link.php" ?>
-    <style>
-        input[type=number]::-webkit-outer-spin-button,
-        input[type=number]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+//* @audit-info Interface Method
+interface Method
+{
+    public function add();
+    public function delete();
+    public function update();
+}
+
+// * @audit-info # Class user
+class User
+{
+    public $userId, $userType,$userName, $userProfile;
+    public function signIn()
+    {
+    }
+    public function signUp()
+    {
+    }
+    public function signOut()
+    {
+        session_abort();
+        header("Location:./index.php");
+    }
+    public function __construct($v_userId, $v_userName, $v_userProfile, $v_userType)
+    {
+        $this->userId = $v_userId;
+        $this->userType = $v_userType;
+        $this->userName = $v_userName;
+        $this->userProfile = $v_userProfile;
+    }
+}
+
+//! @audit Student user
+
+if ($value == true) {
+
+    // * @audit-info # Class Achievement
+    class Achievement
+    {
+        public function addAchievement()
+        {
         }
-
-        .form-control {
-            width: 9cm;
+        public function updateAchievement()
+        {
         }
-
-        .card-body {
-            display: block;
-            margin: 0px 80px;
+        public function deleteAchievement()
+        {
         }
+    }
 
-        .row>* {
-            padding: 0px;
+    // * @audit-info # Class Comment
+    class Comment
+    {
+        public function addComment()
+        {
         }
+    }
 
-        .card-img-top {
-            margin: 1ch 30%;
-            max-width: 150px;
+    // * @audit-info # Class Comment
+    class Paper
+    {
+        public function viewPaper()
+        {
         }
+    }
 
-        .text-primary:link {
-            text-decoration: none;
+    // * @audit-info # Class Result
+    class Result
+    {
+        public function viewResult()
+        {
         }
+    }
+}
 
-        .text-primary:hover {
-            text-decoration: underline;
+//! @audit Faculty user
+
+if ($value == true) {
+
+    // * @audit-info # Class Research
+    class Research
+    {
+        public function addResearch()
+        {
         }
-
-        .linkers {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-            display: block;
+        public function deleteResearch()
+        {
         }
-
-        .center {
-            width: 200px;
-            height: 200px;
-            margin: 10px auto;
-            border-radius: 50%;
+        public function updateResearch()
+        {
         }
+    }
 
-        .card {
-            background-color: #ffffffd3;
-            height: 9in;
-            width: auto;
-            overflow: hidden;
-            margin-bottom: 1in;
+    // * @audit-info # Class News
+    class News
+    {
+        public function addNews()
+        {
         }
-
-        input[type="file"] {
-            display: none;
+        public function deleteNews()
+        {
         }
-
-        .file-upload {
-            border: 1px solid #ccc;
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            margin: 0px 0px 10px 50px;
-            border-radius: 5px;
-            width: 87%;
-            height: 40px;
-            color: gray;
+        public function updateNews()
+        {
         }
+    }
 
-        .preview>#file-preview {
-            width: 200px;
-            border: 50%;
+    // * @audit-info # Class Achievement
+    class Achievement
+    {
+        public function addAchievement()
+        {
         }
-    </style>
-</head>
-
-<body style="background-color: #eee" id="hide">
-    <div style="padding-bottom: 2in;"></div>
-    <?php include "./links/include/header.php" ?>
-    <section class="vh-100">
-
-        <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100 ">
-                <div class="col-lg-7 col-xl-6">
-                    <div class="text-black card" style="border-radius: 25px;">
-                        <div class="preview">
-                            <img src="image/logos/bgfreelogo.webp" id="file-preview" class="center" alt="department o computer science logos">
-                        </div>
-                        <h4 class="card-title " style="color: #657388;padding-left:10px;">Maharishi pingla, School of
-                            advance
-                            computing and
-                            information technology</h4>
-                        <div class="card-body">
-                            <div class="row justify-content-center ">
-                                <p class="mb-2 text-center h1 fw-bold mx-md-3 ">Sign up</p>
-                                <!--TODO: Form for sign-up -->
-                                <form action="./links/php/user-mgmt.php" method="POST" id="form" enctype="multipart/form-data">
-                                    <label class="inline-block w-full h-10 p-2 my-2 ml-10 bg-white border-gray-300 rounded-md border-1 sm:ml-12 text-md sm:w-80">Select Your avatar
-                                        <input type="file" name="image" accept="image/jpg, image/png,image/jpeg, image/webp" onchange="showPreview(event);">
-                                    </label>
-                                    <div class="flex-row mb-2 d-flex align-items-center">
-                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                        <div class="mb-0 form-outline flex-fill">
-                                            <input type="text" id="form3Example1c" class="form-control" placeholder="User Name" name="name" minlength="4" required autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="flex-row mb-2 d-flex align-items-center">
-                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                        <div class="mb-0 form-outline flex-fill">
-                                            <input type="email" name="mail" class="form-control" placeholder="Mail" required autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1"></div>
-                                        <div class="flex flex-row">
-                                            <div class="mb-2 ml-14 sm:ml-16 sm:w-52 ">
-                                                <select class="form-select " required id="option" autocomplete="off" name="course">
-                                                    <option selected disabled value="0" id="option">Course
-                                                    </option>
-                                                    <option value="1">Doctor of Philosophy [ PHD ]</option>
-                                                    <option value="2">Master of Science in Computer Science
-                                                        [ MSC(cs) ]</option>
-                                                    <option value="3">Artificial Intelligence & Machine
-                                                        Learning [ AIML ]</option>
-                                                    <option value="4">M. Tech in Networking & Communication
-                                                        [ M.TECH NC ]</option>
-                                                    <option value="5">M. Tech in Web Technology [ M.TECH WT
-                                                        ]</option>
-                                                    <option value="6">Masters in Computer Application [ MCA
-                                                        ]</option>
-                                                    <option value="7"> Post Graduate Diploma in Computer
-                                                        Science and Applications [ PGDCSA ]</option>
-                                                </select>
-                                            </div>
-                                            <input type="number" class="w-16 p-2 mb-2 ml-4 text-lg bg-white border-gray-300 rounded-md sm:ml-8 sm:w-24 h-9 border-1 focus:ring focus:ring-blue-200 focus:outline-none" id="semester" placeholder="Semester" name="sem" min="1" max="10" required autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-row mx-auto" >
-                                    <input type="text" class="w-2/3 p-1 mb-2 text-sm border-gray-300 rounded-md sm:ml-14 sm:w-2/4 border-1 focus:ring focus:ring-blue-200 focus:outline-none ml-11 h-9 "name="address" placeholder="Address">    
-                                    <input type="number" class="w-20 p-1 mb-2 ml-4 text-sm border-gray-300 rounded-md border-1 focus:ring focus:ring-blue-200 focus:outline-none h-9" name="batch" placeholder="Batch Year">
-                                    </div>
-                                    <div class="flex-row mb-2 d-flex align-items-center">
-                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                        <div class="mb-0 form-outline flex-fill">
-                                            <input type="password" id="pswd_input1" class="form-control" placeholder="Password" name="pswd" minlength="6" maxlength="10" required autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="flex-row mb-2 d-flex align-items-center">
-                                        <i class="fas fa-check fa-lg me-3 fa-fw"></i>
-                                        <div class="mb-0 form-outline flex-fill">
-                                            <input type="password" id="pswd_input2" class="form-control" placeholder="Confirm your password" name="confirm_pswd" minlength="6" maxlength="10" required autocomplete="off" />
-                                        </div>
-                                    </div>
-                                    <div class="flex-row mb-2 d-flex align-items-center">
-                                        <div class="mb-0 form-outline flex-fill">
-                                            <input type="checkbox" id="checkes" onclick="pswd_visible()" style="margin:0px 3%;  width:15px; height:15px;"> Show Password
-                                        </div>
-                                    </div>
-                                    <div class="mx-4 mb-2 d-flex justify-content-center mb-lg-0">
-                                        <input type="submit" class="px-3 py-1 text-blue-600 capitalize border-blue-500 rounded-lg border-1 hover:bg-blue-700 hover:text-white" name="student-request" value="Request" />
-                                    </div>
-                                    <div class="linkers">Already have an account?<a class="text-primary" href="sign-in.php" target="_self"> Sign-in now</a></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    <?php
-            echo rand(11111,99999);           
-    ?>
-    </section>
-    <script>
-        var x1 = document.getElementById("pswd_input1");
-        var x2 = document.getElementById("pswd_input2");
-
-        function pswd_visible() {
-            if (x1.type === "password" && x2.type === "password") {
-                x1.type = "text";
-                x2.type = "text";
-                setTimeout(MakeCheckNull, 2000);
-            } else {
-                x1.type = "password";
-                x2.type = "password";
-            }
+        public function deleteAchievement()
+        {
         }
-
-        function MakeCheckNull() {
-            var x = document.getElementById("checkes");
-            if (x.checked == true) {
-                x.checked = false;
-                x1.type = "password";
-                x2.type = "password";
-            }
+        public function updateAchievement()
+        {
         }
+    }
 
-        function showPreview(event) {
-            if (event.target.files.length > 0) {
-                var src = URL.createObjectURL(event.target.files[0]);
-                var preview = document.getElementById("file-preview");
-                preview.src = src;
-                preview.style.display = "block";
-            }
+    // * @audit-info # Class Event
+    class Event
+    {
+        public function updateEvent()
+        {
         }
-    </script>
-</body>
+    }
 
-</html>
+    // * @audit-info # Class Comment
+    class Comment
+    {
+        public function addComment()
+        {
+        }
+    }
+}
+
+//! @audit Admin user
+
+if ($value == true) {
+
+    // * @audit-info # Class Course
+    class Course
+    {
+        private $courseId, $courseName;
+        public function addCourse()
+        {
+        }
+        public function deleteCourse()
+        {
+        }
+        public function updateCourse()
+        {
+        }
+    }
+
+    // *@audit-info # Class Subject
+    class Subject
+    {
+        private $syllabusId;
+        public function addSubject()
+        {
+        }
+        public function deleteSubject()
+        {
+        }
+        public function updateSubject()
+        {
+        }
+    }
+
+    // * @audit-info # Class News
+    class News
+    {
+        public function addNews()
+        {
+        }
+        public function deleteNews()
+        {
+        }
+        public function updateNews()
+        {
+        }
+    }
+
+    // * @audit-info # Class Event
+    class Event
+    {
+        public function addEvent()
+        {
+        }
+        public function deleteEvent()
+        {
+        }
+        public function updateEvent()
+        {
+        }
+    }
+
+    // * @audit-info # Class Achievement
+    class Achievement
+    {
+        public function addAchievement()
+        {
+        }
+        public function deleteAchievement()
+        {
+        }
+        public function updateAchievement()
+        {
+        }
+    }
+
+    // * @audit-info # Class Comment
+    class Comment
+    {
+        public function addComment()
+        {
+        }
+        public function deleteComment()
+        {
+        }
+        public function updateComment()
+        {
+        }
+    }
+
+    // * @audit-info # Class Paper
+    class Paper
+    {
+        public function addPaper()
+        {
+        }
+        public function deletePaper()
+        {
+        }
+        public function updatePaper()
+        {
+        }
+    }
+
+    // * @audit-info # Class Result
+    class Result
+    {
+        public function addResult()
+        {
+        }
+        public function deleteResult()
+        {
+        }
+        public function updateResult()
+        {
+        }
+    }
+
+    // * @audit-info # Class Research
+    class Research
+    {
+        public function addResearch()
+        {
+        }
+        public function deleteResearch()
+        {
+        }
+        public function updateResearch()
+        {
+        }
+    }
+    class user
+    {
+        public function addFaculty()
+        {
+        }
+        public function updateFaculty()
+        {
+        }
+        public function deleteFaculty()
+        {
+        }
+        public function addStudent()
+        {
+        }
+        public function updateStudent()
+        {
+        }
+        public function deleteStudent()
+        {
+        }
+        public function addAdmin()
+        {
+
+        }
+        public function updateAdmin()
+        {
+            
+        }
+        public function deleteAdmin()
+        {
+            
+        }
+    }
+}

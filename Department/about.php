@@ -1,4 +1,5 @@
-<!-- // TODO: About page  -->
+<!-- //  TODO: About page
+-->
 <!doctype html>
 <html lang="en">
 
