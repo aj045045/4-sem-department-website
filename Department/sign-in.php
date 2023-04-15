@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "./links/include/db.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -64,17 +68,53 @@
                             <div class="row justify-content-center">
                                 <div>
                                     <p class="mb-4 text-center h1 fw-bold mx-md-3 ">Sign in</p>
-                                    <form class="mx-1 mx-md-4" action="./links/php/user-mgmt.php" method="POST">
+                                    <?php
+                                    try {
+                                        if (isset($_POST['sign-in'])) {
+                                            $userName = $_POST['userName'];
+                                            $password = $_POST['password'];
+                                            $sql = "SELECT user_name,user_password,user_profile,use_category_id from user where user_name = '$userName' and user_password = '$password';";
+                                            $sqlQuery = $conn->query($sql);
+                                            if ($sqlQuery->num_rows > 0) {
+                                                while ($row = $sqlQuery->fetch_assoc()) {
+                                                    $_SESSION['userProfile'] = $row['user_profile'];
+                                                    switch ($row['use_category_id']) {
+                                                        case 1:
+                                                            $_SESSION['userType'] = "admin";
+                                                            break;
+                                                        case 2:
+                                                            $_SESSION['userType'] = "faculty";
+                                                            break;
+                                                        case 3:
+                                                            $_SESSION['userType'] = "student";
+                                                            break;
+                                                        default:
+                                                            throw new Exception("Please Sign In");
+                                                            break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } catch (Exception $ex) {
+                                        echo " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+                                <button type=\"button\" class=\"btn-close \" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                        ERROR:  <strong>" . $err->getMessage() . "</strong> <br>TRY AGAIN
+                                </div>";
+                                    }
+
+                                    ?>
+
+                                    <form class="mx-1 mx-md-4" action="" method="POST">
                                         <div class="flex-row mb-2 d-flex align-items-center">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="mb-0 form-outline flex-fill">
-                                                <input type="text"  class="form-control" placeholder="User Name" name="name" required autocomplete="off" />
+                                                <input type="text" class="form-control" placeholder="User Name" name="userName" required autocomplete="off" />
                                             </div>
                                         </div>
                                         <div class="flex-row mb-2 d-flex align-items-center">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class="mb-0 form-outline flex-fill">
-                                                <input type="password"  id="pswd_input" class="form-control" placeholder="Password" name="password" minlength="6" required autocomplete="off" />
+                                                <input type="password" id="pswd_input" class="form-control" placeholder="Password" name="password" minlength="6" required autocomplete="off" />
                                             </div>
                                         </div>
                                         <div class="flex-row mb-2 d-flex align-items-center">

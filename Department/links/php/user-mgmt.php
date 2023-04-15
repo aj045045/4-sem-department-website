@@ -7,7 +7,7 @@ $conn = mysqli_connect($server, $user, $password, $database);
 
 try {
     if (isset($_POST['student-request'])) {
-        session_start();
+        // session_start();
         $password = $_POST['password'];
         $name = $_POST['name'];
         $mail = $_POST['mail'];

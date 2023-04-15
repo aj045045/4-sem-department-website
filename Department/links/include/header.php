@@ -24,14 +24,15 @@ echo '<nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
             <li class="nav-item">
                 <a class="nav-link text-light" href="faculty.php"><b>FACULTY</b></a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link text-light" href="broucher.php"><b>COURSES</b></a>
+        </li>
             <!--Add index.php-->
             <li class="nav-item">
                 <a class="nav-link text-light" href="event.php"><b>EVENTS</b></a>
             </li>
             <!--Add index.php-->
-            <li class="nav-item">
-                <a class="nav-link text-light" href="download.php"><b>SYLLABUS</b></a>
-            </li>
+           
             <li class="nav-item">
                 <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
             </li>';

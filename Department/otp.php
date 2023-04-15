@@ -40,15 +40,15 @@ session_start();
     <?php include "links/include/link.php"; ?>
 </head>
 
-<body class=" bg-gray-200">
+<body class="bg-gray-200 ">
     <?php include "links/include/header.php"; ?>
-    <div class=" bg-white my-56 mx-auto sm:w-96 w-4/5 shadow-xl rounded-xl px-3">
-        <p class=" capitalize mx-5 pt-3 text-3xl">e-mail verification</p>
-        <div class="flex flex-row"> <div class=" italic  mt-3 font-thin">A One Time Password has been sent: <div class=" font-semibold"> <?php echo $_SESSION['mail'];?></div></div></div>
+    <div class="w-4/5 px-3 mx-auto my-56 bg-white shadow-xl  sm:w-96 rounded-xl">
+        <p class="pt-3 mx-5 text-3xl capitalize ">e-mail verification</p>
+        <div class="flex flex-row"> <div class="mt-3 italic font-thin ">A One Time Password has been sent: <div class="font-semibold "> <?php echo $_SESSION['mail'];?></div></div></div>
         <form action="" method="post">
-            <div class="mx-auto px-10">
-                <input type="number" name="verified-otp" class="border-1 border-gray-500 rounded-md mt-4 w-full p-2 text-sm focus:ring focus:outline-none focus:ring-offset-2 focus: ring-blue-300 " placeholder="Enter verification code"><br>
-                <input type="submit" class="w-full bg-blue-600 rounded-md my-3 text-white focus:ring focus:outline-none focus:ring-blue-400 focus:ring-offset-1 " value="Submit" name="submit-otp">
+            <div class="px-10 mx-auto">
+                <input type="number" name="verified-otp" class="w-full p-2 mt-4 text-sm border-gray-500 rounded-md border-1 focus:ring focus:outline-none focus:ring-offset-2 focus: ring-blue-300 " placeholder="Enter verification code"><br>
+                <input type="submit" class="w-full my-3 text-white bg-blue-600 rounded-md focus:ring focus:outline-none focus:ring-blue-400 focus:ring-offset-1 " value="Submit" name="submit-otp">
             </div>
         </form>
     </div>

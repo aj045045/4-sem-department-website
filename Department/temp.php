@@ -20,7 +20,8 @@ class User
     }
     public function signOut()
     {
-        session_abort();
+        session_unset();
+        session_destroy();
         header("Location:./index.php");
     }
     public function __construct($v_userId, $v_userName, $v_userProfile, $v_userType)
