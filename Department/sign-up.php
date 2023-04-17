@@ -126,7 +126,7 @@ function isUserRegistered($name, $mail, $conn)
                                         $_SESSION['password'] = $password;
                                         $_SESSION['sent-otp'] = rand(11111, 99999);
                                         $message = "Your/One/Time/Password/is/" . $_SESSION['sent-otp'] . "/to/Request/for/Registration";
-                                        exec("C:\Users\anshy\AppData\Local\Programs\Python\Python311\python.exe ./links/php/mail.py $mail $message");
+                                        exec("C:\Python38\python.exe ./links/php/mail.py $mail $message");
                                         echo "<script>
                                         setTimeout(function() {
                                             window.open('otp.php', '_self');

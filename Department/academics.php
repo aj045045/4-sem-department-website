@@ -54,7 +54,7 @@
     <br>
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li>Academics</li>
         </ul>
         <div class="pill">Academics</div>
@@ -79,7 +79,7 @@
                             like Network Security, Information Retrieval, Query optimization Computer Vision,
                             e-learning,
                             Image Processing ,NLP and Data Mining.
-                            <a button type="button" class="btn btn-link" href="phd.php">Read More.. </a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More.. </a>
                         </p>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                             any area of Computer applications as well as prepares student for research and academics.
                             This
                             course also grooms students to become entrepreneurs.
-                            <a button type="button" class="btn btn-link" href="mca.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                         <!-- <hr> -->
                         <p style="font-size: 18px;">The PGDCSA program prepares the student to take up positions as
                             programmer, web designer and lab administrator.
-                            <a button type="button" class="btn btn-link" href="pgdca.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build data analysts, data mining experts and robotics and automation software engineers
-                            <a button type="button" class="btn btn-link" href="aiml.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build data analysts, data mining experts and robotics and automation software engineers
-                            <a button type="button" class="btn btn-link" href="aimld.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
                             soluta non
                             atque impedit perspiciatis doloremque consequunt
-                            <a button type="button" class="btn btn-link" href="msccs.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                         <!-- <hr> -->
                         <p>Apart from Research and Academics, this course is designed to
                             build network analysts, network architects and network/security consultants.
-                            <a button type="button" class="btn btn-link" href="mtechnc.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga
                             soluta non
                             atque impedit perspiciatis doloremque consequunt
-                            <a button type="button" class="btn btn-link" href="mtechwt.php">Read More..</a></button>
+                            <a type="button" class="btn btn-link" href="academics_details.php">Read More..</a>
                         </p>
                     </div>
                 </div>

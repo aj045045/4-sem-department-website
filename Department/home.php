@@ -130,7 +130,9 @@
                             <div style="float:left;" class="d-flex flex-wrap  w-75 my-1 p-1">
                                 <span class="p-1 bg-msg">
                                     Hello. I am DCS bot,You can ask me your queries.<br />
+                                    <button class="btn btn-primary" onclick='passMessage(this)'>Admission</button>
                                     <button class="btn btn-primary" onclick='passMessage(this)'>Faculty</button>
+                                    <button class="btn btn-primary" onclick='passMessage(this)'>About</button>
                                 </span>
                             </div>
                         </div>
