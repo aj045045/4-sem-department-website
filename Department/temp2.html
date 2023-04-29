@@ -1,9 +1,55 @@
-<?php include "db.php"?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-// // // TODO: Header
-// Navbar code
-echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav {
+        background-color: #333;
+        color: #fff;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav li {
+        position: relative;
+    }
+
+    nav a {
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        display: none;
+    }
+
+    nav ul li:hover>ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+
+    
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
         <div class="container flex-start">
             <a class="navbar-brand" href="home.php">
                 <img src="image/logos/logo1.webp" alt="Avatar Logo" style="width:65px;border-radius: 50%;">
@@ -31,28 +77,11 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <!--Add index.php-->
                     <li class="nav-item">
                         <a class="nav-link text-light" href="academics.php"><b>ACADEMICS</b></a>
-                        <ul>';
-                     $query = "SELECT `course_id`, `course_name` FROM `course`;";
-  
-  // FETCHING DATA FROM DATABASE
-  $result = $conn->query($query);
-  
-    if ($result->num_rows > 0) 
-    {
-        // OUTPUT DATA OF EACH ROW
-        while($row = $result->fetch_assoc())
-        {
-            $course_id=$row["course_id"];
-            $course_name=$row["course_name"];            
-         echo '<li><a href="academics_details.php?course_id='.$course_id.'">'.$course_name.'</a></li>';
-        }
-    } 
-    else {
-        echo "0 results";
-    }
-  
-  
-                        echo'</ul>
+                        <ul>
+                            <li><a href="#">Service 1</a></li>
+                            <li><a href="#">Service 2</a></li>
+                            <li><a href="#">Service 3</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="event.php"><b>Why Department of computer science</b></a>
@@ -101,7 +130,18 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
                     </li>
-</nav>
-';
-echo '<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
-?>
+                </ul>
+                <div class="top-header hidden-xs" style="padding:0px">
+                    <a class="nav-link text-light p-2 ms-lg-5" href="sign-up.php" target="_self">
+                        <b>SIGN UP</b></a>
+                    <a class="nav-link text-light p-2 ms-lg-5" href="sign-in.php" target="_self">
+                        <b>SIGN IN</b></a>
+                    <form action="links/php/search.php" method="GET" style="padding-top:0px">
+                        <input type="text" name="searchValue" style="text-transform: capitalize;">
+                        <input type="submit" value="Search" name="search" autocomplete="off">
+                    </form>
+                </div>
+    </nav>
+</body>
+
+</html>

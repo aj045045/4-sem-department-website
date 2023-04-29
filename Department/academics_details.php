@@ -1,5 +1,33 @@
 <!--  // TODO: Academics web pages
 -->
+<?php include "links/include/db.php"?>
+<?php
+    $course_id=$_GET["course_id"];
+?>
+
+<?php
+$query = "SELECT `course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image` FROM `course` where `course_id`=$course_id";
+
+  // FETCHING DATA FROM DATABASE
+$result = $conn->query($query);
+
+    if ($result->num_rows > 0) 
+    {
+        // OUTPUT DATA OF EACH ROW
+        while($row = $result->fetch_assoc())
+        {
+            $course_id=$row["course_id"];
+            $course_name=$row["course_name"];
+            $course_duration=$row["course_duration"];
+            $course_details=$row["course_details"];
+            $course_document=$row["course_document"];
+            $course_image=$row["course_image"];
+        }
+    }else{
+        echo "not found";
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,28 +50,23 @@
         <ul class="breadcrumb" style="padding-top: 130px;">
             <li><a href="home.php">Home</a></li>
             <li><a href="academics.php">Academics</a></li>
-            <li>MCA</li>
+            <li><?php echo $course_name; ?></li>
         </ul>
-        <div class="pill">Master of Computer Applications</div>
+        <div class="pill"><?php echo $course_name; ?></div>
         <br>    
     </div>
     <div class="container content">
                 <div class="row">
                     <div class="mx-auto text-center col-12" style="background-color:whitesmoke;">
-                        <img src="image/academics/logo/mca.webp" alt="logo" class="mx-auto" style="max-width: 100%; max-height: 100%;">
+                        <img src="<?php echo $course_image; ?>" alt="logo" class="mx-auto" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="text-left p-5 pt-0 col-12" style="background-color:whitesmoke;">
-                        <h3 class="fs-3">Masters of Computer Applications (MCA)</h3>
+                        <h3 class="fs-3"><?php echo $course_name; ?></h3>
                         <!-- <hr> -->
-                        <p style="font-size: 18px;">The MCA program prepares the student to take up high profile
-                            positions in the IT industry as analysts, system designers, developers and project managers
-                            in
-                            any area of Computer applications as well as prepares student for research and academics.
-                            This
-                            course also grooms students to become entrepreneurs.
+                        <p style="font-size: 18px;"><?php echo $course_details; ?>
                         </p>
                         <h3 class="fs-3 pt-2">Syllabus</h3>
-                            <a id="course-download-btn" class=" mt-2 btn btn-primary" target="_blank"  href="documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf">MCA</a>
+                            <a id="course-download-btn" class=" mt-2 btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
 
                     </div>
                 </div>

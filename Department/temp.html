@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  display: none;
+}
+
+nav ul li:hover > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul ul li {
+  width: 100%;
+}
+
+nav ul ul a:hover {
+  background-color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Mission & Vision</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Service 1</a></li>
+                    <li><a href="#">Service 2</a></li>
+                    <li><a href="#">Service 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+<script>
+    // This code block is optional, but it improves accessibility by making the dropdowns keyboard accessible.
+        const dropdownTriggers = document.querySelectorAll("nav ul li > a");
+        dropdownTriggers.forEach((trigger) => {
+            trigger.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    trigger.parentElement.querySelector("ul").classList.add("open");
+                }
+            });
+        });
+
+        const dropdownMenus = document.querySelectorAll("nav ul ul");
+        dropdownMenus.forEach((menu) => {
+            menu.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    event.preventDefault();
+                    menu.parentElement.querySelector("a").focus();
+                    menu.classList.remove("open");
+                }
+            });
+        });
+
+</script>
+</html>
