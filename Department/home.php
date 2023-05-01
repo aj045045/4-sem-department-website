@@ -326,6 +326,13 @@
                 moreText.style.display = "inline";
             }
         }
+        var input = document.getElementById("chat-message");
+        input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("chat-send-btn").click();
+        }
+        });
         $("#chat-send-btn").on("click", function(e) {
             e.preventDefault();
             var chattext = $("#chat-message").val();

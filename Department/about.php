@@ -37,7 +37,7 @@
     <div style="padding-right:7%;padding-left:7%;">
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li>About</li>
         </ul>
         <div class="container">
@@ -88,6 +88,10 @@
                 universities
                 teachers at state level and national level.</p>
         </div>
+        <br>
+        <div class="pill">Culture</div>
+        <br>         
+        Educate, encourage, promote and develop individuals for a technology of future  Culture characterized by integrity, mutual respect, enthusiasm, and hard work  Students co-operate and compete to acquire latest technology and to carve a niche in the IT industry
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d649.0649982208517!2d72.54517913626239!3d23.036029182865764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e859c09adf79f%3A0xe1d87bc33ed48fe7!2sDepartment%20of%20Computer%20Science%2C%20Maharshi%20Pingal%20-%20School%20of%20Advanced%20Computing%20and%20Information%20Technology!5e0!3m2!1sen!2sin!4v1679460183283!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <br><br><br>

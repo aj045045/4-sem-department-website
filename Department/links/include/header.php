@@ -19,10 +19,10 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <li class="nav-item">
                         <a class="nav-link  text-light" href="home.php"><b>HOME</b></a>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="about.php">About us</a></li>
+                            <li><a href="mission&vision.php">Mission & Vision</a></li>
                             <li><a href="#">EPG pathshala modules</a></li>
-                            <li><a href="#">Feedback system</a></li>
+                            <li><a href="feedback.php">Feedback system</a></li>
                             <li><a href="#">catering to Student diversity</a></li>
                             <li><a href="#">Mentor Mentee system</a></li>
                             <li><a href="#">professional memberships</a></li>
@@ -50,12 +50,10 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
     else {
         echo "0 results";
     }
-  
-  
                         echo'</ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>Why Department of computer science</b></a>
+                        <a class="nav-link text-light" href="event.php"><b>WHY DCS</b></a>
                         <ul>
                             <li><a href="#">state of art infrastructure</a></li>
                             <li><a href="#">100% placements</a></li>
@@ -64,7 +62,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>Student</b></a>
+                        <a class="nav-link text-light" href="event.php"><b>STUDENT</b></a>
                         <ul>
                             <li><a href="#">syllabus</a></li>
                             <li><a href="#">results</a></li>
@@ -72,7 +70,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="faculty.php"><b>Research</b></a>
+                        <a class="nav-link text-light" href="faculty.php"><b>RESEARCH</b></a>
                         <ul>
                             <li><a href="#">projects ongoing</a></li>
                             <li><a href="#">collaborations</a></li>
@@ -88,7 +86,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     </li>
                     <!--Add index.php-->
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>Happenings</b></a>
+                        <a class="nav-link text-light" href="event.php"><b>HAPPENINGS</b></a>
                         <ul>
                             <li><a href="#">News</a></li>
                             <li><a href="#">Events</a></li>
