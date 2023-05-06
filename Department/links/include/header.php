@@ -17,15 +17,17 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <!--Add index.php-->
                     <li class="nav-item">
-                        <a class="nav-link  text-light" href="home.php"><b>HOME</b></a>
+                    <a class="nav-link  text-light" href="home.php"><b>HOME</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
                         <ul>
-                            <li><a href="about.php">About us</a></li>
                             <li><a href="mission&vision.php">Mission & Vision</a></li>
-                            <li><a href="#">EPG pathshala modules</a></li>
+                            <li><a href="#">EPG Pathshala modules</a></li>
                             <li><a href="feedback.php">Feedback system</a></li>
-                            <li><a href="#">catering to Student diversity</a></li>
-                            <li><a href="#">Mentor Mentee system</a></li>
-                            <li><a href="#">professional memberships</a></li>
+                            <li><a href="student_diversity.php">Catering to Student Diversity</a></li>
+                            <li><a href="mentor_mentee.php">Mentor Mentee system</a></li>
+                            <li><a href="#">Professional Memberships</a></li>
                         </ul>
                     </li>
                     <!--Add index.php-->
@@ -55,9 +57,9 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="event.php"><b>WHY DCS</b></a>
                         <ul>
-                            <li><a href="#">state of art infrastructure</a></li>
-                            <li><a href="#">100% placements</a></li>
-                            <li><a href="#">No 1 in gujarat</a></li>
+                            <li><a href="#">State of Art Infrastructure</a></li>
+                            <li><a href="placement.php">100% placements</a></li>
+                            <li><a href="no_one.php">No 1 in gujarat</a></li>
                             <li><a href="#">Availability of HPC systems</a></li>
                         </ul>
                     </li>
@@ -79,7 +81,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="faculty.php"><b>FACULTY</b></a>
+                        <a class="nav-link text-light" href="https://www.gujaratuniversity.ac.in/details/18"><b>FACULTY</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="broucher.php"><b>COURSES</b></a>
@@ -93,12 +95,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                             <li><a href="#">Circular</a></li>
                             <li><a href="#">gallary</a></li>
                         </ul>
-                    </li>
-                    <!--Add index.php-->
-
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
-                    </li>
+                    </li>                    
 </nav>
 ';
 echo '<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';

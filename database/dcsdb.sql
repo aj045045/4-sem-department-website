@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 05, 2023 at 06:52 PM
+-- Generation Time: May 06, 2023 at 07:54 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -58,10 +58,25 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
-  `course_name` varchar(50) DEFAULT NULL,
+  `course_name` varchar(255) DEFAULT NULL,
   `course_duration` tinyint(1) DEFAULT NULL,
-  `course_details` text DEFAULT NULL
+  `course_details` text DEFAULT NULL,
+  `course_document` text NOT NULL,
+  `course_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`) VALUES
+(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/phd.webp'),
+(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp'),
+(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator. ', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/pgdca.webp'),
+(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aiml.webp'),
+(7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp'),
+(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp'),
+(9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp');
 
 -- --------------------------------------------------------
 
@@ -160,6 +175,28 @@ CREATE TABLE `faculty_research` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedback_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `phone`, `message`) VALUES
+(1, 'Umang', 'gohelumang@gmail.com', '8156076506', 'This site is good'),
+(3, 'umang', 'gohelumang12@gmail.com', '8156076506', 'This is good website');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -215,8 +252,9 @@ INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
 (1, 'hi,hiii,hey,hello', 'Greetings,How may I help you?', 'text'),
 (2, 'how are you?', 'I am fine', 'text'),
 (3, 'course,how many courses are there,how many courses are in rollwala computer center,how many courses are in departement of computer science,what are the courses', 'There are following courses in Department of computer science:<br/>\nMCA<br/>\nMSC(AI & ML)<br/>\nMSC(5 Year integrated)<br/>\nM.Tech<br/>\nPGDCA<br/>', 'text'),
-(4, 'about dcs,about rcc,about rollwala computer center,tell me about rollwala,give me information about rollwala,give me information about dcs', 'Department of Computer Science, Gujarat University is the most popular, well sought and best resourced Computer Science Department in Gujarat. Ever since its inception, Department of Computer Science has maintained and sustained its legacy as a premium institute in providing high quality education to produce personnel with professional and personal success as well as high ethics and social conduct. The resources at the department are well supported by extensive networked Computer facilities and software aids well along with skilled and experienced faculties. ', 'text'),
-(5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"faculty.php\">here.</a>', 'text');
+(4, 'about dcs,about rcc,about rollwala computer center,tell me about rollwala,give me information about rollwala,give me information about dcs', 'You can find a information about <a style=\"color:blue;\" href=\"about.php\">here.</a>', 'text'),
+(5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"faculty.php\">here.</a>', 'text'),
+(10, 'admission', 'You can find Information about Admission from <a style=\"color:blue;\" href=\"broucher.php\">here.</a>', 'text');
 
 -- --------------------------------------------------------
 
@@ -283,6 +321,28 @@ CREATE TABLE `syllabus` (
   `syllabus_document` varchar(50) DEFAULT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tmp_questions`
+--
+
+CREATE TABLE `tmp_questions` (
+  `tmp_question_id` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `type` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tmp_questions`
+--
+
+INSERT INTO `tmp_questions` (`tmp_question_id`, `question`, `type`) VALUES
+(24, 'msc', ''),
+(26, 'msc feess', ''),
+(27, 'mca fees', ''),
+(29, 'facutly', '');
 
 -- --------------------------------------------------------
 
@@ -394,6 +454,12 @@ ALTER TABLE `faculty_research`
   ADD KEY `fk_fac_research_faculty1` (`faculty_id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedback_id`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
@@ -457,6 +523,12 @@ ALTER TABLE `syllabus`
   ADD KEY `fk_syllabus_program1` (`course_id`);
 
 --
+-- Indexes for table `tmp_questions`
+--
+ALTER TABLE `tmp_questions`
+  ADD PRIMARY KEY (`tmp_question_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -489,7 +561,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `designation`
@@ -522,6 +594,12 @@ ALTER TABLE `faculty_research`
   MODIFY `research_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
@@ -543,7 +621,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `reference_paper`
@@ -574,6 +652,12 @@ ALTER TABLE `subject`
 --
 ALTER TABLE `syllabus`
   MODIFY `syllabus_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tmp_questions`
+--
+ALTER TABLE `tmp_questions`
+  MODIFY `tmp_question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `user`

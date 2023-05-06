@@ -1,6 +1,24 @@
 <!--  // TODO: Academics web pages
 -->
-<?php include "links/include/db.php"?>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        #course-download-btn{
+            background-color: rgb(11, 64, 124);
+        }
+        #course-download-btn:hover{
+            background-color: #2babd0;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <?php include "links/include/header.php"?>
+    <?php include "links/include/db.php"?>
 <?php
     $course_id=$_GET["course_id"];
 ?>
@@ -25,26 +43,9 @@ $result = $conn->query($query);
         }
     }else{
         echo "not found";
-    }
+    }    
 ?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <style>
-        #course-download-btn{
-            background-color: rgb(11, 64, 124);
-        }
-        #course-download-btn:hover{
-            background-color: #2babd0;
-        }
-    </style>
-</head>
-
-<body>
-    
-    <?php include "links/include/header.php"?>
     <br>
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">

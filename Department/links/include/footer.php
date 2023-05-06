@@ -56,7 +56,7 @@ header{
                 <img src="image/logos/imap.webp" style="width:20px; display:inline-block;" >|
                 Gujarat University, Near Ambedkar Gate, University Area, Ahmedabad, Gujarat 380009
             </div>
-            <div class="tdrow">📞| 09727797105</div>
+            <div class="tdrow">📞| 26300877</div>
             <div class="tdrow">📧| admissions.dcs@gmail.com</div>
             <div class="tdrow">
                 <table>
