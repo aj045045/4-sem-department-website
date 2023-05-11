@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./Department/*','./Department/{course,php}/*','./Department/admin/*'],
+  prefix:"tw-",
+  content: ['./Department/{admin,links}/**/*.php'],
   theme: {
     extend: {},
   },
+  
   plugins: [],
 }

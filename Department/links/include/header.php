@@ -1,4 +1,4 @@
-<?php include "db.php"?>
+<?php include "db.php" ?>
 
 <?php
 // TODO: Header
@@ -14,10 +14,10 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <ul class="mt-2 navbar-nav me-auto mt-lg-0">
                     <!--Add index.php-->
                     <li class="nav-item">
-                    <a class="nav-link  text-light" href="home.php"><b>HOME</b></a>
+                    <a class="nav-link text-light" href="home.php"><b>HOME</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
@@ -34,25 +34,22 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="academics.php"><b>ACADEMICS</b></a>
                         <ul>';
-                     $query = "SELECT `course_id`, `course_name` FROM `course`;";
-  
-  // FETCHING DATA FROM DATABASE
-  $result = $conn->query($query);
-  
-    if ($result->num_rows > 0) 
-    {
-        // OUTPUT DATA OF EACH ROW
-        while($row = $result->fetch_assoc())
-        {
-            $course_id=$row["course_id"];
-            $course_name=$row["course_name"];            
-         echo '<li><a href="academics_details.php?course_id='.$course_id.'">'.$course_name.'</a></li>';
-        }
-    } 
-    else {
-        echo "0 results";
+$query = "SELECT `course_id`, `course_name` FROM `course`;";
+
+// FETCHING DATA FROM DATABASE
+$result = $conn->query($query);
+
+if ($result->num_rows > 0) {
+    // OUTPUT DATA OF EACH ROW
+    while ($row = $result->fetch_assoc()) {
+        $course_id = $row["course_id"];
+        $course_name = $row["course_name"];
+        echo '<li><a href="academics_details.php?course_id=' . $course_id . '">' . $course_name . '</a></li>';
     }
-                        echo'</ul>
+} else {
+    echo "0 results";
+}
+echo '</ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="event.php"><b>WHY DCS</b></a>
@@ -91,7 +88,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                         <a class="nav-link text-light" href="event.php"><b>HAPPENINGS</b></a>
                         <ul>
                             <li><a href="#">News</a></li>
-                            <li><a href="#">Events</a></li>
+                            <li><a href="event.php">Events</a></li>
                             <li><a href="#">Circular</a></li>
                             <li><a href="#">gallary</a></li>
                         </ul>

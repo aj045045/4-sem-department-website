@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 06, 2023 at 07:54 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2023 at 02:22 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -111,10 +111,16 @@ CREATE TABLE `event` (
   `event_venue` varchar(100) DEFAULT NULL,
   `event_start` datetime DEFAULT NULL,
   `event_end` datetime DEFAULT NULL,
-  `event_status` tinyint(4) DEFAULT NULL,
-  `event_category_id` int(11) NOT NULL,
-  `faculty_id` int(11) NOT NULL
+  `event_category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`event_id`, `event_title`, `event_description`, `event_venue`, `event_start`, `event_end`, `event_category_id`) VALUES
+(4, 'DevTools', 'Tech kauchalya is an event \r\norganized by the department of computer science to promote technical skills ', 'Department of computer Science', '2023-04-16 00:00:00', '2023-04-20 00:00:00', 1),
+(6, 'Tech Kaushilya', 'A Technical Event organized by the Department of computer science. In which student can participate in those event many college has participate in this event. It is organized on april 20 to april 22. Their are technical event like footwall, gully cricket, tennis etc. and technical event like query relay and  ', 'Upasana & Department of computer Science', '2023-04-20 10:00:00', '2023-04-22 18:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -126,6 +132,16 @@ CREATE TABLE `event_category` (
   `event_category_id` int(11) NOT NULL,
   `event_category_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `event_category`
+--
+
+INSERT INTO `event_category` (`event_category_id`, `event_category_type`) VALUES
+(1, 'technical'),
+(2, 'workshop'),
+(3, 'seminar'),
+(4, 'Webinar');
 
 -- --------------------------------------------------------
 
@@ -230,6 +246,17 @@ CREATE TABLE `photos` (
   `photo_document` varchar(50) DEFAULT NULL,
   `event_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`photo_id`, `photo_document`, `event_id`) VALUES
+(7, './image/events/event-4.1.webp', 4),
+(8, './image/events/event-4.2.webp', 4),
+(11, './image/events/event-6.1.webp', 6),
+(12, './image/events/event-6.2.webp', 6),
+(13, './image/events/event-6.3.webp', 6);
 
 -- --------------------------------------------------------
 
@@ -429,8 +456,7 @@ ALTER TABLE `designation`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`event_id`),
-  ADD KEY `fk_event_evt_cat` (`event_category_id`),
-  ADD KEY `fk_event_faculty1` (`faculty_id`);
+  ADD KEY `fk_event_evt_cat` (`event_category_id`);
 
 --
 -- Indexes for table `event_category`
@@ -573,13 +599,13 @@ ALTER TABLE `designation`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `event_category`
 --
 ALTER TABLE `event_category`
-  MODIFY `event_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `event_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `faculty`
@@ -615,7 +641,7 @@ ALTER TABLE `news_category`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -689,74 +715,11 @@ ALTER TABLE `comments`
   ADD CONSTRAINT `fk_comments_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
--- Constraints for table `event`
---
-ALTER TABLE `event`
-  ADD CONSTRAINT `fk_event_evt_cat` FOREIGN KEY (`event_category_id`) REFERENCES `event_category` (`event_category_id`),
-  ADD CONSTRAINT `fk_event_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`);
-
---
 -- Constraints for table `faculty`
 --
 ALTER TABLE `faculty`
   ADD CONSTRAINT `fk_faculty_designation1` FOREIGN KEY (`designation_id`) REFERENCES `designation` (`designation_id`),
   ADD CONSTRAINT `fk_faculty_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
-
---
--- Constraints for table `faculty_research`
---
-ALTER TABLE `faculty_research`
-  ADD CONSTRAINT `fk_fac_research_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`);
-
---
--- Constraints for table `news`
---
-ALTER TABLE `news`
-  ADD CONSTRAINT `fk_news_news_cat1` FOREIGN KEY (`news_category_id`) REFERENCES `news_category` (`news_category_id`);
-
---
--- Constraints for table `photos`
---
-ALTER TABLE `photos`
-  ADD CONSTRAINT `fk_photos_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`);
-
---
--- Constraints for table `reference_paper`
---
-ALTER TABLE `reference_paper`
-  ADD CONSTRAINT `fk_subject_doc_subject1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`);
-
---
--- Constraints for table `result`
---
-ALTER TABLE `result`
-  ADD CONSTRAINT `fk_result_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`),
-  ADD CONSTRAINT `fk_result_subject1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`);
-
---
--- Constraints for table `student`
---
-ALTER TABLE `student`
-  ADD CONSTRAINT `fk_student_course1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
-  ADD CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
-
---
--- Constraints for table `subject`
---
-ALTER TABLE `subject`
-  ADD CONSTRAINT `fk_subject_program1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
-
---
--- Constraints for table `syllabus`
---
-ALTER TABLE `syllabus`
-  ADD CONSTRAINT `fk_syllabus_program1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `use_category_id` FOREIGN KEY (`use_category_id`) REFERENCES `user_category` (`use_category_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
