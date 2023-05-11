@@ -64,7 +64,7 @@ if ($value == true) {
     {
         public function viewPaper()
         {
-        }
+        }             
     }
 
     // * @audit-info # Class Result

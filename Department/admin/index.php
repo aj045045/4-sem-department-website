@@ -24,9 +24,7 @@ if (isset($_POST['userIdDeclined'])) {
 </head>
 
 <body class=" bg-slate-300">
-    <div class="">
-        button*
-    </div>
+<!-- Student request -->
     <?php
     $sql = "SELECT u.user_id, u.user_name, u.user_email,s.student_batch_year, s.student_sem, c.course_name 
         FROM user u 

@@ -15,11 +15,12 @@
             height: 5in;
             margin: 5% 10%;
             width: 80%;
+            background: whitesmoke;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-slate-300">
     <?php include "links/include/header.php" ?>
 
     <div class=" sm:grid sm:grid-cols-4 space-y-3 mt-40 mb-20  mx-8">
@@ -35,7 +36,7 @@
     $scan = array('aiml.html', 'mca.html', 'msc.html', 'mtec.html', 'pgdcsa.html');
     foreach ($scan as $file) {
         if (is_file("./$file")) {
-            echo '<div class="w-2/4 sm:pl-44 pl-16 mx-auto sm:text-2xl text-sm text-white bg-red-800 ">NEW COURSES</div><iframe src= ./' . $file . '></iframe><br>';
+            echo '<div class="w-2/4 sm:pl-44 pl-16 mx-auto sm:text-2xl sm:mb-1 text-sm text-white bg-red-800 ">NEW COURSES</div><iframe src= ./' . $file . '></iframe><br>';
         }
     }
     ?>
