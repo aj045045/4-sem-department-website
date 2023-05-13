@@ -62,6 +62,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../links/bs5/bs.min.css">
     <script src="./include/js/bootstrap.bundle.min.js"></script>
+    
     <link rel="stylesheet" href="./../links/css/tw.css">
     <title>Event </title>
     <style>
@@ -162,7 +163,7 @@ try {
     <div class=" tw-flex tw-flex-row tw-m-8">
         <div class="tw-shadow-md tw-shadow-slate-400 sm:tw-w-3/4 tw-flex sm:tw-flex-row tw-flex-col tw-bg-white tw-mx-8 tw-rounded-md sm:tw-h-10">
             <button type="button" class="tw-flex sm:tw-flex-row tw-flex-col tw-my-2 " data-bs-toggle="modal" data-bs-target="#modalId">
-                <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-h-6" id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
+                <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-h-6 " id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
                 <!-- Modal button -->
                 Do you want to add event in for the department of computer science ?
             </button>
@@ -302,7 +303,7 @@ try {
 
     <!-- @audit-info Event list -->
     <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-mx-20 tw-p-10 tw-rounded-md">
-        <div class=" tw-mx-96 tw-capitalize tw-text-5xl"  style="font-family: Brush Script MT;">event list</div>
+        <div class=" tw-text-center tw-capitalize tw-text-5xl"  style="font-family: Brush Script MT;">event list</div>
         <?php
         $query = "SELECT  ev.event_id,ec.event_category_type, ev.event_title, ev.event_description, ev.event_venue, ev.event_start, ev.event_end FROM event_category as ec inner join event ev on ec.event_category_id = ev.event_category_id  order by ev.event_id  desc";
         $resultData = $dataBase->prepare($query);

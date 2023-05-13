@@ -80,14 +80,14 @@ echo '</ul>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="https://www.gujaratuniversity.ac.in/details/18"><b>FACULTY</b></a>
                     </li>
-                    <li class="nav-item">
+                 <!--  <li class="nav-item">
                         <a class="nav-link text-light" href="broucher.php"><b>COURSES</b></a>
-                    </li>
+                    </li>-->
                     <!--Add index.php-->
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>HAPPENINGS</b></a>
+                        <a class="nav-link text-light" href="#"><b>HAPPENINGS</b></a>
                         <ul>
-                            <li><a href="#">News</a></li>
+                            <li><a href="news.php">News</a></li>
                             <li><a href="event.php">Events</a></li>
                             <li><a href="#">Circular</a></li>
                             <li><a href="#">gallary</a></li>
@@ -95,5 +95,5 @@ echo '</ul>
                     </li>                    
 </nav>
 ';
-echo '<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
+echo '<button class=" tw-animate-bounce" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
 ?>

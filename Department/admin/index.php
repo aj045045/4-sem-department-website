@@ -1,16 +1,3 @@
-<?php
-include "./../links/include/db.php";
-if (isset($_POST['userIdApproved'])) {
-    $user_id = $_POST['userIdApproved'];
-    $sql = "UPDATE `user` SET  `use_category_id` = 3 WHERE user_id = $user_id ";
-    $result = $conn->query($sql);
-}
-if (isset($_POST['userIdDeclined'])) {
-    $user_id = $_POST['userIdDeclined'];
-    $sql = "CALL delete_student('$user_id')";
-    $result = $conn->query($sql);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,59 +5,50 @@ if (isset($_POST['userIdDeclined'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../links/css/output.css">
     <title>Admin</title>
+    <link rel="stylesheet" href="./../links/bs5/bs.min.css">
+    <script src="./include/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./../links/css/tw.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
-<body class=" bg-slate-300">
-<!-- Student request
-    <?php
-    $sql = "SELECT u.user_id, u.user_name, u.user_email,s.student_batch_year, s.student_sem, c.course_name 
-        FROM user u 
-        INNER JOIN student s ON u.user_id= s.user_id 
-        INNER JOIN course c ON s.course_id = c.course_id 
-        WHERE u.use_category_id = 0;";
-    $sqlQuery = $conn->query($sql);
-    if ($sqlQuery->num_rows > 0) {
-    ?>
-        <div class="w-4/5 mx-auto bg-white rounded-lg shadow-lg ">
-            <table class="w-8/12 mx-auto mt-10 text-sm text-justify table-auto sm:w-11/12 font-sanserif sm:text-md ">
-                <thead class="font-bold text-center capitalize">
-                    <tr class="border-b-2 border-gray-400 sm:border-b-2 ">
-                        <td class="py-4">Status</td>
-                        <td class="py-4">Name</td>
-                        <td class="py-4">Email</td>
-                        <td class="py-4">Course</td>
-                        <td class="py-4">Semester</td>
-                        <td class="py-4">Batch</td>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <?php
-                    while ($row = $sqlQuery->fetch_assoc()) {
-                    ?>
-                        <tr class="font-sans hover:bg-slate-200 ">
-                            <td class="py-2">
-                                <form action="" method="post" id="approved">
-                                    <input checked type="checkbox" name="userIdDeclined" value="<?php echo $row['user_id']; ?>" class="w-4 h-4 accent-blue-500">
-                                    <input checked type="checkbox" name="userIdApproved" value="<?php echo $row['user_id']; ?>" class="w-4 h-4 sm:ml-4 accent-red-500 l-2">
-                                </form>
-                            </td>
-                            <td class="py-2"><?php echo ucfirst($row['user_name']); ?></td>
-                            <td class="py-2"><?php echo $row['user_email']; ?></td>
-                            <td><?php echo $row['course_name']; ?></td>
-                            <td><?php echo $row['student_sem']; ?></td>
-                            <td><?php echo $row['student_batch_year']; ?></td>
-                        </tr>
-                <?php
-                    }
-                }
-                ?>
-                </tbody>
-            </table>
+<body class=" tw-flex-col tw-flex tw-p-10 tw-gap-y-10">
+
+    <!-- Div for Add / Update Data  -->
+    <div class="tw-flex-col tw-flex tw-gap-y-4">
+        <div class="tw-flex-row tw-flex">
+            <div class="">Col</div>
+            <div class="">Col</div>
         </div>
-        <script>
+        <div class="tw-flex-row tw-flex">
+            <div class="">Col</div>
+            <div class="">Col</div>
+        </div>
+        <div class="tw-flex-row tw-flex">
+            <div class="">Col</div>
+            <div class="">Col</div>
+        </div>
+    </div>
+
+    <!-- Div for Summary in cards  -->
+    <div class="">ANSH</div>
+
+    <!-- Div for Details of Faculty, Awards and collaborators -->
+    <div class=" tw-bg-slate-400 tw-text-center tw-shadow-lg tw-shadow-slate-500 tw-rounded-md">
+        <div class=" tw-capitalize tw-text-7xl tw-my-5" style="font-family: Brush Script MT;">Details</div>
+        <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-slate-300 tw-rounded-lg tw-m-5 tw-shadow-lg tw-shadow-slate-500">
+            <div class=" tw-capitalize tw-text-center tw-font-serif tw-text-4xl tw-my-5">Faculty</div>
+        </div>
+        <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-slate-300 tw-rounded-lg tw-m-5 tw-shadow-lg tw-shadow-slate-500">
+            <div class=" tw-capitalize tw-text-center tw-font-serif tw-text-4xl tw-my-5">Awards</div>
+        </div>
+        <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-slate-300 tw-rounded-lg tw-m-5 tw-shadow-lg tw-shadow-slate-500">
+            <div class=" tw-capitalize tw-text-center tw-font-serif tw-text-4xl tw-my-5">collaborators</div>
+        </div>
+    </div>
+
+    <!-- @audit-info Jquery to form submit on click 
+            <script>
             $(document).ready(
                 function() {
                     $("input:checkbox").change(
