@@ -21,14 +21,10 @@
 </head>
 <body>
     <?php include './links/include/header.php' ?>
-<br>
-<br>
-<br>
-<br>
-<br>
+
     <!-- @audit-info Event list -->
-    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-mx-20 tw-p-10 tw-rounded-md tw-m-80" data-aos="zoom-in-up" data-aos-duration="2000">
-        <div class=" tw-text-center tw-capitalize tw-text-5xl"  style="font-family: Brush Script MT;">event list</div>
+    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-mx-20 tw-p-10 tw-rounded-md tw-m-40" data-aos="zoom-in-up" data-aos-duration="2000">
+        <div class=" tw-text-center tw-capitalize tw-text-5xl"  style="font-family: Brush Script MT;">events </div>
         <?php
         $query = "SELECT  ev.event_id,ec.event_category_type, ev.event_title, ev.event_description, ev.event_venue, ev.event_start, ev.event_end FROM event_category as ec inner join event ev on ec.event_category_id = ev.event_category_id  order by ev.event_id  desc";
         $resultData = $dataBase->prepare($query);
@@ -54,9 +50,6 @@
         }
         ?>
     </div>
-<br>
-<br>
-<br>
     <?php include './links/include/footer.php' ?>
 </body>
 </html>

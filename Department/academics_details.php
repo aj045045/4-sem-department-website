@@ -61,13 +61,13 @@ $result = $conn->query($query);
                     <div class="mx-auto text-center col-12" style="background-color:whitesmoke;">
                         <img src="<?php echo $course_image; ?>" alt="logo" class="mx-auto" style="max-width: 100%; max-height: 100%;">
                     </div>
-                    <div class="text-left p-5 pt-0 col-12" style="background-color:whitesmoke;">
+                    <div class="p-5 pt-0 text-left col-12" style="background-color:whitesmoke;">
                         <h3 class="fs-3"><?php echo $course_name; ?></h3>
                         <!-- <hr> -->
                         <p style="font-size: 18px;"><?php echo $course_details; ?>
                         </p>
-                        <h3 class="fs-3 pt-2">Syllabus</h3>
-                            <a id="course-download-btn" class=" mt-2 btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
+                        <h3 class="pt-2 fs-3">Syllabus</h3>
+                            <a id="course-download-btn" class="mt-2  btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
 
                     </div>
                 </div>

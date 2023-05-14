@@ -165,7 +165,7 @@ try {
             <button type="button" class="tw-flex sm:tw-flex-row tw-flex-col tw-my-2 " data-bs-toggle="modal" data-bs-target="#modalId">
                 <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-h-6 " id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
                 <!-- Modal button -->
-                Do you want to add event in for the department of computer science ?
+                Do you want to add event in the department of computer science ?
             </button>
         </div>
         <div class="tw-shadow-md tw-shadow-slate-400 sm:tw-w-1/4 tw-flex sm:tw-flex-row tw-flex-col tw-bg-white tw-mx-8 tw-px-10 tw-py-2 tw-rounded-md sm:tw-h-10">
@@ -263,8 +263,8 @@ try {
                             </tr>
                         </table>
                         <div class=" modal-footer">
-                            <button type="button" class="hover:tw-border-none tw-border-2 tw-rounded-md tw-border-red-400 tw-text-red-500 tw-w-24 hover:tw-bg-red-500 hover:tw-text-white" data-bs-dismiss="modal">Close</button>
-                            <input class="tw-w-24 tw-rounded-md tw-bg-blue-500 tw-text-white focus:tw-ring-2 focus:tw-ring-offset-1 focus:tw-ring-blue-400" type="submit" value="Submit" name="eventSubmit">
+                            <button type="button" class=" tw-bg-transparent tw-border-4 tw-border-red-500 tw-w-24 tw-text-red-700 tw-text-lg tw-rounded-lg hover:tw-bg-red-500 hover:tw-text-white" data-bs-dismiss="modal">Close</button>
+                            <input class="tw-w-24 tw-rounded-md tw-h-9 tw-bg-blue-600 tw-text-white focus:tw-ring-2 focus:tw-ring-offset-1 focus:tw-ring-blue-400" type="submit" value="Submit" name="eventSubmit">
                         </div>
                     </form>
                 </div>
@@ -292,8 +292,8 @@ try {
                         </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="hover:tw-border-none tw-border-2 tw-rounded-md tw-border-red-400 tw-text-red-500 tw-w-24 hover:tw-bg-red-500 hover:tw-text-white" data-bs-dismiss="modal">Close</button>
-                    <input class="tw-w-24 tw-rounded-md tw-bg-blue-500 tw-text-white focus:tw-ring-2 focus:tw-ring-offset-1 focus:tw-ring-blue-400" type="submit" value="Submit" name="eventCategorySubmit">
+                    <button type="button" class=" tw-bg-transparent tw-border-4 tw-border-red-500 tw-w-24 tw-text-red-700 tw-text-lg tw-rounded-lg hover:tw-bg-red-500 hover:tw-text-white" data-bs-dismiss="modal">Close</button>
+                    <input class="tw-w-24 tw-rounded-md tw-bg-blue-600 tw-text-white focus:tw-ring-2 focus:tw-ring-offset-1 focus:tw-ring-blue-400 tw-h-9" type="submit" value="Submit" name="eventCategorySubmit">
                 </div>
                 </form>
             </div>
