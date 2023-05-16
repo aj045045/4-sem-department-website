@@ -1,3 +1,41 @@
+<?php
+   $host = "localhost";
+   $username = "root";
+   $password = "";
+   $database = "dcsdb";
+
+   $connection = mysqli_connect($host, $username, $password, $database);
+
+   if (mysqli_connect_errno()) {
+       die("Connection failed: " . mysqli_connect_error());
+   }
+
+
+
+
+$query = "SELECT seat_number, boys_fees FROM course WHERE course_id = 9";
+$result = mysqli_query($connection, $query);
+
+if (!$result) {
+   die("Query failed: " . mysqli_error($connection));
+}
+
+if (mysqli_num_rows($result) == 1) {
+   $row = mysqli_fetch_assoc($result);
+   $seatNumber = $row["seat_number"];
+   $boysFees = $row["boys_fees"];
+   
+   
+} else {
+   echo "No data found for course with ID 9";
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,13 +101,13 @@
                             & Communications.
                         </li>
                         <li>
-                            <u> Number of seats in M.Tech.(NT):</u>-25
+                            <u> Number of seats in M.Tech.(NT):-</u><?php echo  $seatNumber . "<br>";?>
                         </li>
                         <li>
-                            <u> Number of seats in M.Tech.(WT):</u>-25
+                            <u> Number of seats in M.Tech.(WT):-</u><?php echo  $seatNumber . "<br>";?>
                         </li>
                         <li>
-                            </b> Fee Structure:25,000 per semester </b>
+                            </b> Fee Structure:<?php echo  $boysFees ."<br>";?></b>
                         </li>
                     </ul>
                 </td>

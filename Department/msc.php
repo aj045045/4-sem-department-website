@@ -1,3 +1,47 @@
+<?php
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "dcsdb";
+
+    $connection = mysqli_connect($host, $username, $password, $database);
+
+    if (mysqli_connect_errno()) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+
+
+
+$query = "SELECT seat_number, boys_fees, girls_fees FROM course WHERE course_id = 8";
+$result = mysqli_query($connection, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($connection));
+}
+
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+    $seatNumber = $row["seat_number"];
+    $boysFees = $row["boys_fees"];
+    $girlsFees = $row["girls_fees"];
+    
+    // echo "Seat Number: " . $seatNumber . "<br>";
+    // echo "Boys Fees: " . $boysFees . "<br>";
+    // echo "Girls Fees: " . $girlsFees . "<br>";
+} else {
+    echo "No data found for course with ID 8";
+}
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,8 +76,8 @@
                 class="w-full h-20 rounded-lg sm:h-36">
             <div
                 class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-100 to-blue-900">
-                <div class="text-lg sm:text-2xl">M.Sc.</div>
-                <div class="font-serif text-sm font-thin sm:text-xl">(Artificial Intelligence & Machine Learning)</div>
+                <div class="text-lg sm:text-2xl">5 Year Integrated Msc(Computer Science)</div>
+                <div class="font-serif text-sm font-thin sm:text-xl">(Master of Science-Computer Science)</div>
             </div>
         </div>
     </div>
@@ -41,41 +85,54 @@
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
         <thead class="text-center text-white bg-blue-800 ">
             <tr>
-                <th class="py-2 pr-5">Admission</th>
-                <th class="py-2 pr-5"> About Course</th>
+                <th class="py-2 pr-5">Eligibility</th>
+                <th class="py-2 pr-5"> About Five Year Integrated Msc(Computer Science) </th>
                 <th class="py-2 pr-5"> Subject Taught</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="px-6">
-                    <ul class="list-disc">
+                <td>
+                    <li>
+                        12th Science(A,B,AB group) or Commerce
+                    </li>
+
+                    <li>A student should have passed the qualifying examination with the following subjects.</li>
+
+                    <li>English</li>
+                    <li>Mathematics or Physics or Chemistry or Statistics or Accountancy</li>
+
+                </td>
+                <td class="px-6 pt-0">
+
+                    <ul>
                         <li>
-                            Applications invited through online admission portal of Gujarat University Admission granted
-                            on merit basis.
+                            5 year Integrated Course with multiple specialization options available . The course is
+                            designed as per NEP 2020 guidelines.Multiple entry and exit options are available . Exit
+                            options available for students after 3 years with B.Sc. degree.
                         </li>
-                    </ul>
-                </td>
-
-                <td class="px-6">
-                    <ul class="list-disc sm:pl-6">
-                        <li>2 years post graduate course with specialization in Artificial Intelligence & Machine
-                            Learning.
+                        <li>
+                            <u> Number of Seats:</u><?php echo  $seatNumber . "<br>";?>
                         </li>
-                        <li><b>Number of Seats: 30</b></li>
-                        <li> <b>Fee Structure: Rs. 27,000 per semester</b></li>
 
+                        <li>
+                            </b> Fee Structure:<?php echo  $boysFees . "<br>";?></b>
+                        </li>
                     </ul>
                 </td>
                 <td class="px-6">
                     <ul class="list-disc sm:pl-6">
-                        <li> Programming (Python ,C,C++),Machine Learning ,Artificial Intelligence ,Deep Learning
-                            ,Mathematics ,Statistics, Computer Vision,NLP,Data Science and applications of these
-                            technologies.Project work in every semester.</li>
-
-                    </ul>
+                        <li>
+                            In this course ,students learn variety of subjects such as Programming skills and logic
+                            development (using C++,Advanced JAVA,Adv Python, Android and PHP),Data Analytics,Cloud
+                            Computing ,Web Security,Artificial Intelligence and Machine Learning,Advanced Networking
+                            ,Full Stack Development,DBMS and many more.
+                        </li>
                 </td>
-
+                </ul>
+                </li>
+                </ul>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -83,23 +140,35 @@
     <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
         <thead class="text-center text-white bg-blue-800 ">
             <tr>
-                <th class="py-2 pr-5">Eligibility</th>
+                <th class="py-2 pr-5">Admission Process</th>
                 <th class="py-2 pr-5"> Career Prospects</th>
+
             </tr>
         </thead>
         <tbody>
             <tr>
+
                 <td class="px-6">
-                    B.Sc.(Computer Science,Information
-                    Technology,Mathematics,Statistics,Physics,Electronics),B.E./B.Tech.(All Branches),BCA.The students
-                    of Universities other than Gujarat will need eligibility certificate according to Gujarat University
-                    rules.
+                    <ul>
+                        <li>
+                            Admission process through Gujarat University
+                            online admission Portal</li>
+                        <li>
+                            <a href="https://www.gujaratuniversity.ac.in/">Click here for more</a>
+                        </li>
+                    </ul>
 
                 </td>
                 <td class="px-6">
+                    <ul>
+                        <li>
+                            Software Developer ,Software Craftsmen ,Full Stack , Application Developer,Data Analysis
+                            ,Quality Analyst ,Website Designer/Developer Mobile app developer,AI developer,Business
+                            Analyst,Database Administrator,Game Developer,Research Fellow
 
-                    Data Analyst,AI developer, Business Analyst,Data Engineer,Machine Learning Engineer,Business
-                    Intelligence(BI) Developer,Research Scientist,Computer vision/NLP developer/Scientist.
+                        </li>
+
+                    </ul>
                 </td>
             </tr>
         </tbody>

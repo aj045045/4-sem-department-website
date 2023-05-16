@@ -12,6 +12,16 @@
         #course-download-btn:hover{
             background-color: #2babd0;
         }
+   
+
+
+.btn btn-custom {
+  background-color: #ff9900; /* set background color to orange */
+  color: #ffffff; /* set text color to white */
+  border-color: #ff9900; /* set border color to orange */
+}
+
+        
     </style>
 </head>
 
@@ -24,7 +34,7 @@
 ?>
 
 <?php
-$query = "SELECT `course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image` FROM `course` where `course_id`=$course_id";
+    $query = "SELECT `course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`,`brouchers` FROM `course` where `course_id`=$course_id";
 
   // FETCHING DATA FROM DATABASE
 $result = $conn->query($query);
@@ -40,6 +50,7 @@ $result = $conn->query($query);
             $course_details=$row["course_details"];
             $course_document=$row["course_document"];
             $course_image=$row["course_image"];
+            $brocher=$row["brouchers"];
         }
     }else{
         echo "not found";
@@ -67,8 +78,14 @@ $result = $conn->query($query);
                         <p style="font-size: 18px;"><?php echo $course_details; ?>
                         </p>
                         <h3 class="pt-2 fs-3">Syllabus</h3>
-                            <a id="course-download-btn" class="mt-2  btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
+                            <a id="course-download-btn" class="mt-2 btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
+                           
+                            
+                            <div class="d-flex justify-content-end align-items-end" style="height: 2vh">
+                            <button class="text-white btn btn-outline-white" style="background-color: #00498D;" onClick="location.href='<?php echo $brocher?>'">Click me</button>
+                                </div>
 
+                            
                     </div>
                 </div>
             </div>

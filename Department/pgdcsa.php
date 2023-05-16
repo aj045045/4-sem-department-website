@@ -1,4 +1,44 @@
+<?php
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "dcsdb";
+
+    $connection = mysqli_connect($host, $username, $password, $database);
+
+    if (mysqli_connect_errno()) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+
+
+
+$query = "SELECT seat_number, boys_fees, girls_fees FROM course WHERE course_id = 5";
+$result = mysqli_query($connection, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($connection));
+}
+
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+    $seatNumber = $row["seat_number"];
+    $boysFees = $row["boys_fees"];
+    $girlsFees = $row["girls_fees"];
+    
+    // echo "Seat Number: " . $seatNumber . "<br>";
+    // echo "Boys Fees: " . $boysFees . "<br>";
+    // echo "Girls Fees: " . $girlsFees . "<br>";
+} else {
+    echo "No data found for course with ID 1";
+}
+
+
+?>
+
 <!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
@@ -65,7 +105,10 @@
                     <ul class="list-disc sm:pl-6">
                         <li>1-year Post Graduate Diploma Course with <B>System Development Project work</B>
                         </li>
-                        <li><u>Number of Seats:33+ EWS</u></li>
+                        <li><u>Number of Seats: <h3 class="fs-3"><?php  echo  $seatNumber . "<br>"; ?></h3>
+                           
+                            
+                        </u></li>
                         </li>
                     </ul>
                 </td>
@@ -98,10 +141,10 @@
                 <td class="px-6">
                     <ul>
                         <li>
-                            <b>Boys:</b>₹2250 per semester
+                            <b>Boys:</b><?php echo  $boysFees . "per Semester". "<br>";?>
                         </li>
                         <li>
-                            <b>Girls:</b>₹1500 per semester
+                            <b>Girls:</b><?php  echo  $girlsFees . "per Semester"."<br>";?>
                         </li>
                     </ul>
                 </td>

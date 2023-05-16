@@ -1,3 +1,42 @@
+<?php
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "dcsdb";
+
+    $connection = mysqli_connect($host, $username, $password, $database);
+
+    if (mysqli_connect_errno()) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+
+
+
+$query = "SELECT seat_number, boys_fees, girls_fees FROM course WHERE course_id = 2";
+$result = mysqli_query($connection, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($connection));
+}
+
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+    $seatNumber = $row["seat_number"];
+    $boysFees = $row["boys_fees"];
+    $girlsFees = $row["girls_fees"];
+    
+   
+} else {
+    echo "No data found for course with ID 2";
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +50,7 @@
 </head>
 
 <body class="mx-3 sm:mx-5">
-    <div class="flex flex-initial h-20 px-10 mt-6 sm:px-32 sm:h-32 bg-purple-900">
+    <div class="flex flex-initial h-20 px-10 mt-6 bg-purple-900 sm:px-32 sm:h-32">
         <div class="flex flex-initial w-full font-serif bg-white">
             <img src="./image/logos/logo.webp" alt="University Tower" class="h-auto mr-4 w-14 sm:mr-10 sm:w-24 ">
             <div class="flex flex-col ">
@@ -42,8 +81,6 @@
             <tr>
                 <th class="py-2 pr-5">Admission Process</th>
                 <th class="py-2 pr-5"> Master of Computer Applications</th>
-                <th class="py-2 pr-5">Admission</th>
-                <th class="py-2 pr-5"> Master of Computer Applications</th>
                 <th class="py-2 pr-5"> About MCA</th>
             </tr>
         </thead>
@@ -60,7 +97,7 @@
                 <td class="px-6 pt-0">In this course, Students learn variety of subjects such as programming skills and logic development ( using C++, Advance JAVA, Advance Python, Android and PHP ), Data Analytics, Cloud Computing, Web Security, Advanced Networking, Full Stack Development, Database Management Systems, Operating Systems, Software Engineering system Analysis and Development and many more.</td>
                 <td><ul class="list-disc sm:pl-6">
                     <li><b>Duration:- 2 years</b></li>
-                    <li><u>Number of Seats:-</u> 30 + EWS + other quotes as per Gujarat Government Norms</li>
+                    <li><u>Number of Seats:-</u> <?php echo  $seatNumber . "<br>";?>+ EWS + other quotes as per Gujarat Government Norms</li>
                     <li>Based on the interest of the students, elective subjects pertaining to following fields are offered 
                         <ul class="pl-6 list-disc sm:pl-8">
                             <li>Artificial Intelligence and Machine Learning</li>
@@ -89,8 +126,9 @@
                 <td>As per ACPC guidelines</td>
                 <td class="px-6">Software Development, Software Engineer, Data Analysts, Database Administrator, Quality Assurance Software Engineer, System Analyst, AI developer, Software craftsmen, Research Scientist, Business Analyst</td>
                 <td>
-                    <b>Boys:</b>Rs.3140/semester
-                    <b>Girls:</b>Rs.1700/semester
+                    <b>Boys:</b><?php echo  $boysFees . "<br>"; ?>/semester
+</br>
+                    <b>Girls:</b><?php echo  $girlsFees . "<br>"; ?>/semester
                 </td>
             </tr>
         </tbody>
