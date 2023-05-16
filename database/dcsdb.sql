@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 02:22 PM
+-- Generation Time: May 16, 2023 at 05:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -219,10 +219,17 @@ INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `phone`, `message`) VALU
 CREATE TABLE `news` (
   `news_id` int(11) NOT NULL,
   `news_title` varchar(50) DEFAULT NULL,
-  `news_image` varchar(50) DEFAULT NULL,
   `news_description` text DEFAULT NULL,
+  `expire_date` date NOT NULL,
   `news_category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_title`, `news_description`, `expire_date`, `news_category_id`) VALUES
+(2, 'Tech Kaushalaya', 'Tech kaushalaya is organized by the department of computer science to promote technical event among computer science folks', '2023-05-29', 2);
 
 -- --------------------------------------------------------
 
@@ -234,6 +241,16 @@ CREATE TABLE `news_category` (
   `news_category_id` int(11) NOT NULL,
   `news_category_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news_category`
+--
+
+INSERT INTO `news_category` (`news_category_id`, `news_category_type`) VALUES
+(1, 'course'),
+(2, 'event'),
+(3, 'placement'),
+(6, 'Work Shop');
 
 -- --------------------------------------------------------
 
@@ -629,13 +646,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `news_category`
 --
 ALTER TABLE `news_category`
-  MODIFY `news_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `photos`
