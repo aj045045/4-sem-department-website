@@ -62,21 +62,25 @@ CREATE TABLE `course` (
   `course_duration` tinyint(1) DEFAULT NULL,
   `course_details` text DEFAULT NULL,
   `course_document` text NOT NULL,
-  `course_image` text NOT NULL
+  `course_image` text NOT NULL,
+  `seat_number` int(11) NOT NULL,
+  `boys_fees` varchar(11) NOT NULL,
+  `girls_fees` varchar(11) NOT NULL,
+  `brouchers` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`) VALUES
-(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/phd.webp'),
-(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp'),
-(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator. ', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/pgdca.webp'),
-(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aiml.webp'),
-(7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp'),
-(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp'),
-(9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp');
+INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`, `seat_number`, `boys_fees`, `girls_fees`, `brouchers`) VALUES
+(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/phd.webp', 15, '₹20000', '₹20000', './error.php'),
+(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 20, '₹3140', '₹1700', './mca.php'),
+(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator. ', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/pgdca.webp', 33, '₹2250', '₹1500', './pgdcsa.ph'),
+(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aiml.webp', 30, '₹27000', '₹27000', './aiml.php'),
+(7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp', 30, '₹27000', '₹27000', './aiml.php'),
+(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
+(9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
 
 -- --------------------------------------------------------
 
