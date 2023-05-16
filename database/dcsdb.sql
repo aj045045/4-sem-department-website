@@ -81,7 +81,6 @@ INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_det
 (7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp', 30, '₹27000', '₹27000', './aiml.php'),
 (8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
 (9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
-
 -- --------------------------------------------------------
 
 --
