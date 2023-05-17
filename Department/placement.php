@@ -7,12 +7,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include "links/include/link.php" ?>
-    <style>
+<style>
+        .scroll_bar::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        img.img {
+            align-items: center;
+            max-height: 80px;
+            margin: auto;
+        }
+
+        .scroll_bar {
+            height: 1in;
+            padding-left: 7%;
+            padding-right: 7%;
+            margin: 4px, 4px;
+            /* background-color: whitesmoke; */
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            writing-mode: vertical-lr;
+        }
+
+        .scroll_bar:hover::-webkit-scrollbar-thumb {
+            border-radius: 50px;
+            background-color: grey;
+        }
         p {
             text-align: justify;
         }
         </style>
     <a href="./../"></a>
+
 </head>
 
 <body>
@@ -35,7 +63,24 @@
             <br>
             <p>The University is one of the most preferred campus for job placements by leading corporates. It has corporate linkages with over 80 companies which regularly conduct campus recruitment..</p>
         </div>
-        
+        <br><br><br>
+        <div class="pill "> collaborators</div><br>
+        <div class="scroll_bar">
+            <img class="img" src="image/collaborators/1scr.webp">
+            <img class="img" style="max-width:200px" src="image/collaborators/2scr.webp">
+            <img class="img" src="image/collaborators/3scr.webp">
+            <img class="img" src="image/collaborators/4scr.webp">
+            <img class="img" src="image/collaborators/5scr.webp">
+            <img class="img" src="image/collaborators/6scr.webp">
+            <img class="img" src="image/collaborators/7scr.webp">
+            <img class="img" src="image/collaborators/8scr.webp">
+            <img class="img" src="image/collaborators/9scr.webp">
+            <img class="img" src="image/collaborators/10scr.webp">
+            <img class="img" src="image/collaborators/11scr.webp">
+            <img class="img" src="image/collaborators/12scr.webp">
+            <img class="img" src="image/collaborators/13scr.webp">
+        </div>
+
     </div>
     <br><br><br>
     <?php include "links/include/footer.php" ?>

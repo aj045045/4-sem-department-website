@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 05:54 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost:3306
+-- Generation Time: May 17, 2023 at 05:11 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,7 +66,7 @@ CREATE TABLE `course` (
   `seat_number` int(11) NOT NULL,
   `boys_fees` varchar(11) NOT NULL,
   `girls_fees` varchar(11) NOT NULL,
-  `brouchers` varchar(11) NOT NULL
+  `brouchers` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -74,13 +74,13 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`, `seat_number`, `boys_fees`, `girls_fees`, `brouchers`) VALUES
-(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/phd.webp', 15, '₹20000', '₹20000', './error.php'),
-(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 20, '₹3140', '₹1700', './mca.php'),
-(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator. ', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/pgdca.webp', 33, '₹2250', '₹1500', './pgdcsa.ph'),
-(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aiml.webp', 30, '₹27000', '₹27000', './aiml.php'),
-(7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp', 30, '₹27000', '₹27000', './aiml.php'),
-(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
-(9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
+(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.\nA Ph.D. in Computer Science is a doctoral degree that represents the highest level of academic achievement in the field of computer science. It is a research-focused degree that typically requires several years of study and independent research.', '', 'image/academics/logo/phd.webp', 15, '₹20000', '₹20000', './error.php'),
+(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.MCA programs focus on providing in-depth knowledge and practical skills related to computer applications and software development.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 20, '₹3140', '₹1700', './mca.php'),
+(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'PGDCA stands for Post Graduate Diploma in Computer Applications. It is a postgraduate diploma program that focuses on providing students with practical skills and knowledge in computer applications and software development.The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator.', 'documents/syllabus/PGDCSA 2018.pdf', 'image/academics/logo/pgdca.webp', 33, '₹2250', '₹1500', './pgdcsa.php'),
+(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'MSc AI/ML stands for Master of Science in Artificial Intelligence/Machine Learning. It is a specialized postgraduate degree program that focuses on the fields of artificial intelligence (AI) and machine learning (ML). MSc AI/ML programs provide advanced training in the theory and practical applications of AI and ML. The curriculum typically includes courses such as machine learning algorithms, data mining, deep learning, natural language processing, computer vision, statistical methods, reinforcement learning, and AI ethics.', 'documents/syllabus/M.Sc AI&ML Defence sem 1 & 2 July 2020.pdf', 'image/academics/logo/aiml.webp', 30, '₹27000', '₹27000', './aiml.php'),
+(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'An MSc CS 5-year integrated course is a specialized academic program that combines undergraduate and postgraduate studies in Computer Science. It is designed to provide students with a comprehensive understanding of computer science concepts and skills over an extended period of study.The MSc CS 5-year integrated course is structured to seamlessly integrate undergraduate (BSc) and postgraduate (MSc) studies into a single program. It eliminates the need for a separate application process for the master\'s program, allowing students to transition smoothly from their undergraduate studies to advanced coursework.', 'documents/syllabus/M.Sc Integrated sem 1 to 3 w.e.f 2021.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
+(9, 'M.Tech. (Networking and Communications)', NULL, 'MTech, short for Master of Technology, is a postgraduate degree program in the field of engineering and technology. It is designed to provide students with advanced knowledge, skills, and expertise in specific areas of engineering.MTech programs, especially those with a thesis option, provide opportunities for research. Students can engage in research projects, contribute to ongoing research activities, or work with faculty members on research initiatives.', '', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
+
 -- --------------------------------------------------------
 
 --
@@ -210,8 +210,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `phone`, `message`) VALUES
-(1, 'Umang', 'gohelumang@gmail.com', '8156076506', 'This site is good'),
-(3, 'umang', 'gohelumang12@gmail.com', '8156076506', 'This is good website');
+(1, 'Umang', 'gohelumang@gmail.com', '8156076506', 'This site is good');
 
 -- --------------------------------------------------------
 

@@ -77,15 +77,16 @@ $result = $conn->query($query);
                         <!-- <hr> -->
                         <p style="font-size: 18px;"><?php echo $course_details; ?>
                         </p>
-                        <h3 class="pt-2 fs-3">Syllabus</h3>
+                        <?php if($course_document!=null)
+                        { ?>
+                            <h3 class="pt-2 fs-3">Syllabus</h3>
                             <a id="course-download-btn" class="mt-2 btn btn-primary" target="_blank"  href="<?php echo $course_document;?>"><?php echo $course_name; ?></a>
-                           
+                            
+                            <?php } ?>
                             
                             <div class="d-flex justify-content-end align-items-end" style="height: 2vh">
                             <button class="text-white btn btn-outline-white" style="background-color: #00498D;" onClick="location.href='<?php echo $brocher?>'">Click me</button>
                                 </div>
-
-                            
                     </div>
                 </div>
             </div>

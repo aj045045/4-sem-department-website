@@ -27,7 +27,6 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                             <li><a href="feedback.php">Feedback system</a></li>
                             <li><a href="student_diversity.php">Catering to Student Diversity</a></li>
                             <li><a href="mentor_mentee.php">Mentor Mentee system</a></li>
-                            <li><a href="#">Professional Memberships</a></li>
                         </ul>
                     </li>
                     <!--Add index.php-->
@@ -57,7 +56,7 @@ echo '</ul>
                             <li><a href="#">State of Art Infrastructure</a></li>
                             <li><a href="placement.php">100% placements</a></li>
                             <li><a href="no_one.php">No 1 in gujarat</a></li>
-                            <li><a href="#">Availability of HPC systems</a></li>
+                            <li><a href="hpc_system.php">Availability of HPC systems</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
