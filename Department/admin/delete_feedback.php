@@ -7,7 +7,7 @@
         }
         else
         {
-            echo "fali";
+            echo "fail";
         }
 }
 ?>

@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
-<!-- // // TODO: Index page 
--->
+
+<!-- // TODO: Index page  -->
+
 <?php //session_start(); ?>
 
 <head>

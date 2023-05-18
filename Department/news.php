@@ -28,10 +28,10 @@ function deleteNews($id)
 
 <body>
     <?php include "links/include/header.php" ?>
+    <!--  -->
 
-
-    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-w-3/5 tw-mx-80 tw-p-10 tw-rounded-md tw-m-40" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
-        <div class=" tw-text-center tw-capitalize tw-text-7xl first-letter:tw-font-serif" style="font-family: Brush Script MT;">News </div>
+    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-w-3/5 tw-p-5 tw-rounded-md tw-my-36 md:tw-block md:tw-mx-auto tw-m-10" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+        <div class=" tw-text-center tw-capitalize tw-text-5xl md:tw-text-7xl first-letter:tw-font-serif" style="font-family: Brush Script MT;">News </div>
         <?php
         $dns = "mysql:host=localhost;dbname=dcsdb";
         $user = "root";
@@ -44,17 +44,14 @@ function deleteNews($id)
         ?>
 
             <button type="button" style="width:100%" data-bs-toggle="modal" data-bs-target="#modalId<?php echo $row['news_id']; ?>">
-                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
-                    <div class="tw-flex tw-flex-row">
-
-                        <div class=" tw-w-2/5 tw-mt-5 tw-items-start tw-font-serif tw-text-2xl">
-                            <?php
-                            echo $row['news_title'];
-                            ?>
-                        </div>
+                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-mt-10 tw-shadow-lg text-dark">
+                    <div class=" tw-w-3/5 tw-mt-5 tw-ml-5 tw-items-start tw-font-serif tw-flex tw-flex-row tw-text-xl md:tw-text-2xl">
+                        <?php
+                        echo $row['news_title'];
+                        ?>
                     </div>
                     <hr class=" tw-border-black tw-mx-auto tw-block tw-w-11/12 tw-mt-3">
-                    <div class=" tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-slate-200 tw-px-5 tw-rounded-2xl">
+                    <div class=" tw-text-sm md:tw-text-lg tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-slate-200 tw-px-5 tw-rounded-2xl">
                         <i class=" tw-font-bold tw-mx-3">Category&nbsp;:</i>
                         <div class=" tw-font-mono">
                             <?php
