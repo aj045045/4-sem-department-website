@@ -1,11 +1,5 @@
 <?php
-
-$servername = "localhost";
-$username = "username";
-$password = "";
-$dbname = "dcsdb";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+<?php include "links/include/db.php" ?>
 
 
 if (!$conn) {

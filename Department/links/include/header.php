@@ -20,19 +20,21 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                     <a class="nav-link text-light" href="home.php"><b>HOME</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="about.php"><b>ABOUT</b></a>
+                        <a class="nav-link text-light"><b>ABOUT</b></a>
                         <ul>
+                            <li><a href="about.php">About</a></li>
                             <li><a href="mission&vision.php">Mission & Vision</a></li>
                             <li><a href="#">EPG Pathshala modules</a></li>
                             <li><a href="feedback.php">Feedback system</a></li>
                             <li><a href="student_diversity.php">Catering to Student Diversity</a></li>
                             <li><a href="mentor_mentee.php">Mentor Mentee system</a></li>
-                        </ul>
-                    </li>
-                    <!--Add index.php-->
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="academics.php"><b>ACADEMICS</b></a>
-                        <ul>';
+                            </ul>
+                            </li>
+                            <!--Add index.php-->
+                            <li class="nav-item">
+                            <a class="nav-link text-light"><b>ACADEMICS</b></a>
+                            <ul>
+                            <li><a href="academics.php">Academics</a></li>';
 $query = "SELECT `course_id`, `course_name` FROM `course`;";
 
 // FETCHING DATA FROM DATABASE
@@ -51,7 +53,7 @@ if ($result->num_rows > 0) {
 echo '</ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>WHY DCS</b></a>
+                        <a class="nav-link text-light"><b>WHY DCS</b></a>
                         <ul>
                             <li><a href="#">State of Art Infrastructure</a></li>
                             <li><a href="placement.php">100% placements</a></li>
@@ -60,7 +62,7 @@ echo '</ul>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>STUDENT</b></a>
+                        <a class="nav-link text-light"><b>STUDENT</b></a>
                         <ul>
                             <li><a href="#">syllabus</a></li>
                             <li><a href="#">results</a></li>
@@ -68,7 +70,7 @@ echo '</ul>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="faculty.php"><b>RESEARCH</b></a>
+                        <a class="nav-link text-light"><b>RESEARCH</b></a>
                         <ul>
                             <li><a href="#">projects ongoing</a></li>
                             <li><a href="#">collaborations</a></li>
@@ -79,12 +81,9 @@ echo '</ul>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="https://www.gujaratuniversity.ac.in/details/18"><b>FACULTY</b></a>
                     </li>
-                 <!--  <li class="nav-item">
-                        <a class="nav-link text-light" href="broucher.php"><b>COURSES</b></a>
-                    </li>-->
                     <!--Add index.php-->
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#"><b>HAPPENINGS</b></a>
+                        <a class="nav-link text-light"><b>HAPPENINGS</b></a>
                         <ul>
                             <li><a href="news.php">News</a></li>
                             <li><a href="event.php">Events</a></li>

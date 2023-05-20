@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 17, 2023 at 05:11 AM
+-- Generation Time: May 20, 2023 at 07:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -74,7 +74,6 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image`, `seat_number`, `boys_fees`, `girls_fees`, `brouchers`) VALUES
-<<<<<<< HEAD
 (1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.\nA Ph.D. in Computer Science is a doctoral degree that represents the highest level of academic achievement in the field of computer science. It is a research-focused degree that typically requires several years of study and independent research.', '', 'image/academics/logo/phd.webp', 15, '₹20000', '₹20000', './error.php'),
 (2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.MCA programs focus on providing in-depth knowledge and practical skills related to computer applications and software development.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 20, '₹3140', '₹1700', './mca.php'),
 (5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'PGDCA stands for Post Graduate Diploma in Computer Applications. It is a postgraduate diploma program that focuses on providing students with practical skills and knowledge in computer applications and software development.The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator.', 'documents/syllabus/PGDCSA 2018.pdf', 'image/academics/logo/pgdca.webp', 33, '₹2250', '₹1500', './pgdcsa.php'),
@@ -82,15 +81,6 @@ INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_det
 (8, 'Five Years Integrated M.Sc Computer Science', NULL, 'An MSc CS 5-year integrated course is a specialized academic program that combines undergraduate and postgraduate studies in Computer Science. It is designed to provide students with a comprehensive understanding of computer science concepts and skills over an extended period of study.The MSc CS 5-year integrated course is structured to seamlessly integrate undergraduate (BSc) and postgraduate (MSc) studies into a single program. It eliminates the need for a separate application process for the master\'s program, allowing students to transition smoothly from their undergraduate studies to advanced coursework.', 'documents/syllabus/M.Sc Integrated sem 1 to 3 w.e.f 2021.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
 (9, 'M.Tech. (Networking and Communications)', NULL, 'MTech, short for Master of Technology, is a postgraduate degree program in the field of engineering and technology. It is designed to provide students with advanced knowledge, skills, and expertise in specific areas of engineering.MTech programs, especially those with a thesis option, provide opportunities for research. Students can engage in research projects, contribute to ongoing research activities, or work with faculty members on research initiatives.', '', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
 
-=======
-(1, 'Doctor of Philosophy (Ph.D in Computer Science)', NULL, 'Department of Computer Science, Gujarat University is one of the earliest in Gujarat to introduce Ph.D. Programme. Currently there are SIX recognized Ph.D. Guides in Gujarat University in the subject of Computer Science. 35-40 students pursuing Ph.D. in varied areas like Network Security, Information Retrieval, Query optimization Computer Vision, e-learning, Image Processing ,NLP and Data Mining.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/phd.webp', 15, '₹20000', '₹20000', './error.php'),
-(2, 'Masters of Computer Applications (MCA)', NULL, 'The MCA program prepares the student to take up high profile positions in the IT industry as analysts, system designers, developers and project managers in any area of Computer applications as well as prepares student for research and academics. This course also grooms students to become entrepreneurs.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 20, '₹3140', '₹1700', './mca.php'),
-(5, ' Post Graduate Diploma in Computer Science and Applications (PGDCSA)', NULL, 'The PGDCSA program prepares the student to take up positions as programmer, web designer and lab administrator. ', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/pgdca.webp', 33, '₹2250', '₹1500', './pgdca.php'),
-(6, 'M.Sc Artificial Intelligence and Machine Learning [M.Sc AI & ML]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aiml.webp', 30, '₹27000', '₹27000', './aiml.php'),
-(7, 'M.Sc Artificial Intelligence and Machine Learning and Defence [M.Sc AI & ML & Defence]', NULL, 'Apart from Research and Academics, this course is designed to build data analysts, data mining experts and robotics and automation software engineers', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/aimld.webp', 30, '₹27000', '₹27000', './aiml.php'),
-(8, 'Five Years Integrated M.Sc Computer Science', NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatum corrupti fuga soluta non atque impedit perspiciatis doloremque consequun', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/msccs.webp', 120, '₹30000', '₹30000', './msc.php'),
-(9, 'M.Tech. (Networking and Communications)', NULL, 'Apart from Research and Academics, this course is designed to build network analysts, network architects and network/security consultants.', 'documents/syllabus/MCA-Scheme_&_Syllabus_Final.pdf', 'image/academics/logo/mca.webp', 25, '₹25000', '₹25000', './mtec.php');
->>>>>>> fe14522aca827b72c59e0df7da7e67fa9049b8dd
 -- --------------------------------------------------------
 
 --
@@ -309,7 +299,7 @@ INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
 (2, 'how are you?', 'I am fine', 'text'),
 (3, 'course,how many courses are there,how many courses are in rollwala computer center,how many courses are in departement of computer science,what are the courses', 'There are following courses in Department of computer science:<br/>\nMCA<br/>\nMSC(AI & ML)<br/>\nMSC(5 Year integrated)<br/>\nM.Tech<br/>\nPGDCA<br/>', 'text'),
 (4, 'about dcs,about rcc,about rollwala computer center,tell me about rollwala,give me information about rollwala,give me information about dcs', 'You can find a information about <a style=\"color:blue;\" href=\"about.php\">here.</a>', 'text'),
-(5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"faculty.php\">here.</a>', 'text'),
+(5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"https://www.gujaratuniversity.ac.in/details/18\">here.</a>', 'text'),
 (10, 'admission', 'You can find Information about Admission from <a style=\"color:blue;\" href=\"broucher.php\">here.</a>', 'text');
 
 -- --------------------------------------------------------
@@ -389,16 +379,6 @@ CREATE TABLE `tmp_questions` (
   `question` text NOT NULL,
   `type` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tmp_questions`
---
-
-INSERT INTO `tmp_questions` (`tmp_question_id`, `question`, `type`) VALUES
-(24, 'msc', ''),
-(26, 'msc feess', ''),
-(27, 'mca fees', ''),
-(29, 'facutly', '');
 
 -- --------------------------------------------------------
 
@@ -712,7 +692,7 @@ ALTER TABLE `syllabus`
 -- AUTO_INCREMENT for table `tmp_questions`
 --
 ALTER TABLE `tmp_questions`
-  MODIFY `tmp_question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `tmp_question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `user`

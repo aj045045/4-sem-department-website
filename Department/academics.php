@@ -50,6 +50,7 @@
             overflow: hidden;
             background-color: #f1f1f1;
         }
+        
     </style>
 </head>
 
@@ -66,7 +67,7 @@
         <br>
     </div>
     <div class="row">
-        <div class="w-full col-sm-9 md:w-3/5" style="padding-left:8%;">
+        <div class="w-full col-sm-8 md:w-3/5" style="padding-left:8%;">
 
             <?php
             $query = "SELECT `course_id`, `course_name`, `course_duration`, `course_details`, `course_document`, `course_image` FROM `course`;";
@@ -93,7 +94,7 @@
                             <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                                 <h5><?php echo $course_name; ?> </h5>
                                 <hr>
-                                <p style="font-size: 18px;"><?php echo $course_details; ?>
+                                <p style="font-size: 18px;"><?php echo substr($course_details,0,300),"..."; ?>
                                     <a type="button" class="btn btn-link" href="academics_details.php?course_id=<?php echo $course_id; ?>">Read More.. </a>
                                 </p>
                             </div>
@@ -109,7 +110,7 @@
             ?>
 
         </div>
-        <div class="mr-12 imgl col-sm">
+        <div class="mr-12 imgl col-sm-3">
             <img data-aos="fade-left" data-aos-duration="3000" src="image/academics/course/acadload.webp" alt="logo" style="max-width: 100%; max-height: 100%;">
         </div>
     </div>
