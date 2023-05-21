@@ -5,6 +5,10 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "links/include/link.php" ?>
     <style>
         #course-download-btn{
             background-color: rgb(11, 64, 124);
@@ -12,7 +16,10 @@
         #course-download-btn:hover{
             background-color: #2babd0;
         }
-   
+       
+            #academic-page {
+                max-width: 80%;
+            }
 
 
 .btn btn-custom {
@@ -28,7 +35,7 @@
 <body>
     
     <?php include "links/include/header.php"?>
-    <?php include "links/include/db.php"?>
+   <?php include "links/include/db.php"?> 
 <?php
     $course_id=$_GET["course_id"];
 ?>
@@ -67,7 +74,7 @@ $result = $conn->query($query);
         <div class="pill"><?php echo $course_name; ?></div>
         <br>    
     </div>
-    <div class="container content">
+    <div id="academic-page" class="container content">
                 <div class="row">
                     <div class="mx-auto text-center col-12" style="background-color:whitesmoke;">
                         <img src="<?php echo $course_image; ?>" alt="logo" class="mx-auto" style="max-width: 100%; max-height: 100%;">
@@ -84,7 +91,7 @@ $result = $conn->query($query);
                             
                             <?php } ?>
                             
-                            <div class="d-flex justify-content-end align-items-end" style="height: 2vh">
+                            <div class="p-2 d-flex justify-content-end align-items-end">
                             <button class="text-white btn btn-outline-white" style="background-color: #00498D;" onClick="location.href='<?php echo $brocher?>'">Click me</button>
                                 </div>
                     </div>

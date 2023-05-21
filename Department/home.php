@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "links/include/link.php" ?>
-    <?php include "links/include/link.php" ?>
     <style>
         .scroll_bar::-webkit-scrollbar {
             height: 5px;
@@ -100,6 +99,27 @@
             background-color: #9aeeff;
             border-radius: 10px;
         }
+        .modal-dialog{
+            margin: 25vh 0px 0px 62vw !important;
+        }
+        @media screen and (max-width:1400px){
+            .modal-dialog{
+                width: 450px !important;
+                margin: 37vh 0px 0px 48vw !important;
+            }
+        }
+        @media screen and (max-width:900px){
+            .modal-dialog{
+                width: 418px !important;
+                margin: 37vh 0px 0px 25vw !important;
+            }
+        }
+        @media screen and (max-width: 576px){
+        .modal-dialog {
+            width: 340px !important;
+            margin: 37vh 0px 0px 3vw !important;
+        }   
+        }
     </style>
 
 </head>
@@ -113,7 +133,7 @@
         </svg>
     </button>
     <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="margin: 25vh 0px 0px 62vw;">
+        <div class="modal-dialog" >
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">DCS Chatbot</h1>
@@ -124,7 +144,7 @@
                         <div id="single-message">
                             <div style="float:left;" class="flex-wrap p-1 my-1 d-flex w-75">
                                 <span class="p-1 bg-msg">
-                                    Hello. I am DCS bot,You can ask me your queries.<br />
+                                    Hello. I am DCS bot,For assistance, you can select one of the following options or ask me a question.<br />
                                     <button class="btn btn-primary" onclick='passMessage(this)'>Admission</button>
                                     <button class="btn btn-primary" onclick='passMessage(this)'>Faculty</button>
                                     <button class="btn btn-primary" onclick='passMessage(this)'>About</button>
@@ -254,7 +274,6 @@
             <img class="img" src="image/collaborators/12scr.webp">
             <img class="img" src="image/collaborators/13scr.webp">
         </div>
-
     </div>
     <br>
     <?php include "links/include/footer.php" ?>
