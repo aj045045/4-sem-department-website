@@ -15,20 +15,22 @@
         <h3>Header</h3>
     </header>
     <div class="container">
-        <h1>Feedbacks:</h1>
+        <h1>Enquiries:</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th>Name:</th>
                     <th>Email:</th>
                     <th>Phone:</th>
+                    <th>Course:</th>
+                    <th>Subject:</th>
                     <th>Message:</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
 <?php
-                     $query = "SELECT * FROM `feedback`";
+                     $query = "SELECT a.admission_enquiry_id,a.name,a.email,a.phone,c.course_name,a.subject,a.message FROM `admission_enquiry` a INNER JOIN course c ON c.course_id=a.course_id";
   
   // FETCHING DATA FROM DATABASE
   $result = $conn->query($query);
@@ -38,19 +40,23 @@
         // OUTPUT DATA OF EACH ROW
         while($row = $result->fetch_assoc())
         {
-            $feedback_id=$row["feedback_id"];
+            $admission_enquiry_id=$row["admission_enquiry_id"];
             $name=$row["name"];
             $email=$row["email"];
             $phone=$row["phone"];
+            $course=$row["course_name"];
+            $subject=$row["subject"];
             $message=$row["message"];
            
          ?>                <tr>
                     <td><?php echo $name;?></td>
                     <td><?php echo $email;?></td>
                     <td><?php echo $phone;?></td>
+                    <td><?php echo $course;?></td>
+                    <td><?php echo $subject;?></td>
                     <td><?php echo $message;?></td>
                     <td>
-                        <button id="delete-<?php echo $feedback_id;?>" class="delete-feedback-btn btn btn-primary">Delete</button>
+                        <button id="delete-<?php echo $admission_enquiry_id;?>" class="delete-enquiry-btn btn btn-primary">Delete</button>
                     </td>
                 </tr>
             <?php
@@ -73,14 +79,14 @@
     <script src="include/js/bootstrap.bundle.min.js"></script>
     <script>      
         // delete question
-        $(".delete-feedback-btn").on("click",function(){
-            var feedback_id=this.id.slice(7);
+        $(".delete-enquiry-btn").on("click",function(){
+            var admission_enquiry_id=this.id.slice(7);
             $.ajax({
                 type: "post",
-                url: "delete_feedback.php",
-                data: {feedback_id: feedback_id},
+                url: "delete_enquiry.php",
+                data: {admission_enquiry_id: admission_enquiry_id},
                 success: function(response) {
-                    alert("Feedback deleted");
+                    alert("Enquiry deleted");
                     location.reload();
                 }
             });

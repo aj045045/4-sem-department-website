@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 20, 2023 at 07:27 PM
+-- Generation Time: May 21, 2023 at 01:14 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -34,6 +34,22 @@ CREATE TABLE `achievement` (
   `award_work` text DEFAULT NULL,
   `award_year` year(4) DEFAULT NULL,
   `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admission_enquiry`
+--
+
+CREATE TABLE `admission_enquiry` (
+  `admission_enquiry_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -204,13 +220,6 @@ CREATE TABLE `feedback` (
   `phone` varchar(15) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `phone`, `message`) VALUES
-(1, 'Umang', 'gohelumang@gmail.com', '8156076506', 'This site is good');
 
 -- --------------------------------------------------------
 
@@ -441,6 +450,13 @@ ALTER TABLE `achievement`
   ADD KEY `fk_achievement_user1` (`user_id`);
 
 --
+-- Indexes for table `admission_enquiry`
+--
+ALTER TABLE `admission_enquiry`
+  ADD PRIMARY KEY (`admission_enquiry_id`),
+  ADD KEY `fk_course_admissioin` (`course_id`);
+
+--
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -587,6 +603,12 @@ ALTER TABLE `achievement`
   MODIFY `award_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `admission_enquiry`
+--
+ALTER TABLE `admission_enquiry`
+  MODIFY `admission_enquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -632,7 +654,7 @@ ALTER TABLE `faculty_research`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -715,6 +737,12 @@ ALTER TABLE `user_category`
 --
 ALTER TABLE `achievement`
   ADD CONSTRAINT `fk_achievement_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `admission_enquiry`
+--
+ALTER TABLE `admission_enquiry`
+  ADD CONSTRAINT `fk_course_admissioin` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `comments`

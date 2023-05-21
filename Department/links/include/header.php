@@ -25,7 +25,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                             <li><a href="about.php">About</a></li>
                             <li><a href="mission&vision.php">Mission & Vision</a></li>
                             <li><a href="#">EPG Pathshala modules</a></li>
-                            <li><a href="feedback.php">Feedback system</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="student_diversity.php">Catering to Student Diversity</a></li>
                             <li><a href="mentor_mentee.php">Mentor Mentee system</a></li>
                             </ul>
@@ -88,7 +88,7 @@ echo '</ul>
                             <li><a href="news.php">News</a></li>
                             <li><a href="event.php">Events</a></li>
                             <li><a href="#">Circular</a></li>
-                            <li><a href="#">gallary</a></li>
+                            <li><a href="#">Gallery</a></li>
                         </ul>
                     </li>                    
 </nav>

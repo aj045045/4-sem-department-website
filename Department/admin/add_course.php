@@ -43,7 +43,7 @@
     <footer class="border border-1">
         <h3>Footer</h3>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>     
     <script src="include/js/bootstrap.bundle.min.js"></script>
     <script>      
         // delete question
