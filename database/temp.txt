@@ -1,7 +1,7 @@
 Department vision-mission Take from 
 Tabs on header
     Department
-        about us -To be reviewed
+    -    about us -To be reviewed
             mission-vision -remain
             EPG pathshala modules
             Feedback system
@@ -9,7 +9,7 @@ Tabs on header
             Mentor Mentee system
             professional memberships
 
-    Why Department of computer science -Remain
+    - Why Department of computer science -Remain
         state of art infrastructure
         100% placements
         No 1 in gujarat
@@ -18,8 +18,9 @@ Tabs on header
     Student
         downloads
             syllabus - Almost ready
-            results
+    [x]     results
             old papers
+    
     Faculty
 
     Research
@@ -35,7 +36,7 @@ Tabs on header
     Happenings
         News
         Events
-        Circular
+[x]     Circular
         gallary
     Admission
     E-resources

@@ -25,9 +25,9 @@
             </a>
         </div>
         <div class="tw-flex-row tw-flex tw-gap-x-10">
-            <a href="event.php" class="tw-bg-white tw-rounded-lg tw-cursor-pointer hover:tw-shadow-md hover:tw-shadow-slate-300 tw-text-lg tw-pr-5 tw-py-2 tw-flex sm:tw-flex-row tw-flex-col tw-my-2">
+            <a href="documents.php" class="tw-bg-white tw-rounded-lg tw-cursor-pointer hover:tw-shadow-md hover:tw-shadow-slate-300 tw-text-lg tw-pr-5 tw-py-2 tw-flex sm:tw-flex-row tw-flex-col tw-my-2">
                 <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-my-auto tw-h-6 " id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
-                Do you like to add &nbsp;<strong>Event</strong>&nbsp; in department of computer science ?
+                Do you like to add &nbsp;<strong>Result&nbsp;/&nbsp;Papers</strong>&nbsp; in department of computer science ?
             </a>
             <a href="news.php" class="tw-ml-auto tw-bg-white tw-rounded-lg tw-cursor-pointer hover:tw-shadow-md hover:tw-shadow-slate-300 tw-text-lg tw-pr-5 tw-py-2 tw-flex sm:tw-flex-row tw-flex-col tw-my-2 ">
                 <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-my-auto tw-h-6 " id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
@@ -63,20 +63,7 @@
         </div>
     </div>
 
-    <!-- @audit-info Jquery to form submit on click 
-            <script>
-            $(document).ready(
-                function() {
-                    $("input:checkbox").change(
-                        function() {
-                            if ($(this).prop("checked", false)) {
-                                $("#approved").submit();
-                            }
-                        }
-                    )
-                }
-            );
-        </script> -->
+  
 </body>
 
 </html>

@@ -60,11 +60,11 @@ echo '</ul>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="event.php"><b>STUDENT</b></a>
+                        <a class="nav-link text-light" href="results.php"><b>STUDENT</b></a>
                         <ul>
-                            <li><a href="#">syllabus</a></li>
-                            <li><a href="#">results</a></li>
-                            <li><a href="#">old papers</a></li>
+                            <li><a href="syllabus.php">Syllabus</a></li>
+                            <li><a href="results.php">Results</a></li>
+                            <li><a href="papers.php">Old papers</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
