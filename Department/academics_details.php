@@ -35,7 +35,7 @@
 <body>
     
     <?php include "links/include/header.php"?>
-    <?php include "links/include/db.php"?>
+   <?php include "links/include/db.php"?> 
 <?php
     $course_id=$_GET["course_id"];
 ?>
