@@ -1,5 +1,5 @@
 <?php
-<?php include "links/include/db.php" ?>
+include "links/include/db.php";
 
 
 if (!$conn) {
