@@ -26,9 +26,17 @@ $dataBase = new PDO($dns, $user, "");
 <body>
     <?php include './links/include/header.php' ?>
 
+    <div style="padding-right:40%;padding-left: 5%;">
+        <ul class="breadcrumb" style="padding-top: 130px;">
+            <li><a href="home.php">Home</a></li>
+            <li>Papers</li>
+        </ul>
+        <div class="pill">Papers</div>
+        <br>
+    </div>
     <!-- @audit-info Event list -->
-    <!-- data-aos="zoom-in-up" data-aos-duration="2000" -->
-    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-mx-20 tw-mx-5 tw-p-10 tw-rounded-md tw-m-40">
+    <!--  -->
+    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-mx-20 tw-mx-5 tw-p-10 tw-rounded-md tw-mb-40" data-aos="zoom-in-up" data-aos-duration="2000">
         <div class=" tw-text-center tw-capitalize tw-text-5xl md:tw-text-8xl tw-my-5" style="font-family: Brush Script MT;">Papers </div>
         <div class=" tw-flex tw-flex-row tw-gap-x-3">
             <div class=" tw-hidden md:tw-block">I want to see </div>
