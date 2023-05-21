@@ -29,15 +29,15 @@ $dataBase = new PDO($dns, $user, "");
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">
             <li><a href="home.php">Home</a></li>
-            <li>Papers</li>
+            <li>Circulars</li>
         </ul>
-        <div class="pill">Papers</div>
+        <div class="pill">Circulars</div>
         <br>
     </div>
     <!-- @audit-info Event list -->
-    <!--  -->
+
     <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-mx-20 tw-mx-5 tw-p-10 tw-rounded-md tw-mb-40" data-aos="zoom-in-up" data-aos-duration="2000">
-        <div class=" tw-text-center tw-capitalize tw-text-5xl md:tw-text-8xl tw-my-5" style="font-family: Brush Script MT;">Papers </div>
+        <div class=" tw-text-center tw-capitalize tw-text-5xl md:tw-text-8xl tw-my-5" style="font-family: Brush Script MT;">Circulars </div>
         <div class=" tw-flex tw-flex-row tw-gap-x-3">
             <div class=" tw-hidden md:tw-block">I want to see </div>
             <form method="get" id="selectForm">
@@ -56,16 +56,16 @@ $dataBase = new PDO($dns, $user, "");
                 <input type="submit" value="Submit" class=" tw-hidden">
             </form>
             <div class=" tw-hidden md:tw-block">
-                course papers
+                course circulars
             </div>
         </div>
         <div class=" tw-my-10 tw-flex tw-flex-col tw-gap-y-10">
             <?php
             if (isset($_GET['resultOption'])) {
                 $option = $_GET['resultOption'];
-                $GLOBALS['query'] = "SELECT document_title, document_location FROM documents WHERE document_category_id = 2 AND course_id = $option order by document_id desc";
+                $GLOBALS['query'] = "SELECT document_title, document_location FROM documents WHERE document_category_id = 3 AND course_id = $option  order by document_id desc";
             } else {
-                $GLOBALS['query'] = "SELECT document_title, document_location FROM documents WHERE document_category_id = 2  order by document_id desc";
+                $GLOBALS['query'] = "SELECT document_title, document_location FROM documents WHERE document_category_id = 3  order by document_id desc";
             }
             $query = $GLOBALS['query'];
             $resultData = $dataBase->query($query);

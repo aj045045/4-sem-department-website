@@ -15,10 +15,10 @@ Tabs on header
         No 1 in gujarat
         Availability of HPC systems(Photo of GPU lab)
 
-    Student
+   - Student
         downloads
             syllabus - Almost ready
-    [x]     results
+            results
             old papers
     
     Faculty

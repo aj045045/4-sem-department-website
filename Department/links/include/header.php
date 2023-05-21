@@ -87,7 +87,7 @@ echo '</ul>
                         <ul>
                             <li><a href="news.php">News</a></li>
                             <li><a href="event.php">Events</a></li>
-                            <li><a href="#">Circular</a></li>
+                            <li><a href="circulars.php">Circular</a></li>
                             <li><a href="gallery.php">Gallery</a></li>
                         </ul>
                     </li>                    

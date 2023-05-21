@@ -49,10 +49,10 @@ try {
                 // paper-id-course-category";
                 $location = "./documents/papers/paper" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
                 break;
-                // case 3:
-                //  // Circular
-                //     $location = "./../documents/circular/circular-id-course-category";
-                //     break;
+            case 3:
+                // Circular
+                $location = "./documents/circulars/circular" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
+                break;
         }
 
         // NOTE - Inserting the data into database
