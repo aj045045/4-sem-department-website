@@ -24,7 +24,7 @@ echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
                         <ul>
                             <li><a href="about.php">About</a></li>
                             <li><a href="mission&vision.php">Mission & Vision</a></li>
-                            <li><a href="#">EPG Pathshala modules</a></li>
+                            <li><a href="epg_pathshala.php">EPG Pathshala modules</a></li>
                             <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="student_diversity.php">Catering to Student Diversity</a></li>
                             <li><a href="mentor_mentee.php">Mentor Mentee system</a></li>
