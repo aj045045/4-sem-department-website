@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 22, 2023 at 05:03 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: 127.0.0.1
+-- Generation Time: May 22, 2023 at 07:07 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,13 +27,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `achievement`
 --
 
-CREATE TABLE `achievement` (
-  `award_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `achievement` (
+  `award_id` int(11) NOT NULL AUTO_INCREMENT,
   `award_name` varchar(50) DEFAULT NULL,
   `award_association` varchar(50) DEFAULT NULL,
   `award_work` text DEFAULT NULL,
   `award_year` year(4) DEFAULT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`award_id`),
+  KEY `fk_achievement_user1` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -42,15 +44,17 @@ CREATE TABLE `achievement` (
 -- Table structure for table `admission_enquiry`
 --
 
-CREATE TABLE `admission_enquiry` (
-  `admission_enquiry_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admission_enquiry` (
+  `admission_enquiry_id` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `subject` varchar(255) NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `message` text NOT NULL,
+  PRIMARY KEY (`admission_enquiry_id`),
+  KEY `fk_course_admissioin` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,12 +62,15 @@ CREATE TABLE `admission_enquiry` (
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `comments` (
-  `comment_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `comments` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `comment` text DEFAULT NULL,
   `comment_at` datetime DEFAULT NULL,
   `event_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `fk_comments_event1` (`event_id`),
+  KEY `fk_comments_user1` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -72,8 +79,8 @@ CREATE TABLE `comments` (
 -- Table structure for table `course`
 --
 
-CREATE TABLE `course` (
-  `course_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `course` (
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` varchar(255) DEFAULT NULL,
   `course_duration` tinyint(1) DEFAULT NULL,
   `course_details` text DEFAULT NULL,
@@ -82,8 +89,9 @@ CREATE TABLE `course` (
   `seat_number` int(11) NOT NULL,
   `boys_fees` varchar(11) NOT NULL,
   `girls_fees` varchar(11) NOT NULL,
-  `brouchers` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `brouchers` varchar(100) NOT NULL,
+  PRIMARY KEY (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `course`
@@ -103,10 +111,11 @@ INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_det
 -- Table structure for table `designation`
 --
 
-CREATE TABLE `designation` (
-  `designation_id` int(11) NOT NULL,
-  `designation` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `designation` (
+  `designation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `designation` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`designation_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `designation`
@@ -120,18 +129,67 @@ INSERT INTO `designation` (`designation_id`, `designation`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `documents`
+--
+
+CREATE TABLE IF NOT EXISTS `documents` (
+  `document_id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_title` text NOT NULL,
+  `document_location` varchar(50) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `document_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`document_id`),
+  KEY `Foreign key course` (`course_id`) USING BTREE,
+  KEY `Foreign Key category` (`document_category_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`document_id`, `document_title`, `document_location`, `course_id`, `document_category_id`) VALUES
+(4, 'Pgdcsa_sem_4', './documents/results/result-4-9-1.pdf', 9, 1),
+(5, 'External sem-3', './documents/papers/paper-5-8-2.pdf', 8, 2),
+(6, 'Department of computer science', './documents/circulars/circular-6-8-3.pdf', 8, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document_category`
+--
+
+CREATE TABLE IF NOT EXISTS `document_category` (
+  `document_category_id` int(2) NOT NULL AUTO_INCREMENT,
+  `document_category_type` varchar(30) NOT NULL,
+  PRIMARY KEY (`document_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `document_category`
+--
+
+INSERT INTO `document_category` (`document_category_id`, `document_category_type`) VALUES
+(1, 'result'),
+(2, 'papers'),
+(3, 'circular');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `event`
 --
 
-CREATE TABLE `event` (
-  `event_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `event` (
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `event_title` varchar(100) DEFAULT NULL,
   `event_description` text DEFAULT NULL,
   `event_venue` varchar(100) DEFAULT NULL,
   `event_start` datetime DEFAULT NULL,
   `event_end` datetime DEFAULT NULL,
-  `event_category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `event_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`event_id`),
+  KEY `fk_event_evt_cat` (`event_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event`
@@ -147,10 +205,11 @@ INSERT INTO `event` (`event_id`, `event_title`, `event_description`, `event_venu
 -- Table structure for table `event_category`
 --
 
-CREATE TABLE `event_category` (
-  `event_category_id` int(11) NOT NULL,
-  `event_category_type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `event_category` (
+  `event_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_category_type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`event_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `event_category`
@@ -168,15 +227,18 @@ INSERT INTO `event_category` (`event_category_id`, `event_category_type`) VALUES
 -- Table structure for table `faculty`
 --
 
-CREATE TABLE `faculty` (
-  `faculty_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `faculty` (
+  `faculty_id` int(11) NOT NULL AUTO_INCREMENT,
   `faculty_experience` smallint(3) DEFAULT NULL,
   `faculty_qualification` varchar(50) DEFAULT NULL,
   `faculty_specialization` varchar(50) DEFAULT NULL,
   `faculty_designation` varchar(50) DEFAULT NULL,
   `designation_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`faculty_id`),
+  KEY `fk_faculty_user1` (`user_id`),
+  KEY `fk_faculty_designation1` (`designation_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `faculty`
@@ -198,13 +260,15 @@ INSERT INTO `faculty` (`faculty_id`, `faculty_experience`, `faculty_qualificatio
 -- Table structure for table `faculty_research`
 --
 
-CREATE TABLE `faculty_research` (
-  `research_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `faculty_research` (
+  `research_id` int(11) NOT NULL AUTO_INCREMENT,
   `research_title` varchar(50) DEFAULT NULL,
   `research_journal` text DEFAULT NULL,
   `research_publisher` varchar(50) DEFAULT NULL,
   `research_year` year(4) DEFAULT NULL,
-  `faculty_id` int(11) NOT NULL
+  `faculty_id` int(11) NOT NULL,
+  PRIMARY KEY (`research_id`),
+  KEY `fk_fac_research_faculty1` (`faculty_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -213,13 +277,14 @@ CREATE TABLE `faculty_research` (
 -- Table structure for table `feedback`
 --
 
-CREATE TABLE `feedback` (
-  `feedback_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `message` text NOT NULL,
+  PRIMARY KEY (`feedback_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -227,13 +292,15 @@ CREATE TABLE `feedback` (
 -- Table structure for table `news`
 --
 
-CREATE TABLE `news` (
-  `news_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `news` (
+  `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_title` varchar(50) DEFAULT NULL,
   `news_description` text DEFAULT NULL,
   `expire_date` date NOT NULL,
-  `news_category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `news_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`news_id`),
+  KEY `fk_news_news_cat1` (`news_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `news`
@@ -248,10 +315,11 @@ INSERT INTO `news` (`news_id`, `news_title`, `news_description`, `expire_date`, 
 -- Table structure for table `news_category`
 --
 
-CREATE TABLE `news_category` (
-  `news_category_id` int(11) NOT NULL,
-  `news_category_type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `news_category` (
+  `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_category_type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`news_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `news_category`
@@ -269,11 +337,13 @@ INSERT INTO `news_category` (`news_category_id`, `news_category_type`) VALUES
 -- Table structure for table `photos`
 --
 
-CREATE TABLE `photos` (
-  `photo_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `photos` (
+  `photo_id` int(11) NOT NULL AUTO_INCREMENT,
   `photo_document` varchar(50) DEFAULT NULL,
-  `event_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `event_id` int(11) NOT NULL,
+  PRIMARY KEY (`photo_id`),
+  KEY `fk_photos_event1` (`event_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `photos`
@@ -292,12 +362,13 @@ INSERT INTO `photos` (`photo_id`, `photo_document`, `event_id`) VALUES
 -- Table structure for table `question`
 --
 
-CREATE TABLE `question` (
-  `question_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `question` (
+  `question_id` int(11) NOT NULL AUTO_INCREMENT,
   `question` text NOT NULL,
   `answer` text NOT NULL,
-  `type` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `type` varchar(35) NOT NULL,
+  PRIMARY KEY (`question_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `question`
@@ -317,11 +388,13 @@ INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
 -- Table structure for table `reference_paper`
 --
 
-CREATE TABLE `reference_paper` (
-  `subject_doc_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reference_paper` (
+  `subject_doc_id` int(11) NOT NULL AUTO_INCREMENT,
   `subject_document_name` varchar(50) DEFAULT NULL,
   `subject_document` varchar(50) DEFAULT NULL,
-  `subject_id` int(11) NOT NULL
+  `subject_id` int(11) NOT NULL,
+  PRIMARY KEY (`subject_doc_id`),
+  KEY `fk_subject_doc_subject1` (`subject_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -330,11 +403,14 @@ CREATE TABLE `reference_paper` (
 -- Table structure for table `result`
 --
 
-CREATE TABLE `result` (
-  `result_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `result` (
+  `result_id` int(11) NOT NULL AUTO_INCREMENT,
   `result_document` varchar(50) DEFAULT NULL,
   `faculty_id` int(11) NOT NULL,
-  `subject_id` int(11) NOT NULL
+  `subject_id` int(11) NOT NULL,
+  PRIMARY KEY (`result_id`),
+  KEY `fk_result_faculty1` (`faculty_id`),
+  KEY `fk_result_subject1` (`subject_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -343,12 +419,15 @@ CREATE TABLE `result` (
 -- Table structure for table `student`
 --
 
-CREATE TABLE `student` (
-  `student_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `student` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
   `student_batch_year` year(4) DEFAULT NULL,
   `student_dob` date DEFAULT NULL,
   `course_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`student_id`),
+  KEY `fk_student_course1` (`course_id`),
+  KEY `fk_student_user1` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -357,11 +436,13 @@ CREATE TABLE `student` (
 -- Table structure for table `subject`
 --
 
-CREATE TABLE `subject` (
-  `subject_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `subject` (
+  `subject_id` int(11) NOT NULL AUTO_INCREMENT,
   `subject_name` varchar(50) DEFAULT NULL,
   `subject_description` text DEFAULT NULL,
-  `course_id` int(11) NOT NULL
+  `course_id` int(11) NOT NULL,
+  PRIMARY KEY (`subject_id`),
+  KEY `fk_subject_program1` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -370,11 +451,13 @@ CREATE TABLE `subject` (
 -- Table structure for table `syllabus`
 --
 
-CREATE TABLE `syllabus` (
-  `syllabus_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `syllabus` (
+  `syllabus_id` int(11) NOT NULL AUTO_INCREMENT,
   `syllabus_semister` smallint(6) DEFAULT NULL,
   `syllabus_document` varchar(50) DEFAULT NULL,
-  `course_id` int(11) NOT NULL
+  `course_id` int(11) NOT NULL,
+  PRIMARY KEY (`syllabus_id`),
+  KEY `fk_syllabus_program1` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -383,11 +466,12 @@ CREATE TABLE `syllabus` (
 -- Table structure for table `tmp_questions`
 --
 
-CREATE TABLE `tmp_questions` (
-  `tmp_question_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tmp_questions` (
+  `tmp_question_id` int(11) NOT NULL AUTO_INCREMENT,
   `question` text NOT NULL,
-  `type` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `type` varchar(35) NOT NULL,
+  PRIMARY KEY (`tmp_question_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -395,14 +479,16 @@ CREATE TABLE `tmp_questions` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(30) DEFAULT NULL,
   `user_profile` varchar(50) DEFAULT NULL,
   `user_email` varchar(50) DEFAULT NULL,
   `user_password` varchar(80) DEFAULT NULL,
-  `use_category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `use_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `use_category_id` (`use_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -424,10 +510,11 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_profile`, `user_email`, `user_
 -- Table structure for table `user_category`
 --
 
-CREATE TABLE `user_category` (
-  `use_category_id` int(11) NOT NULL,
-  `user_category_name` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS `user_category` (
+  `use_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_category_name` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`use_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_category`
@@ -437,296 +524,6 @@ INSERT INTO `user_category` (`use_category_id`, `user_category_name`) VALUES
 (1, 'admin'),
 (2, 'faculty'),
 (3, 'student');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `achievement`
---
-ALTER TABLE `achievement`
-  ADD PRIMARY KEY (`award_id`),
-  ADD KEY `fk_achievement_user1` (`user_id`);
-
---
--- Indexes for table `admission_enquiry`
---
-ALTER TABLE `admission_enquiry`
-  ADD PRIMARY KEY (`admission_enquiry_id`),
-  ADD KEY `fk_course_admissioin` (`course_id`);
-
---
--- Indexes for table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`comment_id`),
-  ADD KEY `fk_comments_event1` (`event_id`),
-  ADD KEY `fk_comments_user1` (`user_id`);
-
---
--- Indexes for table `course`
---
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_id`);
-
---
--- Indexes for table `designation`
---
-ALTER TABLE `designation`
-  ADD PRIMARY KEY (`designation_id`);
-
---
--- Indexes for table `event`
---
-ALTER TABLE `event`
-  ADD PRIMARY KEY (`event_id`),
-  ADD KEY `fk_event_evt_cat` (`event_category_id`);
-
---
--- Indexes for table `event_category`
---
-ALTER TABLE `event_category`
-  ADD PRIMARY KEY (`event_category_id`);
-
---
--- Indexes for table `faculty`
---
-ALTER TABLE `faculty`
-  ADD PRIMARY KEY (`faculty_id`),
-  ADD KEY `fk_faculty_user1` (`user_id`),
-  ADD KEY `fk_faculty_designation1` (`designation_id`);
-
---
--- Indexes for table `faculty_research`
---
-ALTER TABLE `faculty_research`
-  ADD PRIMARY KEY (`research_id`),
-  ADD KEY `fk_fac_research_faculty1` (`faculty_id`);
-
---
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`feedback_id`);
-
---
--- Indexes for table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`news_id`),
-  ADD KEY `fk_news_news_cat1` (`news_category_id`);
-
---
--- Indexes for table `news_category`
---
-ALTER TABLE `news_category`
-  ADD PRIMARY KEY (`news_category_id`);
-
---
--- Indexes for table `photos`
---
-ALTER TABLE `photos`
-  ADD PRIMARY KEY (`photo_id`),
-  ADD KEY `fk_photos_event1` (`event_id`);
-
---
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`question_id`);
-
---
--- Indexes for table `reference_paper`
---
-ALTER TABLE `reference_paper`
-  ADD PRIMARY KEY (`subject_doc_id`),
-  ADD KEY `fk_subject_doc_subject1` (`subject_id`);
-
---
--- Indexes for table `result`
---
-ALTER TABLE `result`
-  ADD PRIMARY KEY (`result_id`),
-  ADD KEY `fk_result_faculty1` (`faculty_id`),
-  ADD KEY `fk_result_subject1` (`subject_id`);
-
---
--- Indexes for table `student`
---
-ALTER TABLE `student`
-  ADD PRIMARY KEY (`student_id`),
-  ADD KEY `fk_student_course1` (`course_id`),
-  ADD KEY `fk_student_user1` (`user_id`);
-
---
--- Indexes for table `subject`
---
-ALTER TABLE `subject`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `fk_subject_program1` (`course_id`);
-
---
--- Indexes for table `syllabus`
---
-ALTER TABLE `syllabus`
-  ADD PRIMARY KEY (`syllabus_id`),
-  ADD KEY `fk_syllabus_program1` (`course_id`);
-
---
--- Indexes for table `tmp_questions`
---
-ALTER TABLE `tmp_questions`
-  ADD PRIMARY KEY (`tmp_question_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`),
-  ADD KEY `use_category_id` (`use_category_id`);
-
---
--- Indexes for table `user_category`
---
-ALTER TABLE `user_category`
-  ADD PRIMARY KEY (`use_category_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `achievement`
---
-ALTER TABLE `achievement`
-  MODIFY `award_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `admission_enquiry`
---
-ALTER TABLE `admission_enquiry`
-  MODIFY `admission_enquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `course`
---
-ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `designation`
---
-ALTER TABLE `designation`
-  MODIFY `designation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `event`
---
-ALTER TABLE `event`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `event_category`
---
-ALTER TABLE `event_category`
-  MODIFY `event_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `faculty`
---
-ALTER TABLE `faculty`
-  MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `faculty_research`
---
-ALTER TABLE `faculty_research`
-  MODIFY `research_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `news`
---
-ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `news_category`
---
-ALTER TABLE `news_category`
-  MODIFY `news_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `photos`
---
-ALTER TABLE `photos`
-  MODIFY `photo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `reference_paper`
---
-ALTER TABLE `reference_paper`
-  MODIFY `subject_doc_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `result`
---
-ALTER TABLE `result`
-  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `student`
---
-ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `subject`
---
-ALTER TABLE `subject`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `syllabus`
---
-ALTER TABLE `syllabus`
-  MODIFY `syllabus_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tmp_questions`
---
-ALTER TABLE `tmp_questions`
-  MODIFY `tmp_question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `user_category`
---
-ALTER TABLE `user_category`
-  MODIFY `use_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -750,6 +547,13 @@ ALTER TABLE `admission_enquiry`
 ALTER TABLE `comments`
   ADD CONSTRAINT `fk_comments_event1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_comments_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `documents`
+--
+ALTER TABLE `documents`
+  ADD CONSTRAINT `Foreign Key` FOREIGN KEY (`document_category_id`) REFERENCES `document_category` (`document_category_id`),
+  ADD CONSTRAINT `Foreign keycourse` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `faculty`
