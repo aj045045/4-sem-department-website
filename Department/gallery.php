@@ -25,8 +25,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Photo Gallery</title>
+    <?php include "links/include/link.php" ?>
     <style>
-        .gallery-container {    
+        .gallery-container {
             /* Adjust this value based on your navbar height */
             padding-bottom: 60px;
             /* Adjust this value based on your footer height */
@@ -90,7 +91,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div class="gallery-container">
         <?php foreach ($photos as $photo) : ?>
             <div class="gallery-item">
-                <img src="<?php echo $photo['photo_document']; ?>">
+                <img src="<?php echo $photo['photo_document']; ?>" data-aos="zoom-in" data-aos-easing="ease-in-cubic" data-aos-duration="2000">
 
             </div>
         <?php endforeach; ?>
@@ -108,7 +109,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             $('.gallery-item img').click(function() {
                 var imageUrl = $(this).attr('src');
                 $('.enlarged-image img').attr('src', imageUrl);
-                $('.enlarged-image').fadeIn();
+                $('.enlarged-image').fadeIn(1000);
             });
 
             $('.enlarged-image').click(function() {

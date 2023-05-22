@@ -3,7 +3,8 @@
 <?php
 // TODO: Header
 // Navbar code
-echo ' <nav class="navbar navbar-expand-sm navbar-dark " id="back-color">
+echo '
+<nav class="navbar navbar-expand-sm navbar-dark" id="back-color">
         <div class="container flex-start">
             <a class="navbar-brand" href="home.php">
                 <img src="image/logos/logo1.webp" alt="Avatar Logo" style="width:65px;border-radius: 50%;">
@@ -92,5 +93,5 @@ echo '</ul>
                     </li>                    
 </nav>
 ';
-echo '<button class=" tw-animate-bounce" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
+echo '<button class="animate-bounce" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
 ?>

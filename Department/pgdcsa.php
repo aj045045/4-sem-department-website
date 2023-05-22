@@ -1,14 +1,14 @@
 <?php
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "dcsdb";
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "dcsdb";
 
-    $connection = mysqli_connect($host, $username, $password, $database);
+$connection = mysqli_connect($host, $username, $password, $database);
 
-    if (mysqli_connect_errno()) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+if (mysqli_connect_errno()) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 
 
@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) == 1) {
     $seatNumber = $row["seat_number"];
     $boysFees = $row["boys_fees"];
     $girlsFees = $row["girls_fees"];
-    
+
     // echo "Seat Number: " . $seatNumber . "<br>";
     // echo "Boys Fees: " . $boysFees . "<br>";
     // echo "Girls Fees: " . $girlsFees . "<br>";
@@ -47,10 +47,16 @@ if (mysqli_num_rows($result) == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./links/css/output.css">
+    <?php include "links/include/link.php" ?>
 </head>
 
-<body class="mx-3 sm:mx-5">
-    <div class="flex flex-initial h-20 px-10 mt-6 bg-green-900 sm:px-32 sm:h-32 ">
+<body>
+    <?php include "links/include/header.php" ?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="flex flex-initial h-20 px-10 mx-3 mt-6 bg-green-900 sm:mx-5 sm:px-32 sm:h-32 ">
         <div class="flex flex-initial w-full font-serif bg-white">
             <img src="./image/logos/logo.webp" alt="University Tower" class="h-auto mr-4 w-14 sm:mr-10 sm:w-24 ">
             <div class="flex flex-col ">
@@ -68,10 +74,8 @@ if (mysqli_num_rows($result) == 1) {
     <div class="flex flex-initial mx-10 mt-6 sm:mx-32 ">
         <img src="./image/logos/Tower.png" alt="University Tower" class="items-start w-16 h-auto sm:w-20">
         <div class="w-full ">
-            <img src="./image/slideshows/3slide.webp" alt="Department of computer science "
-                class="w-full h-20 rounded-lg sm:h-36">
-            <div
-                class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-100 to-green-900">
+            <img src="./image/slideshows/3slide.webp" alt="Department of computer science " class="w-full h-20 rounded-lg sm:h-36">
+            <div class="mt-6 font-semibold text-center text-white rounded-lg bg-gradient-to-r from-blue-100 to-green-900">
                 <div class="text-lg sm:text-2xl">PGDSA</div>
                 <div class="font-serif text-sm font-thin sm:text-xl">(Post Graduate Diploma in Computer Science &
                     Applications)</div>
@@ -105,10 +109,10 @@ if (mysqli_num_rows($result) == 1) {
                     <ul class="list-disc sm:pl-6">
                         <li>1-year Post Graduate Diploma Course with <B>System Development Project work</B>
                         </li>
-                        <li><u>Number of Seats: <h3 class="fs-3"><?php  echo  $seatNumber . "<br>"; ?></h3>
-                           
-                            
-                        </u></li>
+                        <li><u>Number of Seats: <h3 class="fs-3"><?php echo  $seatNumber . "<br>"; ?></h3>
+
+
+                            </u></li>
                         </li>
                     </ul>
                 </td>
@@ -141,10 +145,10 @@ if (mysqli_num_rows($result) == 1) {
                 <td class="px-6">
                     <ul>
                         <li>
-                            <b>Boys:</b><?php echo  $boysFees . "per Semester". "<br>";?>
+                            <b>Boys:</b><?php echo  $boysFees . "per Semester" . "<br>"; ?>
                         </li>
                         <li>
-                            <b>Girls:</b><?php  echo  $girlsFees . "per Semester"."<br>";?>
+                            <b>Girls:</b><?php echo  $girlsFees . "per Semester" . "<br>"; ?>
                         </li>
                     </ul>
                 </td>
@@ -204,6 +208,11 @@ if (mysqli_num_rows($result) == 1) {
             </tr>
         </tbody>
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <?php include "links/include/footer.php" ?>
 </body>
 
 </html>

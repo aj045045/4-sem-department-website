@@ -50,7 +50,6 @@
             overflow: hidden;
             background-color: #f1f1f1;
         }
-        
     </style>
 </head>
 
@@ -94,7 +93,7 @@
                             <div class="text-left col-sm-7" style="background-color:whitesmoke;">
                                 <h5><?php echo $course_name; ?> </h5>
                                 <hr>
-                                <p style="font-size: 18px;"><?php echo substr($course_details,0,300),"..."; ?>
+                                <p style="font-size: 18px;"><?php echo substr($course_details, 0, 300), "..."; ?>
                                     <a type="button" class="btn btn-link" href="academics_details.php?course_id=<?php echo $course_id; ?>">Read More.. </a>
                                 </p>
                             </div>

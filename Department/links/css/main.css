@@ -201,3 +201,6 @@ nav ul li:hover>ul {
 nav ul ul a:hover {
     color: #ec5221 !important;
 }
+.nav-link > a{
+    color:white;
+}

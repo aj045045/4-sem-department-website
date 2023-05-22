@@ -1,7 +1,7 @@
 
 <?php
 include "link.php";
-// // // TODO: Footer
+// TODO: Footer
 echo '<style>
 
 a{
@@ -20,31 +20,85 @@ header{
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-6 footer-links">
-            <div class="pb-4 ">QUICK LINKS</div>
+            <div class="pb-2 ">QUICK LINKS</div>
             <div class="row small">
-                <div class="col-lg-6 col-md-6 footer-link text-start">
-                    <b>Academics</b>
+                <div class="col-lg-4 col-md-6 footer-link text-start"><br>
+                    <b>ACADEMIC</b>
                     <ul style="font-size: smaller;">
+                        <li><a href="academics.php">Programs</a></li>
                         <li><a href="phd.php">Ph.D</a></li>
                         <li><a href="mca.php">MCA</a></li>
-                        <li><a href="pgdca.php">PGDCA</a></li>
+                        <li><a href="pgdcsa.php">PGDCSA</a></li>
                         <li><a href="aiml.php">M.sc AI & ML</a></li>
                         <li><a href="aimld.php">M.Sc AI & ML & D</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="msccs.php">5 Years Integrated M.Sc-CS</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="msc.php">5 Years Integrated M.Sc-CS</a></li>
                         <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">M.Sc AI & ML & D</a></li> -->
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-6 footer-links text-start">
-                    <b>Download</b>
+                    </ul><br>
+                    <b>STUDENT</b>
                     <ul style="font-size: smaller;">
                     <li><a
-                    href="https://www1.gujaratuniversity.ac.in/custom/student/syllabus">Syllabus</a>
+                    href="syllabus.php">Syllabus</a>
+                    </li>
+                    <li><a
+                    href="papers.php">Reference Papers</a>
+                    </li>
+                    <li><a
+                    href="placement.php">Placement</a>
                     </li>
                     </ul>
-                    <b>Faculties</b>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-links text-start"><br>
+                    <b>EXAMINATION</b>
                     <ul style="font-size: smaller;">
                     <li><a
-                                href="faculty.php">Faculties</a>
+                    href="results.php">Result</a>
+                    </li>
+                    <li><a
+                    href="results.php">Diversity</a>
+                    </li>
+                    <li><a
+                    href="circulars.php">Circular</a>
+                    </li>
+                    </ul>
+                </div>
+                    <div class="col-lg-4 col-md-6 footer-links text-start"><br>
+                    <b>DEPARTMENT</b>
+                    <ul style="font-size: smaller;">
+                     <li><a
+                    href="no_one.php">No.1 in Gujarat</a>
+                    </li>
+                     <li><a
+                                href="about.php">About</a>
+                    </li>
+                    <li><a
+                    href="faculty.php">Faculty</a>
+                    </li>
+                     <li><a
+                    href="mentor_mentee.php">Mentor Mentee System</a>
+                    </li>
+                     <li><a
+                    href="project_ongoing.php">Projects ongoing</a>
+                    </li>
+                     <li><a
+                    href="research.php">Research</a>
+                    </li>
+                     <li><a
+                    href="award.php">Awards</a>
+                    </li>
+                    <li><a
+                                href="news.php">News</a>
+                    </li>
+                    <li><a
+                                href="event.php">Events</a>
+                    </li>
+                    <li><a
+                                href="circulars.php">Circulars</a>
+                    </li>
+                    <li><a
+                                href="gallery.php">Gallery</a>
+                    </li>
+                    <li><a
+                                href="feedback.php">Feedback</a>
                     </li>
                     </ul>
                 </div>
@@ -82,7 +136,7 @@ header{
 </div>
 </div>
 ';
-echo'<script>
+echo '<script>
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {
     scrollFunction()

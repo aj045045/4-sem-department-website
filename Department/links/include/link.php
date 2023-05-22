@@ -11,8 +11,8 @@ echo '
 <link rel="stylesheet" href="./links/css/output.css"> <!-- // @audit-info :tailwind css  -->
 <link rel="stylesheet" href="./links/css/global.css"> <!-- // @audit-info :global css  -->
 <title>Depart. of Computer science</title> <!-- // @audit-info :icons and titles css  -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- // @audit-info :Animation on scroll js  -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  <!-- // @audit-info :Animation on scroll css  -->
+<script src="./links/aos/aos.js"></script> <!-- // @audit-info :Animation on scroll js  -->
+<link href="./links/aos/aos.css" rel="stylesheet">  <!-- // @audit-info :Animation on scroll css  -->
 <link rel="shortcut icon" href="image/logos/logo.webp" type="image/png">
 <script>
   AOS.init();

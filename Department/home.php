@@ -99,26 +99,30 @@
             background-color: #9aeeff;
             border-radius: 10px;
         }
-        .modal-dialog{
+
+        .modal-dialog {
             margin: 25vh 0px 0px 62vw !important;
         }
-        @media screen and (max-width:1400px){
-            .modal-dialog{
+
+        @media screen and (max-width:1400px) {
+            .modal-dialog {
                 width: 450px !important;
                 margin: 37vh 0px 0px 48vw !important;
             }
         }
-        @media screen and (max-width:900px){
-            .modal-dialog{
+
+        @media screen and (max-width:900px) {
+            .modal-dialog {
                 width: 418px !important;
                 margin: 37vh 0px 0px 25vw !important;
             }
         }
-        @media screen and (max-width: 576px){
-        .modal-dialog {
-            width: 340px !important;
-            margin: 37vh 0px 0px 3vw !important;
-        }   
+
+        @media screen and (max-width: 576px) {
+            .modal-dialog {
+                width: 340px !important;
+                margin: 37vh 0px 0px 3vw !important;
+            }
         }
     </style>
 
@@ -133,7 +137,7 @@
         </svg>
     </button>
     <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" >
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">DCS Chatbot</h1>
@@ -168,7 +172,7 @@
         <li><i class="fa fa-"></i> Home</li>
 
     </ul>
-    <div id="carouselId" class="carousel slide" data-bs-ride="carousel"  data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in-down" data-aos-easing="ease-in-cubic" data-aos-duration="2000">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="First slide"></li>
