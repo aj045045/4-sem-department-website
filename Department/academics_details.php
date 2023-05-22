@@ -92,7 +92,7 @@ $result = $conn->query($query);
                             <?php } ?>
                             
                             <div class="p-2 d-flex justify-content-end align-items-end">
-                            <button class="text-white btn btn-outline-white" style="background-color: #00498D;" onClick="location.href='<?php echo $brocher?>'">Click me</button>
+                            <button class="text-white btn btn-outline-white" style="background-color: #00498D;" onClick="location.href='<?php echo $brocher?>'">Admission Details</button>
                                 </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 21, 2023 at 01:14 PM
+-- Generation Time: May 22, 2023 at 05:03 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `achievement`
 --
 
-CREATE TABLE IF NOT EXISTS `achievement` (
+CREATE TABLE `achievement` (
   `award_id` int(11) NOT NULL,
   `award_name` varchar(50) DEFAULT NULL,
   `award_association` varchar(50) DEFAULT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `achievement` (
 -- Table structure for table `admission_enquiry`
 --
 
-CREATE TABLE IF NOT EXISTS `admission_enquiry` (
+CREATE TABLE `admission_enquiry` (
   `admission_enquiry_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `admission_enquiry` (
 -- Table structure for table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comments` (
+CREATE TABLE `comments` (
   `comment_id` int(11) NOT NULL,
   `comment` text DEFAULT NULL,
   `comment_at` datetime DEFAULT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Table structure for table `course`
 --
 
-CREATE TABLE IF NOT EXISTS `course` (
+CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `course_name` varchar(255) DEFAULT NULL,
   `course_duration` tinyint(1) DEFAULT NULL,
@@ -103,7 +103,7 @@ INSERT INTO `course` (`course_id`, `course_name`, `course_duration`, `course_det
 -- Table structure for table `designation`
 --
 
-CREATE TABLE IF NOT EXISTS `designation` (
+CREATE TABLE `designation` (
   `designation_id` int(11) NOT NULL,
   `designation` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -123,7 +123,7 @@ INSERT INTO `designation` (`designation_id`, `designation`) VALUES
 -- Table structure for table `event`
 --
 
-CREATE TABLE IF NOT EXISTS `event` (
+CREATE TABLE `event` (
   `event_id` int(11) NOT NULL,
   `event_title` varchar(100) DEFAULT NULL,
   `event_description` text DEFAULT NULL,
@@ -147,7 +147,7 @@ INSERT INTO `event` (`event_id`, `event_title`, `event_description`, `event_venu
 -- Table structure for table `event_category`
 --
 
-CREATE TABLE IF NOT EXISTS `event_category` (
+CREATE TABLE `event_category` (
   `event_category_id` int(11) NOT NULL,
   `event_category_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -168,7 +168,7 @@ INSERT INTO `event_category` (`event_category_id`, `event_category_type`) VALUES
 -- Table structure for table `faculty`
 --
 
-CREATE TABLE IF NOT EXISTS `faculty` (
+CREATE TABLE `faculty` (
   `faculty_id` int(11) NOT NULL,
   `faculty_experience` smallint(3) DEFAULT NULL,
   `faculty_qualification` varchar(50) DEFAULT NULL,
@@ -198,7 +198,7 @@ INSERT INTO `faculty` (`faculty_id`, `faculty_experience`, `faculty_qualificatio
 -- Table structure for table `faculty_research`
 --
 
-CREATE TABLE IF NOT EXISTS `faculty_research` (
+CREATE TABLE `faculty_research` (
   `research_id` int(11) NOT NULL,
   `research_title` varchar(50) DEFAULT NULL,
   `research_journal` text DEFAULT NULL,
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `faculty_research` (
 -- Table structure for table `feedback`
 --
 
-CREATE TABLE IF NOT EXISTS `feedback` (
+CREATE TABLE `feedback` (
   `feedback_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 -- Table structure for table `news`
 --
 
-CREATE TABLE IF NOT EXISTS `news` (
+CREATE TABLE `news` (
   `news_id` int(11) NOT NULL,
   `news_title` varchar(50) DEFAULT NULL,
   `news_description` text DEFAULT NULL,
@@ -248,7 +248,7 @@ INSERT INTO `news` (`news_id`, `news_title`, `news_description`, `expire_date`, 
 -- Table structure for table `news_category`
 --
 
-CREATE TABLE IF NOT EXISTS `news_category` (
+CREATE TABLE `news_category` (
   `news_category_id` int(11) NOT NULL,
   `news_category_type` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -269,7 +269,7 @@ INSERT INTO `news_category` (`news_category_id`, `news_category_type`) VALUES
 -- Table structure for table `photos`
 --
 
-CREATE TABLE IF NOT EXISTS `photos` (
+CREATE TABLE `photos` (
   `photo_id` int(11) NOT NULL,
   `photo_document` varchar(50) DEFAULT NULL,
   `event_id` int(11) NOT NULL
@@ -292,7 +292,7 @@ INSERT INTO `photos` (`photo_id`, `photo_document`, `event_id`) VALUES
 -- Table structure for table `question`
 --
 
-CREATE TABLE IF NOT EXISTS `question` (
+CREATE TABLE `question` (
   `question_id` int(11) NOT NULL,
   `question` text NOT NULL,
   `answer` text NOT NULL,
@@ -309,7 +309,7 @@ INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
 (3, 'course,how many courses are there,how many courses are in rollwala computer center,how many courses are in departement of computer science,what are the courses', 'There are following courses in Department of computer science:<br/>\nMCA<br/>\nMSC(AI & ML)<br/>\nMSC(5 Year integrated)<br/>\nM.Tech<br/>\nPGDCA<br/>', 'text'),
 (4, 'about dcs,about rcc,about rollwala computer center,tell me about rollwala,give me information about rollwala,give me information about dcs', 'You can find a information about <a style=\"color:blue;\" href=\"about.php\">here.</a>', 'text'),
 (5, 'faculty', 'You can find a complete list of all DCS\'s faculties <a style=\"color:blue;\" href=\"https://www.gujaratuniversity.ac.in/details/18\">here.</a>', 'text'),
-(10, 'admission', 'You can find Information about Admission from <a style=\"color:blue;\" href=\"broucher.php\">here.</a>', 'text');
+(10, 'admission', 'You can find Information about Admission from <a style=\"color:blue;\" href=\"admission_enquiry.php\">here.</a>', 'text');
 
 -- --------------------------------------------------------
 
@@ -317,7 +317,7 @@ INSERT INTO `question` (`question_id`, `question`, `answer`, `type`) VALUES
 -- Table structure for table `reference_paper`
 --
 
-CREATE TABLE IF NOT EXISTS `reference_paper` (
+CREATE TABLE `reference_paper` (
   `subject_doc_id` int(11) NOT NULL,
   `subject_document_name` varchar(50) DEFAULT NULL,
   `subject_document` varchar(50) DEFAULT NULL,
@@ -330,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `reference_paper` (
 -- Table structure for table `result`
 --
 
-CREATE TABLE IF NOT EXISTS `result` (
+CREATE TABLE `result` (
   `result_id` int(11) NOT NULL,
   `result_document` varchar(50) DEFAULT NULL,
   `faculty_id` int(11) NOT NULL,
@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `result` (
 -- Table structure for table `student`
 --
 
-CREATE TABLE IF NOT EXISTS `student` (
+CREATE TABLE `student` (
   `student_id` int(11) NOT NULL,
   `student_batch_year` year(4) DEFAULT NULL,
   `student_dob` date DEFAULT NULL,
@@ -357,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 -- Table structure for table `subject`
 --
 
-CREATE TABLE IF NOT EXISTS `subject` (
+CREATE TABLE `subject` (
   `subject_id` int(11) NOT NULL,
   `subject_name` varchar(50) DEFAULT NULL,
   `subject_description` text DEFAULT NULL,
@@ -370,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `subject` (
 -- Table structure for table `syllabus`
 --
 
-CREATE TABLE IF NOT EXISTS `syllabus` (
+CREATE TABLE `syllabus` (
   `syllabus_id` int(11) NOT NULL,
   `syllabus_semister` smallint(6) DEFAULT NULL,
   `syllabus_document` varchar(50) DEFAULT NULL,
@@ -383,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `syllabus` (
 -- Table structure for table `tmp_questions`
 --
 
-CREATE TABLE IF NOT EXISTS `tmp_questions` (
+CREATE TABLE `tmp_questions` (
   `tmp_question_id` int(11) NOT NULL,
   `question` text NOT NULL,
   `type` varchar(35) NOT NULL
@@ -395,7 +395,7 @@ CREATE TABLE IF NOT EXISTS `tmp_questions` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(30) DEFAULT NULL,
   `user_profile` varchar(50) DEFAULT NULL,
@@ -424,7 +424,7 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_profile`, `user_email`, `user_
 -- Table structure for table `user_category`
 --
 
-CREATE TABLE IF NOT EXISTS `user_category` (
+CREATE TABLE `user_category` (
   `use_category_id` int(11) NOT NULL,
   `user_category_name` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

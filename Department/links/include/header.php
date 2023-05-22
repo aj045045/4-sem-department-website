@@ -74,7 +74,7 @@ echo '</ul>
                         <ul>
                             <li><a href="project_ongoing.php">Projects ongoing</a></li>
                             <li><a href="research.php">Research outcomes</a></li>
-                            <li><a href="#">Awards</a></li>
+                            <li><a href="award.php">Awards</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
