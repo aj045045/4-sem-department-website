@@ -72,10 +72,9 @@ echo '</ul>
                     <li class="nav-item">
                         <a class="nav-link text-light"><b>RESEARCH</b></a>
                         <ul>
-                            <li><a href="#">projects ongoing</a></li>
-                            <li><a href="#">collaborations</a></li>
-                            <li><a href="#">research outcomes</a></li>
-                            <li><a href="#">awards</a></li>
+                            <li><a href="project_ongoing.php">Projects ongoing</a></li>
+                            <li><a href="research.php">Research outcomes</a></li>
+                            <li><a href="#">Awards</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
