@@ -160,7 +160,7 @@ try {
         ?>
 
             <button type="button" style="width:100%" data-bs-toggle="modal" data-bs-target="#modalId<?php echo $row['news_id']; ?>">
-                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
+                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark tw-group/item">
                     <div class="tw-flex tw-flex-row">
 
                         <div class=" tw-w-2/5 tw-mt-5 tw-items-start tw-font-serif tw-text-2xl">
@@ -168,11 +168,11 @@ try {
                             echo $row['news_title'];
                             ?>
                         </div>
-                        <div class="tw-w-2/8 tw-mx-auto tw-mt-6 tw-font-mono"><i class=" tw-font-bold tw-mx-3">Expire Date</i><?php $dt = new DateTime($row['expire_date']);
-                                                                                                                                echo $dt->format('j-M-Y'); ?></div>
+                        <div class="group-hover/item:tw-visible md:tw-invisible tw-w-2/8 tw-mx-auto tw-mt-6 tw-font-mono"><i class=" tw-font-bold tw-mx-3">Expire Date</i><?php $dt = new DateTime($row['expire_date']);
+                                                                                                                                                                            echo $dt->format('j-M-Y'); ?></div>
                     </div>
                     <hr class=" tw-border-black tw-mx-auto tw-block tw-w-11/12 tw-mt-3">
-                    <div class=" tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-slate-200 tw-px-5 tw-rounded-2xl">
+                    <div class=" tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-slate-200 tw-px-5 tw-rounded-full">
                         <i class=" tw-font-bold tw-mx-3">Category&nbsp;:</i>
                         <div class=" tw-font-mono">
                             <?php

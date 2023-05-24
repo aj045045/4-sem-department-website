@@ -37,7 +37,7 @@ function deleteNews($id)
         <div class="pill">News</div>
         <br>
     </div>
-    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-w-3/5 tw-p-5 tw-rounded-md tw-mb-40 md:tw-block md:tw-mx-auto tw-m-10" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 md:tw-w-3/5 tw-p-5 tw-rounded-md tw-mb-40 md:tw-block md:tw-mx-auto tw-m-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
         <div class=" tw-text-center tw-capitalize tw-text-5xl md:tw-text-7xl first-letter:tw-font-serif" style="font-family: Brush Script MT;">News </div>
         <?php
         $dns = "mysql:host=localhost;dbname=dcsdb";
@@ -51,14 +51,14 @@ function deleteNews($id)
         ?>
 
             <button type="button" style="width:100%" data-bs-toggle="modal" data-bs-target="#modalId<?php echo $row['news_id']; ?>">
-                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-mt-10 tw-shadow-lg text-dark">
-                    <div class=" tw-w-3/5 tw-mt-5 tw-ml-5 tw-items-start tw-font-serif tw-flex tw-flex-row tw-text-xl md:tw-text-2xl">
+                <div class=" md:tw-flex-row tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-mt-10 tw-shadow-lg text-dark tw-group/item">
+                    <div class=" tw-overflow-hidden tw-text-center  tw-w-3/5 tw-my-2 tw-ml-5 tw-items-start tw-font-serif tw-flex tw-flex-row tw-text-xl md:tw-text-2xl">
                         <?php
                         echo $row['news_title'];
                         ?>
                     </div>
-                    <hr class=" tw-border-black tw-mx-auto tw-block tw-w-11/12 tw-mt-3">
-                    <div class=" tw-text-sm md:tw-text-lg tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-slate-200 tw-px-5 tw-rounded-2xl">
+                    <hr class="tw-hidden max-md:tw-block tw-border-black tw-mx-auto tw-w-11/12">
+                    <div class=" group-hover/item:tw-visible md:tw-invisible tw-visible  tw-text-xs md:tw-text-base tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-white tw-px-5 tw-rounded-2xl">
                         <i class=" tw-font-bold tw-mx-3">Category&nbsp;:</i>
                         <div class=" tw-font-mono">
                             <?php

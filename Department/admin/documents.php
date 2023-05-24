@@ -1,4 +1,7 @@
 <?php
+
+use FFI\Exception;
+
 $dns = "mysql:host=localhost;dbname=dcsdb";
 $user = "root";
 $dataBase = new PDO($dns, $user, "");
@@ -21,8 +24,7 @@ try {
         $resultQuery->closeCursor();
     }
 
-    if(isset($_GET['delete']))
-    {
+    if (isset($_GET['delete'])) {
         deleteDocument($_GET['delete']);
     }
     if (isset($_POST['documentSubmit'])) {
@@ -53,6 +55,8 @@ try {
                 // Circular
                 $location = "./documents/circulars/circular" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
                 break;
+            default:
+                throw new Exception("Please Choose the Category ");
         }
 
         // NOTE - Inserting the data into database
@@ -92,12 +96,12 @@ try {
 </head>
 
 <body class=" tw-bg-slate-200">
-    <!-- @audit-info Add the News and News category button -->
+    <!-- //NOTE -  Add the News and News category button -->
     <div class="tw-shadow-md tw-m-8 tw-shadow-slate-400 sm:tw-w-3/4 tw-flex sm:tw-flex-row tw-flex-col tw-bg-white tw-mx-8 tw-rounded-md sm:tw-h-10">
         <button type="button" class="tw-flex sm:tw-flex-row tw-flex-col tw-my-2 " data-bs-toggle="modal" data-bs-target="#modalId">
             <img class="tw-hidden md:tw-block tw-w-6 tw-mx-2 tw-rounded-full tw-h-6 " id="image' . $i . '-preview" src="./../image/logos/plus-icon.jpg" alt="Title">
             <!-- Modal button -->
-            Do you want to add <strong class="tw-mx-2 ">Result&nbsp;/&nbsp;Papers</strong> for the department of computer science ?
+            Do you want to add <strong class="tw-mx-2 ">Result&nbsp;/&nbsp;Papers&nbsp;/&nbsp;Circular</strong> for the department of computer science ?
         </button>
     </div>
 
@@ -158,7 +162,7 @@ try {
         ?>
 
             <a target="_blank" href="<?php echo "./." . $row['document_location'] ?>">
-                <div class=" tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
+                <div class="tw-group/item tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
                     <div class="tw-flex tw-flex-row">
                         <div class=" tw-w-2/5 tw-m-5 tw-items-start tw-font-serif tw-text-2xl">
                             <?php
@@ -170,7 +174,7 @@ try {
                         </div>
                     </div>
                     <hr class=" tw-border-black tw-mx-auto tw-block tw-w-11/12 tw-mt-3">
-                    <div class=" tw-mx-auto tw-flex tw-flex-row tw-gap-x-10">
+                    <div class="tw-invisible group-hover/item:tw-visible tw-mx-auto tw-flex tw-flex-row tw-gap-x-10 ">
                         <div class=" tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-700 tw-text-white tw-px-5 tw-rounded-2xl">
                             <i class=" tw-font-bold tw-mx-3">Category&nbsp;:</i>
                             <div class=" tw-font-mono first-letter:tw-capitalize">
@@ -179,7 +183,7 @@ try {
                                 ?>
                             </div>
                         </div>
-                            <a class="tw-my-3 tw-text-white tw-bg-red-700 tw-px-5 tw-rounded-2xl tw-mx-3 tw-font-bold tw-font-mono " href="documents.php?delete=<?php echo $row['document_id']; ?>">Delete</a>
+                        <a class=" tw-my-3 tw-text-white tw-bg-red-700 tw-px-5 tw-rounded-2xl tw-mx-3 tw-font-bold tw-font-mono" href="documents.php?delete=<?php echo $row['document_id']; ?>">Delete</a>
                     </div>
                 </div>
             </a>

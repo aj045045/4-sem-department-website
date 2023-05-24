@@ -43,12 +43,12 @@ $dataBase = new PDO($dns, $user, "");
         foreach ($rows as $row) {
         ?>
             <a target="_self" href="event_detail.php?id=<?php echo sha1($row['event_id']) ?>">
-                <div class=" tw-flex-col tw-flex tw-h-26 tw-container tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
+                <div class=" tw-overflow-hidden tw-group/item tw-flex-col tw-flex tw-h-26 tw-container tw-bg-white tw-rounded-2xl tw-my-10 tw-shadow-lg text-dark">
                     <div class=" tw-flex-row tw-flex">
                         <img src="<?php echo "./image/events/event-" . $row['event_id'] . ".1.webp" ?>" class="md:tw-mt-3 tw-mt-5 md:tw-ml-10 tw-ml-5 tw-rounded-full md:tw-w-10 tw-w-7 tw-h-7 md:tw-h-auto" alt="">
                         <div class=" tw-w-2/5 tw-mt-5 tw-ml-3 tw-font-serif md:tw-text-xl tw-text-base"><?php echo $row['event_title'] ?></div>
-                        <div class="md:tw-w-2/8 tw-mx-auto tw-mt-6 tw-font-mono md:tw-text-lg tw-text-xs tw-flex tw-flex-row"><i class=" tw-font-bold tw-mx-3">Date</i><?php $dt = new DateTime($row['event_start']);
-                                                                                                                                                                        echo $dt->format('j-M-Y'); ?></div>
+                        <div class=" group-hover/item:tw-visible md:tw-invisible md:tw-w-2/8 tw-mx-auto tw-mt-6 tw-font-mono md:tw-text-lg tw-text-xs tw-flex tw-flex-row"><i class=" tw-font-bold tw-mx-3">Date</i><?php $dt = new DateTime($row['event_start']);
+                                                                                                                                                                                                                    echo $dt->format('j-M-Y'); ?></div>
                     </div>
                     <hr class=" tw-border-black tw-mx-auto tw-block tw-w-11/12 tw-mt-3">
                     <div class=" tw-flex tw-flex-row tw-mx-auto md:tw-text-lg tw-text-sm">
