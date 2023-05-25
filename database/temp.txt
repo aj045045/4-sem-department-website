@@ -7,7 +7,6 @@ Tabs on header
             Feedback system
             catering to Student diversity
             Mentor Mentee system
-            professional memberships
 
     - Why Department of computer science -Remain
         state of art infrastructure

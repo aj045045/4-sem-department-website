@@ -89,7 +89,7 @@ include "./links/include/db.php";
                                                             $_SESSION['userType'] = "student";
                                                             break;
                                                         default:
-                                                            throw new Exception("Please Sign In");
+                                                                throw new Exception("Please Sign In");
                                                             break;
                                                     }
                                                 }

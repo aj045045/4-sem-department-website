@@ -34,7 +34,7 @@ header{
                         <li><i class="bx bx-chevron-right"></i> <a href="msc.php">5 Years Integrated M.Sc-CS</a></li>
                         <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">M.Sc AI & ML & D</a></li> -->
                     </ul><br>
-                    <b>STUDENT</b>
+                    <b>STUDENTs</b>
                     <ul style="font-size: smaller;">
                     <li><a
                     href="syllabus.php">Syllabus</a>
@@ -106,11 +106,14 @@ header{
         </div>
         <div class="col-lg-4 col-md-6 footer-links">
             <div class="pb-4 uppercase ">CONTACT US</div>
-            <div class="tdrow">
-                <img src="image/logos/imap.webp" style="width:20px; display:inline-block;" >|
+             <div class="flex-row flex">
+                        <div class="flex-row flex block italic font-semibold"><img src="image/logos/imap.webp" style="width:30px; height:20px; margin-top:5px; display:inline-block;" >|&nbsp;</div>
+                        <div class="font-mono">&nbsp;
                 Gujarat University, Near Ambedkar Gate, University Area, Ahmedabad, Gujarat 380009
-            </div>
-            <div class="tdrow">📞| 26300877</div>
+
+                        </div>
+                    </div>
+            <div class="tdrow">📞| 07926300877</div>
             <div class="tdrow">📧| admissions.dcs@gmail.com</div>
             <div class="tdrow">
                 <table>

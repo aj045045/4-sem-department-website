@@ -168,10 +168,6 @@
             </div>
         </div>
     </div>
-    <ul class="breadcrumb" style="padding-top:130px;padding-left: 7%;">
-        <li><i class="fa fa-"></i> Home</li>
-
-    </ul>
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in-down" data-aos-easing="ease-in-cubic" data-aos-duration="2000">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
