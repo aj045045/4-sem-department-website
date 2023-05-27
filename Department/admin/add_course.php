@@ -1,6 +1,42 @@
+
 <?php
 include "include/connection/db.php";
 ?>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $courseName = $_POST['course_name'];
+    $courseDetails = $_POST['course_details'];
+    $seats = $_POST['seats'];
+    $boyFee = $_POST['boy_fee'];
+    $girlFee = $_POST['girl_fee'];
+
+    // Process the uploaded course document
+    $documentName = $_FILES['course_document']['name'];
+    $documentTmpName = $_FILES['course_document']['tmp_name'];
+    $documentPath ='documents/syllabus/' . $documentName;
+    move_uploaded_file($documentTmpName,'./../'.$documentPath);
+
+    $imageName = $_FILES['course_image']['name'];
+    $imageTmpName = $_FILES['course_image']['tmp_name'];
+    $imagePath =   'image/academics/logo/'.  $imageName;
+    move_uploaded_file($imageTmpName, './../'.$imagePath);
+
+    // // Make sure to establish a database connection in "include/connection/db.php"
+    // // Modify the table name and column names according to your database structure
+
+    $sql = "INSERT INTO course (course_name, course_details, seat_number, boys_fees, girls_fees, course_document, course_image) 
+             VALUES ('$courseName', '$courseDetails', '$seats', '$boyFee', '$girlFee', '$documentPath', '$imagePath')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Course added successfully.');</script>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +54,7 @@ include "include/connection/db.php";
     </header>
     <div class="container">
         <h1>Add Course:</h1>
-        <form method="post" enctype="multipart/form-data">>
+        <form method="post" enctype="multipart/form-data">
             <div class="py-2">
                 <label for="course_name" class="form-label">Course Name:</label>
                 <input type="text" name="course_name" id="course_name" class="form-control" placeholder="Enter course name here" required>
@@ -26,6 +62,18 @@ include "include/connection/db.php";
             <div class="py-2">
                 <label for="course_details" class="form-label">Course Details:</label>
                 <textarea placeholder="Course Details" name="course_details" id="course_details" class="form-control" rows="5" required></textarea>
+            </div>
+            <div class="py-2">
+                <label for="seats" class="form-label">Total seats:</label>
+                <input type="number" name="seats" id="seats" class="form-control" placeholder="Enter total seats" required>
+            </div>
+            <div class="py-2">
+                <label for="boy_fee" class="form-label">Boys fee:</label>
+                <input type="number" name="boy_fee" id="boy_fee" class="form-control" placeholder="Enter Boy fee" required>
+            </div>
+            <div class="py-2">
+                <label for="girl_fee" class="form-label">Girls fee:</label>
+                <input type="number" name="girl_fee" id="girl_fee" class="form-control" placeholder="Enter Girl fee" required>
             </div>
             <div class="py-2">
                 <label for="course_document" class="form-label">Course syllabus:</label>
@@ -47,23 +95,7 @@ include "include/connection/db.php";
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="include/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // delete question
-        $(".delete-feedback-btn").on("click", function() {
-            var feedback_id = this.id.slice(7);
-            $.ajax({
-                type: "post",
-                url: "delete_feedback.php",
-                data: {
-                    feedback_id: feedback_id
-                },
-                success: function(response) {
-                    alert("Feedback deleted");
-                    location.reload();
-                }
-            });
-        });
-    </script>
+   
 </body>
 
 </html>

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Course</title>
     <link rel="stylesheet" href="include/css/bootstrap.min.css"><!-- // @audit-info : bootstrap -->
 </head>
 <body>
@@ -44,8 +44,8 @@
          <tr>
                     <td><?php echo $course_name;?></td>
                     <td>
-                        <button id="edit-<?php echo $tmp_question_id;?>" class="edit-question-btn btn btn-primary">Edit</button>
-                        <button id="delete-<?php echo $feedback_id;?>" class="delete-feedback-btn btn btn-primary">Delete</button>
+                        <a href="edit_course.php?course_id=<?php echo $course_id;?>" class="edit-question-btn btn btn-primary">Edit</a>
+                        <button id="delete-<?php echo $course_id;?>" class="delete-course-btn btn btn-primary">Delete</button>
                     </td>
                 </tr>
             <?php
@@ -68,14 +68,16 @@
     <script src="include/js/bootstrap.bundle.min.js"></script>
     <script>      
         // delete question
-        $(".delete-feedback-btn").on("click",function(){
-            var feedback_id=this.id.slice(7);
+        $(".delete-course-btn").on("click",function(){
+            var course_id=this.id.slice(7);
+            console.log("click");
+            console.log(course_id);
             $.ajax({
                 type: "post",
-                url: "delete_feedback.php",
-                data: {feedback_id: feedback_id},
+                url: "delete_course.php",
+                data: {course_id: course_id},
                 success: function(response) {
-                    alert("Feedback deleted");
+                    alert("Course deleted",);
                     location.reload();
                 }
             });
