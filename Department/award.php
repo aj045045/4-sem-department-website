@@ -1,5 +1,3 @@
-<!-- //  TODO: About page
--->
 <!doctype html>
 <html lang="en">
 
@@ -26,52 +24,36 @@
             <div class="pill">Awards</div>
             <br>
             <br>
-            <div class="border border-3 row mt-2">
-                <div class="title-box p-2 col-12 col-md-2 m-auto">
-                    <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
-                        <p>September 2021</p>
+            <?php
+            include "links/include/db.php"; 
+            $sql = "SELECT * FROM achievement";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $awardDate = date('F Y', strtotime($row['award_time']));
+                    $facultyName = $row['award_winner'];
+                    $awardName = $row['award_name'];
+                    $awardPlace = $row['award_place'];
+                    ?>
+                    <div class="border border-3 row mt-2">
+                        <div class="title-box p-2 col-12 col-md-2 m-auto">
+                            <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
+                                <p><?php echo $awardDate; ?></p>
+                            </div>
+                        </div>
+                        <div class="title-box p-2 col-12 col-md-10 border border-1">
+                            <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal"><?php echo $facultyName; ?></span></h3>
+                            <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal"><?php echo $awardName; ?></span></h3>
+                            <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal"><?php echo $awardPlace; ?></span></h3>
+                        </div>
                     </div>
-                </div>
-                <div class="title-box p-2 col-12 col-md-10 border border-1">
-                    <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal">Dr.Bhumika Shah</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal">WINNER OF ACM TEACHING CHALLENGE-2021</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal">ACM compute-Online</span></h3>
-                </div>
-            </div>
-            <div class="border border-3 row mt-2">
-                <div class="title-box p-2 col-12 col-md-2 m-auto">
-                    <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
-                        <p>October 2022</p>
-                    </div>
-                </div>
-                <div class="title-box p-2 col-12 col-md-10 border border-1">
-                    <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal">Dr.Bhumika Shah</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal">WINNER OF ACM TEACHING CHALLENGE-2022</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal">ACM compute-Jaipur</span></h3>
-                </div>
-            </div><div class="border border-3 row mt-2">
-                <div class="title-box p-2 col-12 col-md-2 m-auto">
-                    <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
-                        <p>September 2019</p>
-                    </div>
-                </div>
-                <div class="title-box p-2 col-12 col-md-10 border border-1">
-                    <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal">Dr.Bhumika Shah</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal">BEST PAPER AWARD ICPS-2019</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal">International Conference on Police Science,Raksha Shakti University,Gandhinagar</span></h3>
-                </div>
-            </div><div class="border border-3 row mt-2">
-                <div class="title-box p-2 col-12 col-md-2 m-auto">
-                    <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
-                        <p>February 2019</p>
-                    </div>
-                </div>
-                <div class="title-box p-2 col-12 col-md-10 border border-1">
-                    <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal">Dr.Jyoti Pareek</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal">Regional Technical Coordinator-Virtual Labs IIT Bombay</span></h3>
-                    <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal">IIT Bombay</span></h3>
-                </div>
-            </div>
+                    <?php
+                }
+            } else {
+                echo "No awards found.";
+            }
+            ?>
         </div>
         
     </div>

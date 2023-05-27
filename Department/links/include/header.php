@@ -73,8 +73,7 @@ echo '</ul>
                     <li class="nav-item">
                         <a class="nav-link text-light"><b>RESEARCH</b></a>
                         <ul>
-                            <li><a href="project_ongoing.php">Projects ongoing</a></li>
-                            <li><a href="research.php">Research outcomes</a></li>
+                            <li><a href="https://www.gujaratuniversity.ac.in/researchproject?deptid=18">Projects & Research outcomes</a></li>
                             <li><a href="award.php">Awards</a></li>
                         </ul>
                     </li>

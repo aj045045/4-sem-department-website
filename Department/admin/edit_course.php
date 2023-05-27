@@ -1,22 +1,18 @@
 <?php
 include "include/connection/db.php";
 
-// Check if the course ID is provided in the URL
 if (isset($_GET['course_id'])) {
     $courseId = $_GET['course_id'];
 
-    // Retrieve the course data from the database
     $sql = "SELECT * FROM course WHERE course_id = $courseId";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
-    // Check if the course exists
     if (!$row) {
         echo "Course not found.";
         exit;
     }
 
-    // Populate the form fields with the retrieved data
     $courseName = $row['course_name'];
     $courseDetails = $row['course_details'];
     $seats = $row['seat_number'];
@@ -34,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $boyFee = $_POST['boy_fee'];
     $girlFee = $_POST['girl_fee'];
 
-    // Process the uploaded course document if a new file is provided
     if ($_FILES['course_document']['name'] !== '') {
         $documentName = $_FILES['course_document']['name'];
         $documentTmpName = $_FILES['course_document']['tmp_name'];
@@ -44,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $documentPath = $row['course_document'];
     }
 
-    // Process the uploaded course image if a new file is provided
     if ($_FILES['course_image']['name'] !== '') {
         $imageName = $_FILES['course_image']['name'];
         $imageTmpName = $_FILES['course_image']['tmp_name'];
@@ -54,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $imagePath = $row['course_image'];
     }
 
-    // Update the course information in the database
     $sql = "UPDATE course SET
             course_name = '$courseName',
             course_details = '$courseDetails',
@@ -72,8 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Close the database connection
-mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +134,6 @@ mysqli_close($conn);
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-        // Update the course image preview on file input change
         $(document).ready(function() {
             $('#course_image').change(function(e) {
                 var file = e.target.files[0];

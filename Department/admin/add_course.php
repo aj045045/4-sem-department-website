@@ -21,9 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imagePath =   'image/academics/logo/'.  $imageName;
     move_uploaded_file($imageTmpName, './../'.$imagePath);
 
-    // // Make sure to establish a database connection in "include/connection/db.php"
-    // // Modify the table name and column names according to your database structure
-
     $sql = "INSERT INTO course (course_name, course_details, seat_number, boys_fees, girls_fees, course_document, course_image) 
              VALUES ('$courseName', '$courseDetails', '$seats', '$boyFee', '$girlFee', '$documentPath', '$imagePath')";
 
@@ -33,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: " . mysqli_error($conn);
     }
 
-    mysqli_close($conn);
 }
 ?>
 
