@@ -40,11 +40,17 @@ try {
         $lastId = 1 + $row['document_id'];
 
         //NOTE - Location Path of a pdf
-        $location = match ($category) {
-            1 => "./documents/results/result" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf",
-            2 => "./documents/papers/paper" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf",
-            3 => "./documents/circulars/circular" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf",
-        };
+        switch ($category) {
+            case 1:
+                $location = "./documents/results/result" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
+                break;
+            case 2:
+                $location = "./documents/papers/paper" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
+                break;
+            case 3:
+                $location = "./documents/circulars/circular" . "-" . $lastId . "-" . $course . "-" . $category . ".pdf";
+                break;
+        }
 
         // NOTE - Inserting the data into database
         $query = "INSERT INTO documents( document_title, document_location, course_id, document_category_id) VALUE (?,?,?,?)";

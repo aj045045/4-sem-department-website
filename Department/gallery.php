@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div class="gallery-container">
         <?php foreach ($photos as $photo) : ?>
             <div class="gallery-item">
-                <img src="<?php echo $photo['photo_document']; ?>" data-aos="zoom-in" data-aos-easing="ease-in-cubic" data-aos-duration="2000">
+                <img src="<?php echo $photo['photo_document']; ?>" data-aos="zoom-in" data-aos-easing="ease-in-cubic" data-aos-duration="1000">
 
             </div>
         <?php endforeach; ?>
