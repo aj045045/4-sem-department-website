@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
 
 use FFI\Exception;
 
@@ -86,9 +93,10 @@ try {
             margin-right: 20px;
         }
     </style>
+<link rel="stylesheet" href="./include/css/style.css">
 </head>
-
-<body class=" tw-bg-slate-200">
+<body class=" tw-bg-slate-200" style="margin-top:125px">
+    <?php include './include/header.php';?>
     <!-- //NOTE -  Add the News and News category button -->
     <div class="tw-shadow-md tw-m-8 tw-shadow-slate-400 sm:tw-w-3/4 tw-flex sm:tw-flex-row tw-flex-col tw-bg-white tw-mx-8 tw-rounded-md sm:tw-h-10">
         <button type="button" class="tw-flex sm:tw-flex-row tw-flex-col tw-my-2 " data-bs-toggle="modal" data-bs-target="#modalId">
@@ -144,7 +152,7 @@ try {
     <!-- Modal ended -->
 
     <!-- data-aos="zoom-in-up" data-aos-duration="2000" -->
-    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-w-3/5 tw-mx-80 tw-p-10 tw-rounded-md tw-m-40">
+    <div class=" tw-bg-slate-300 tw-shadow-lg tw-shadow-slate-500 tw-w-3/5 tw-mx-80 tw-p-10 tw-rounded-md tw-m-20">
         <div class=" tw-text-center tw-capitalize tw-text-7xl" style="font-family: Brush Script MT;">Documents </div>
         <?php
         $query = "select d.document_id, d.document_title, d.document_location,c.course_name, dc.document_category_type from documents d inner join document_category dc on dc.document_category_id = d.document_category_id inner join course c on c.course_id = d.course_id  order by document_id desc";

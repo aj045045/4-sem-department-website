@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
 $dns = "mysql:host=localhost;dbname=dcsdb";
 $user = "root";
 $dataBase = new PDO($dns, $user, "");
@@ -58,9 +65,11 @@ try {
     <link rel="stylesheet" href="./../links/css/tw.css">
     <link rel="shortcut icon" href="image/logos/logo.webp" type="image/png">
     <title>Depart. of Computer science</title>
+<link rel="stylesheet" href="./include/css/style.css">
 </head>
 
-<body class=" tw-bg-slate-200">
+<body class=" tw-bg-slate-200" style="margin-top:125px">
+    <?php include './include/header.php';?>
     <!-- @audit-info Add the News and News category button -->
     <div class=" tw-flex tw-flex-row tw-m-8">
         <div class="tw-shadow-md tw-shadow-slate-400 sm:tw-w-3/4 tw-flex sm:tw-flex-row tw-flex-col tw-bg-white tw-mx-8 tw-rounded-md sm:tw-h-10">

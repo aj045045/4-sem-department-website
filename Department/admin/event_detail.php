@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
 $dns = "mysql:host=localhost;dbname=dcsdb";
 $root = "root";
 $dataBase = new PDO($dns, $root, "");

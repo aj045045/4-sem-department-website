@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
     include "include/connection/db.php";
 ?>
 
@@ -10,12 +17,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awards</title>
     <link rel="stylesheet" href="include/css/bootstrap.min.css">
+<link rel="stylesheet" href="./include/css/style.css">
 </head>
+
 <body>
-    <header class="border border-1">
-        <h3>Header</h3>
-    </header>
-    <div class="container">
+    <?php include './include/header.php';?>
+    
+    <div class="container mt-5 py-5">
         <h1>Awards:</h1>
         <br>
         <a href="add_award.php" class="btn btn-primary">Add Award</a>
@@ -59,9 +67,6 @@
             </tbody>
         </table>
     </div>
-    <footer class="border border-1">
-        <h3>Footer</h3>
-    </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="include/js/bootstrap.bundle.min.js"></script>
     <script>

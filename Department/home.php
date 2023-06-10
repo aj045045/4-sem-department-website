@@ -201,27 +201,6 @@
             <br>
             <!-- AIM-->
             <div class="mt-3 container-fluid">
-                <div class="pill"> AIM</div>
-                <br>
-                <ul class="westside">
-                    <li>Quality software professionalism relevant and useful to the Industry, Business and Other
-                        organization. </li>
-                    <li>To expose the students to the real world issues, encourage them.</li>
-                    <li>Course that fits one’s career goals and prepare them to prove themselves in any
-                        national/international scenario.</li>
-                    <li>Nation's finest in nurturing a future generation of competent, credible and ethical forensic
-                        scientists.</li>
-                    <li>Adopting innovative teaching methods that promote learning, creativity and critical thinking
-                        skills.
-                    </li>
-                    <li>Reviewing regularly the curriculum, courses and programs offered to meet the changing needs of
-                        the
-                        forensic science profession.</li>
-                </ul>
-                <br>
-                <div class="pill"> Total Student </div>
-                <br>
-                <canvas id="myChart" style="width:100%;max-width:600px; display:block; margin:auto;"></canvas>
 
                 <!-- OVERVIEW -->
                 <div class="pill "> OVERVIEW</div>
@@ -255,6 +234,28 @@
                         level and national level</span>
                     <button onclick="myFunction()" id="buttonreadmore">Read more</button>
                 </p>
+                <div class="pill"> AIM</div>
+                <br>
+                <ul class="westside">
+                    <li>Quality software professionalism relevant and useful to the Industry, Business and Other
+                        organization. </li>
+                    <li>To expose the students to the real world issues, encourage them.</li>
+                    <li>Course that fits one’s career goals and prepare them to prove themselves in any
+                        national/international scenario.</li>
+                    <li>Nation's finest in nurturing a future generation of competent, credible and ethical forensic
+                        scientists.</li>
+                    <li>Adopting innovative teaching methods that promote learning, creativity and critical thinking
+                        skills.
+                    </li>
+                    <li>Reviewing regularly the curriculum, courses and programs offered to meet the changing needs of
+                        the
+                        forensic science profession.</li>
+                </ul>
+                <br>
+                <div class="pill"> Total Student </div>
+                <br>
+                <canvas id="myChart" style="width:100%;max-width:600px; display:block; margin:auto;"></canvas>
+
                 <br>
             </div>
         </div>

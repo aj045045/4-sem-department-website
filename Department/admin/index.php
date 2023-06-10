@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    echo `<script>alert("hi")</script>`;
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
 $dns = "mysql:host=localhost;dbname=dcsdb";
 $dataBase = new PDO($dns, "root", "");
 try {
@@ -23,8 +31,8 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<head>
+</head>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,9 +42,12 @@ try {
     <script src="./include/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./../links/css/tw.css">
     <link rel="shortcut icon" href="./../image/logos/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./include/css/style.css">
 </head>
 
-<body class=" tw-flex-col tw-flex tw-p-20 tw-gap-y-10 ">
+<body>
+    <?php include './include/header.php';?>
+    <div class=" tw-flex-col tw-flex tw-p-20  tw-gap-y-10" style="margin-top:55px">
     <!-- //NOTE - Div for Add / Update Data  -->
     <div class=" tw-w-28 tw-uppercase tw-rounded-md tw-p-2 sm:tw-text-xl tw-text-md tw-bg-blue-700 tw-text-center tw-shadow-lg tw-shadow-blue-400 tw-text-white">LINKs</div>
 
@@ -107,7 +118,7 @@ try {
             <div class=" tw-capitalize tw-text-center tw-font-serif tw-text-4xl tw-my-5">collaborators</div>
         </div>
     </div>
-
+</div>
 
 </body>
 
