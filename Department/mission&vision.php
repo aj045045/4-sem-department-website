@@ -23,6 +23,7 @@
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
             <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li>Mission & Vision</li>
         </ul>
         <div class="container">
@@ -32,7 +33,7 @@
             <h1 class="fs-2 fw-bolder">Mission:</h1>
             <p>The mission of this department is to usher in era of quality software professionalism relevant and useful to the industry, business and other organization. The basic purpose is to expose the students to the real world issues, encourage them to pursue the course that fits one's career goals and prepare them to prove themselves in any national/international scenario  Mission
             </p>
-            <h1 class="fs-2 fw-bolder mt-2"> Vision :</h1>
+            <h1 class="mt-2 fs-2 fw-bolder"> Vision :</h1>
             <p>
                 To be the centre of excellence for research and development in Computer Science, and make a mark in national and international IT scenario
             </p>

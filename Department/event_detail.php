@@ -55,10 +55,12 @@ $resultData->closeCursor();
         $resultData->execute();
         $row = $resultData->fetch(PDO::FETCH_ASSOC);
     ?>
-        <br>
-        <br>
-        <br>
-        <br>
+    <ul class="breadcrumb" style="padding-top: 130px; padding-right:40%; padding-left:5%">
+            <li><a href="home.php">Home</a></li>
+            <li>Happenings</li>
+            <li>Event</li>
+            <li><?php echo ucfirst($row['event_title']); ?></li>
+        </ul>
         <div class=" tw-bg-slate-300 tw-shadow-md tw-shadow-slate-500 md:tw-mx-20 tw-mx-5 tw-my-10 tw-p-10 tw-rounded-md tw-flex tw-flex-col md:tw-gap-y-16 tw-gap-10">
             <div class=" tw-text-center tw-text-5xl tw-pl-10 tw-capitalize md:tw-text-8xl tw-container" style="font-family: Brush Script MT;">event details</div>
 

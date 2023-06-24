@@ -36,8 +36,10 @@ try {
         $resultData->closeCursor();
         $query = "DELETE  FROM event where event_id = $eventId";
         $resultData = $dataBase->prepare($query);
-        if (!$resultDataDelete->execute()) {
+        if (!$resultData->execute()) {
             throw new Exception(" Event not delete from database".$row['photo_id']);
+        }else{
+            header("Location: event.php");
         }
     }
     if (isset($_POST['updateEvent'])) {

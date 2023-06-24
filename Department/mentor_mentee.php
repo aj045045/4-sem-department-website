@@ -23,6 +23,7 @@
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
             <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li>Mentor Mentee System</li>
         </ul>
         <div class="container">

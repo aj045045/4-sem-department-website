@@ -18,6 +18,7 @@
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
             <li><a href="home.php">Home</a></li>
+            <li>Research</li>
             <li>Awards</li>
         </ul>
         <div class="container">
@@ -36,13 +37,13 @@
                     $awardName = $row['award_name'];
                     $awardPlace = $row['award_place'];
                     ?>
-                    <div class="border border-3 row mt-2">
-                        <div class="title-box p-2 col-12 col-md-2 m-auto">
-                            <div class="d-flex flex-md-column flex-row justify-content-around align-items-center">
+                    <div class="mt-2 border border-3 row">
+                        <div class="p-2 m-auto title-box col-12 col-md-2">
+                            <div class="flex-row d-flex flex-md-column justify-content-around align-items-center">
                                 <p><?php echo $awardDate; ?></p>
                             </div>
                         </div>
-                        <div class="title-box p-2 col-12 col-md-10 border border-1">
+                        <div class="p-2 border title-box col-12 col-md-10 border-1">
                             <h3 class="pb-1 fs-5 fw-bolder">Faculty Name: <span class="text-secondary fw-normal"><?php echo $facultyName; ?></span></h3>
                             <h3 class="pb-1 fs-5 fw-bolder">Award:<span class="text-secondary fw-normal"><?php echo $awardName; ?></span></h3>
                             <h3 class="pb-1 fs-5 fw-bolder">Place:<span class="text-secondary fw-normal"><?php echo $awardPlace; ?></span></h3>

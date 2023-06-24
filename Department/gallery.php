@@ -83,6 +83,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">
             <li><a href="home.php">Home</a></li>
+            <li>Happenings</li>
             <li>Gallery</li>
         </ul>
         <div class="pill">Gallery</div>

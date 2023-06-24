@@ -18,6 +18,10 @@ if (isset($_POST["message"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include "links/include/link.php" ?>
     <style>
+        label::after{
+            content:"*";
+            color:red;
+        }
     </style>
 </head>
 
@@ -36,6 +40,7 @@ if (isset($_POST["message"])) {
         <br>
         <ul class="breadcrumb" style="padding-top:130px">
             <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li>Feedback</li>
         </ul>
         <div class="container">
@@ -59,7 +64,7 @@ if (isset($_POST["message"])) {
                     <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
                 </div>
                 <div class="py-2">
-                   <input name="submit" type="submit" value="Submit" class="pill">
+                   <input name="submit" type="submit" value="Submit" class=" pill">
                 </div>
             </form>
         </div>

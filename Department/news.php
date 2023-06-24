@@ -30,8 +30,9 @@ function deleteNews($id)
     <?php include "links/include/header.php" ?>
     <!--  -->
     <div style="padding-right:40%;padding-left: 5%;">
-        <ul class="breadcrumb" style="padding-top: 130px;">
+        <ul class="tw-flex-row tw-flex breadcrumb" style="padding-top: 130px;">
             <li><a href="home.php">Home</a></li>
+            <li>Happenings</li>
             <li>News</li>
         </ul>
         <div class="pill">News</div>
@@ -52,13 +53,13 @@ function deleteNews($id)
 
             <button type="button" style="width:100%" data-bs-toggle="modal" data-bs-target="#modalId<?php echo $row['news_id']; ?>">
                 <div class=" md:tw-flex-row tw-flex-col tw-flex tw-h-26 tw-bg-white tw-rounded-2xl tw-mt-10 tw-shadow-lg text-dark tw-group/item">
-                    <div class=" tw-overflow-hidden tw-text-center  tw-w-3/5 tw-my-2 tw-ml-5 tw-items-start tw-font-serif tw-flex tw-flex-row tw-text-xl md:tw-text-2xl">
+                    <div class=" tw-overflow-hidden tw-text-center tw-w-3/5 tw-my-2 tw-ml-5 tw-items-start tw-font-serif tw-flex tw-flex-row tw-text-xl md:tw-text-2xl">
                         <?php
                         echo $row['news_title'];
                         ?>
                     </div>
                     <hr class="tw-hidden max-md:tw-block tw-border-black tw-mx-auto tw-w-11/12">
-                    <div class=" group-hover/item:tw-visible md:tw-invisible tw-visible  tw-text-xs md:tw-text-base tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-white tw-px-5 tw-rounded-2xl">
+                    <div class=" group-hover/item:tw-visible md:tw-invisible tw-visible tw-text-xs md:tw-text-base tw-flex tw-flex-row tw-my-3 tw-mx-auto tw-bg-blue-600 tw-text-white tw-px-5 tw-rounded-2xl">
                         <i class=" tw-font-bold tw-mx-3">Category&nbsp;:</i>
                         <div class=" tw-font-mono">
                             <?php

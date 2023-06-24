@@ -66,6 +66,7 @@
     <div style="padding-right:40%;padding-left: 5%;">
         <ul class="breadcrumb" style="padding-top: 130px;">
             <li><a href="home.php">Home</a></li>
+            <li>Students</li>
             <li>Syllabus</li>
         </ul>
         <div class="pill">Syllabus</div>
