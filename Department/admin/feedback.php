@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
     include "include/connection/db.php";
 ?>
 <!DOCTYPE html>
@@ -9,12 +16,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
     <link rel="stylesheet" href="include/css/bootstrap.min.css"><!-- // @audit-info : bootstrap -->
+<link rel="stylesheet" href="./include/css/style.css">
 </head>
+
 <body>
-    <header class="border border-1">
-        <h3>Header</h3>
-    </header>
-    <div class="container">
+    <?php include './include/header.php';?>
+   
+<div class="container mt-5 py-5">
         <h1>Feedbacks:</h1>
         <table class="table">
             <thead>
@@ -66,9 +74,6 @@
         </table>
         
     </div>
-    <footer class="border border-1">
-        <h3>Footer</h3>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
     <script src="include/js/bootstrap.bundle.min.js"></script>
     <script>      

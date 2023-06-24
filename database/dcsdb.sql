@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 27, 2023 at 10:02 PM
+-- Generation Time: Jun 10, 2023 at 06:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -44,6 +44,25 @@ INSERT INTO `achievement` (`award_id`, `award_winner`, `award_name`, `award_plac
 (5, 'Dr.Bhumika Shah', 'WINNER OF ACM TEACHING CHALLENGE-2022', 'ACM compute-Jaipur', '2022-10-01'),
 (6, 'Dr.Bhumika Shah', 'BEST PAPER AWARD ICPS-2019', 'International Conference on Police Science,Raksha Shakti University,Gandhinagar', '2019-09-28'),
 (7, ' Dr.Jyoti Pareek', 'Regional Technical Coordinator-Virtual Labs IIT Bombay', 'IIT Bombay', '2019-02-28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `username`, `password`) VALUES
+(1, 'Admin', 'Admin@123');
 
 -- --------------------------------------------------------
 
@@ -198,8 +217,7 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`event_id`, `event_title`, `event_description`, `event_venue`, `event_start`, `event_end`, `event_category_id`) VALUES
 (4, 'DevTools', 'Tech kauchalya is an event \r\norganized by the department of computer science to promote technical skills ', 'Department of computer Science', '2023-04-16 00:00:00', '2023-04-20 00:00:00', 1),
-(6, 'Tech Kaushilya', 'A Technical Event organized by the Department of computer science. In which student can participate in those event many college has participate in this event. It is organized on april 20 to april 22. Their are technical event like footwall, gully cricket, tennis etc. and technical event like query relay and  ', 'Upasana & Department of computer Science', '2023-04-20 10:00:00', '2023-04-22 18:00:00', 1),
-(7, 'jljllj', 'This is description', 'Fgsf', '0000-00-00 00:00:00', '2023-05-14 00:00:00', 1);
+(6, 'Tech Kaushilya', 'A Technical Event organized by the Department of computer science. In which student can participate in those event many college has participate in this event. It is organized on april 20 to april 22. Their are technical event like footwall, gully cricket, tennis etc. and technical event like query relay and  ', 'Upasana & Department of computer Science', '2023-04-20 10:00:00', '2023-04-22 18:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -294,13 +312,6 @@ CREATE TABLE `news` (
   `expire_date` date NOT NULL,
   `news_category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`news_id`, `news_title`, `news_description`, `expire_date`, `news_category_id`) VALUES
-(2, 'Tech Kaushalaya', 'Tech kaushalaya is organized by the department of computer science to promote technical event among computer science folks', '2023-05-29', 2);
 
 -- --------------------------------------------------------
 
@@ -509,6 +520,12 @@ ALTER TABLE `achievement`
   ADD PRIMARY KEY (`award_id`);
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `admission_enquiry`
 --
 ALTER TABLE `admission_enquiry`
@@ -676,6 +693,12 @@ ALTER TABLE `achievement`
   MODIFY `award_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `admission_enquiry`
 --
 ALTER TABLE `admission_enquiry`
@@ -745,7 +768,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `news_category`

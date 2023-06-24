@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
 include "include/connection/db.php";
 
 if (isset($_GET['course_id'])) {
@@ -82,15 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-top: 10px;
         }
     </style>
+<link rel="stylesheet" href="./include/css/style.css">
 </head>
 
 <body>
-    <header class="border border-1">
-        <h3>Header</h3>
-    </header>
-    <div class="container">
+    <?php include './include/header.php';?>
+    <div class="container mt-5 py-5">
         <h1>Edit Course:</h1>
-
         <form method="post" enctype="multipart/form-data">
             <div class="py-2">
                 <label for="course_name" class="form-label">Course Name:</label>
@@ -129,9 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </form>
     </div>
-    <footer class="border border-1">
-        <h3>Footer</h3>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
         $(document).ready(function() {

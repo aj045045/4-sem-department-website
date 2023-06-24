@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: sign_in.php");
+    exit();
+}
+?>
+<?php
     include "include/connection/db.php";
     if (isset($_POST["tmp_question_id"])) {
         $tmp_question_id = $_POST["tmp_question_id"];

@@ -89,7 +89,10 @@ echo '</ul>
                             <li><a href="circulars.php">Circular</a></li>
                             <li><a href="gallery.php">Gallery</a></li>
                         </ul>
-                    </li>                    
+                    </li>     
+                </ul>
+            </div>
+        </div>               
 </nav>
 ';
 echo '<button class="animate-bounce" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>';
