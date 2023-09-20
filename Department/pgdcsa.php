@@ -56,8 +56,8 @@ if (mysqli_num_rows($result) == 1) {
     <br>
     <br>
     <br>
-    <div class=" mx-7 bg-white rounded-xl flex flex-col ">
-        <div class="flex flex-initial h-20 px-10 mt-6 bg-green-900 rounded-t-lg overflow-hidden sm:px-32 sm:h-32 ">
+    <div class="flex flex-col bg-white  mx-7 rounded-xl">
+        <div class="flex flex-initial h-20 px-10 mt-6 overflow-hidden bg-green-900 rounded-t-lg sm:px-32 sm:h-32 ">
             <div class="flex flex-initial w-full font-serif bg-white">
                 <img src="./image/logos/logo.webp" alt="University Tower" class="h-auto mr-4 w-14 sm:mr-10 sm:w-24 ">
                 <div class="flex flex-col ">
@@ -86,20 +86,20 @@ if (mysqli_num_rows($result) == 1) {
         <!-- TABLE 1 -->
         <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
             <thead class="text-center text-white bg-green-800 ">
-                <tr class=" grid grid-cols-3">
+                <tr class="grid grid-cols-3 ">
                     <th class="py-2 pr-5">Admission</th>
                     <th class="py-2 pr-5"> Post Graduate Diploma in Computer Science & Applications</th>
                     <th class="py-2 pr-5"> About PGDCSA</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class=" grid grid-cols-3">
+                <tr class="grid grid-cols-3 ">
                     <td>
                         <ul>
                             <li>
                                 Admission Process through Gujarat University online Admission Portal:
                                 <href a="https://www.gujaratuniversity.ac.in/">Click here to enroll now</href>
-                            </li>
+                             </li>
 
                     </td>
                     <td class="px-6 pt-0"> In this course, students learn variety of subjects such as Basic Computer
@@ -123,14 +123,14 @@ if (mysqli_num_rows($result) == 1) {
         <!-- TABLE 2 -->
         <table class="w-full mx-auto mt-10 font-serif text-sm text-justify capitalize table-auto sm:text-lg">
             <thead class="text-center text-white bg-green-800 ">
-                <tr class=" grid grid-cols-3">
+                <tr class="grid grid-cols-3 ">
                     <th class="py-2 pr-5">Eligibility</th>
                     <th class="py-2 pr-5"> Career Prospects</th>
                     <th class="py-2 pr-5"> Fee Structure</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class=" grid grid-cols-3">
+                <tr class="grid grid-cols-3 ">
 
                     <td class="px-5"> <b>Graduate:</b> in any Discipline</td>
                     <td class="px-6">
